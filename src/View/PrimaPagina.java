@@ -33,18 +33,18 @@ public class PrimaPagina extends JFrame implements ActionListener {
 
         btnGioca = new JButton();
         btnGioca.setBounds(150, 325, 250, 100);
-        //btnGioca.addActionListener();
+        btnGioca.addActionListener(this);
         btnGioca.setText("GIOCA!");
         btnGioca.setFocusable(false);
         btnGioca.setVerticalTextPosition(JButton.CENTER);
         btnGioca.setHorizontalTextPosition(JButton.CENTER);
         btnGioca.setFont(new Font("Comic Sans", Font.BOLD, 30));
-        btnGioca.setForeground(Color.black);
-        btnGioca.setBackground(Color.lightGray);
+        btnGioca.setForeground(Color.black);   //imposto colore testo
+        btnGioca.setBackground(Color.lightGray);   //imposto colore di sfondo
 
         btnClassifica = new JButton();
         btnClassifica.setBounds(600, 325, 250, 100);
-        //btnClassifica.addActionListener();
+        btnClassifica.addActionListener(this);
         btnClassifica.setText("CLASSIFICA");
         btnClassifica.setFocusable(false);
         btnClassifica.setVerticalTextPosition(JButton.CENTER);
@@ -55,7 +55,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
 
         btnEsci = new JButton();
         btnEsci.setBounds(425, 550, 150, 50);
-        //btnEsci.addActionListener();
+        btnEsci.addActionListener(this);
         btnEsci.setText("ESCI");
         btnEsci.setFocusable(false);
         btnEsci.setVerticalTextPosition(JButton.CENTER);
@@ -79,6 +79,19 @@ public class PrimaPagina extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //controllo per capire quale tasto è stato cliccato
+        if(e.getSource() == btnGioca){
+            panelPrimaPagina.setVisible(false);
+        }else if(e.getSource() == btnClassifica){
+            panelPrimaPagina.setVisible(false);
+        }else if(e.getSource() == btnEsci){
+            //dichiarazione JOptionPane contenuto in una variabile memorizzare l'output generato dalla scelta dell'utente
+            int scelta = JOptionPane.showConfirmDialog (null, "Sei sicuro di voler uscire?",
+                    "Conferma Uscita", JOptionPane.YES_NO_OPTION);
 
+            if(scelta == JOptionPane.YES_OPTION){   //controllo sul bottone che clicca l'utente nel JOptionPane
+                this.dispose();   //nel caso l'utente clicca il bottone yes chiude il JFrame e chiude il programma
+            }
+        }
     }
 }

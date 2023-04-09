@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Creazione primo frame">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Completamento primo frame, creato un JPanel che contiene un JLabel e tre JButton per fare in modo di poterlo cambiare con quello che conterrà le impostazioni di gioco">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
@@ -76,7 +76,8 @@
       <workItem from="1675160952962" duration="1844000" />
       <workItem from="1676367509403" duration="1005000" />
       <workItem from="1680977301019" duration="2199000" />
-      <workItem from="1681039312591" duration="4350000" />
+      <workItem from="1681039312591" duration="4575000" />
+      <workItem from="1681075546451" duration="2110000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -113,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680979469619</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Completamento primo frame, creato un JPanel che contiene un JLabel e tre JButton per fare in modo di poterlo cambiare con quello che conterrà le impostazioni di gioco">
+      <created>1681047594333</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681047594333</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +156,7 @@
     <MESSAGE value="ciao" />
     <MESSAGE value="prova commit" />
     <MESSAGE value="Creazione primo frame" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creazione primo frame" />
+    <MESSAGE value="Completamento primo frame, creato un JPanel che contiene un JLabel e tre JButton per fare in modo di poterlo cambiare con quello che conterrà le impostazioni di gioco" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completamento primo frame, creato un JPanel che contiene un JLabel e tre JButton per fare in modo di poterlo cambiare con quello che conterrà le impostazioni di gioco" />
   </component>
 </project>
