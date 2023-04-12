@@ -8,7 +8,9 @@ import java.awt.event.ActionListener;
 public class PrimaPagina extends JFrame implements ActionListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     JPanel panelPrimaPagina;
+
     JLabel labelTitolo;
+
     JButton btnGioca;
     JButton btnClassifica;
 
@@ -27,7 +29,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
         labelTitolo.setBackground(new Color(125, 125, 125));
         labelTitolo.setOpaque(true);
         labelTitolo.setForeground(new Color(0, 0, 0));   //imposta colore del testo
-        labelTitolo.setFont(new Font("Comic Sans", Font.BOLD, 75));   //imposta il font e la grandezza del testo
+        labelTitolo.setFont(new Font("Comic Sans", Font.BOLD, 45));   //imposta il font e la grandezza del testo
         labelTitolo.setVerticalAlignment(JLabel.CENTER);   //imposta la posizione verticale del testo
         labelTitolo.setHorizontalAlignment(JLabel.CENTER);   //imposta la posizione orizzontale del testo
 
@@ -64,6 +66,8 @@ public class PrimaPagina extends JFrame implements ActionListener {
         btnEsci.setForeground(Color.black);
         btnEsci.setBackground(Color.lightGray);
 
+
+
         panelPrimaPagina = new JPanel();
         panelPrimaPagina.setBackground(new Color(216, 112, 124));
         panelPrimaPagina.setBounds(0, 0, 1000, 700);
@@ -72,6 +76,8 @@ public class PrimaPagina extends JFrame implements ActionListener {
         panelPrimaPagina.add(btnGioca);
         panelPrimaPagina.add(btnClassifica);
         panelPrimaPagina.add(btnEsci);
+
+
 
         this.add(panelPrimaPagina);
         this.setVisible(true);
