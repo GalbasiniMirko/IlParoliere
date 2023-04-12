@@ -8,13 +8,11 @@ import java.awt.event.ActionListener;
 public class PrimaPagina extends JFrame implements ActionListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     JPanel panelPrimaPagina;
-
     JLabel labelTitolo;
-
     JButton btnGioca;
     JButton btnClassifica;
-
     JButton btnEsci;
+    panelimpostazioni panelimpostazioni;
 
     public PrimaPagina(){
         this.setTitle("Il Paroliere");
@@ -66,8 +64,6 @@ public class PrimaPagina extends JFrame implements ActionListener {
         btnEsci.setForeground(Color.black);
         btnEsci.setBackground(Color.lightGray);
 
-
-
         panelPrimaPagina = new JPanel();
         panelPrimaPagina.setBackground(new Color(216, 112, 124));
         panelPrimaPagina.setBounds(0, 0, 1000, 700);
@@ -77,9 +73,10 @@ public class PrimaPagina extends JFrame implements ActionListener {
         panelPrimaPagina.add(btnClassifica);
         panelPrimaPagina.add(btnEsci);
 
-
+        panelimpostazioni = new panelimpostazioni();
 
         this.add(panelPrimaPagina);
+        this.add(panelimpostazioni);
         this.setVisible(true);
     }
 
@@ -88,6 +85,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
         //controllo per capire quale tasto è stato cliccato
         if(e.getSource() == btnGioca){
             panelPrimaPagina.setVisible(false);
+            panelimpostazioni.setVisible(true);
         }else if(e.getSource() == btnClassifica){
             panelPrimaPagina.setVisible(false);
         }else if(e.getSource() == btnEsci){
