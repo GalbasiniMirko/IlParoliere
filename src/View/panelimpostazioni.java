@@ -10,6 +10,9 @@ public class panelimpostazioni extends JPanel implements ActionListener {
     JLabel modalita;
     JLabel sceltadifficolta;
     JButton avanti;
+    JRadioButton facile;
+    JRadioButton medio;
+    JRadioButton difficile;
     JTextField username;
 
     public panelimpostazioni(){
@@ -43,17 +46,48 @@ public class panelimpostazioni extends JPanel implements ActionListener {
         username.setBackground(new Color(255 ,255,255));
 
         sceltadifficolta = new JLabel();
-        sceltadifficolta.setBounds(0, 80, 1000, 50);
+        sceltadifficolta.setBounds(0, 200, 1000, 50);
         sceltadifficolta.setText("a che difficoltà giochiamo teso?");
         sceltadifficolta.setForeground(new Color(0, 0, 0));
         sceltadifficolta.setFont(new Font("Comic Sans", Font.BOLD, 25));
         sceltadifficolta.setVerticalAlignment(JLabel.CENTER);
         sceltadifficolta.setHorizontalAlignment(JLabel.CENTER);
 
+        facile = new JRadioButton("facile");
+        facile.setBounds(455,250,150,80);
+        facile.setBackground(new Color(216, 112, 124));
+        medio =new JRadioButton("medio");
+        medio.setBounds(455,300,150,80);
+        medio.setBackground(new Color(216, 112, 124));
+        difficile = new JRadioButton("difficile");
+        difficile.setBounds(455,350,150,80);
+        difficile.setBackground(new Color(216, 112, 124));
+
+        avanti =new JButton();
+        avanti.setBounds(420, 450, 150, 50);
+        avanti.setText("INIZIAMO");
+        avanti.setFocusable(false);
+        avanti.setVerticalTextPosition(JButton.CENTER);
+        avanti.setHorizontalTextPosition(JButton.CENTER);
+        avanti.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        avanti.setForeground(Color.black);
+        avanti.setBackground(Color.lightGray);
+
+        ButtonGroup group=new ButtonGroup();
+        group.add(facile);
+        group.add(medio);
+        group.add(difficile);
+
+
+
         this.add(titolo);
         this.add(modalita);
         this.add(username);
         this.add(sceltadifficolta);
+        this.add(facile);
+        this.add(medio);
+        this.add(difficile);
+        this.add(avanti);
         this.setVisible(false);
      }
 

@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Panelimpostazioni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/panelimpostazioni.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/panelimpostazioni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/panelimpostazioni.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,8 @@
       <updated>1673951263915</updated>
       <workItem from="1673951264336" duration="2238000" />
       <workItem from="1681295814536" duration="4810000" />
-      <workItem from="1681472220623" duration="338000" />
+      <workItem from="1681472220623" duration="1288000" />
+      <workItem from="1681490304930" duration="1693000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -92,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681300666152</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="panel impostazioni e dbconnection&#10;(galba è scritto in minuscolo fottiti)">
+      <created>1681472850405</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681472850405</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +121,7 @@
     <MESSAGE value="commento" />
     <MESSAGE value="prima pagina (galba fai pena)" />
     <MESSAGE value="inizio secondo panel per impostazioni" />
-    <option name="LAST_COMMIT_MESSAGE" value="inizio secondo panel per impostazioni" />
+    <MESSAGE value="panel impostazioni e dbconnection&#10;(galba è scritto in minuscolo fottiti)" />
+    <option name="LAST_COMMIT_MESSAGE" value="panel impostazioni e dbconnection&#10;(galba è scritto in minuscolo fottiti)" />
   </component>
 </project>

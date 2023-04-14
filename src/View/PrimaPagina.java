@@ -10,6 +10,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
     JPanel panelPrimaPagina;
     JLabel labelTitolo;
     JButton btnGioca;
+
     JButton btnClassifica;
     JButton btnEsci;
     View.panelimpostazioni panelimpostazioni;
