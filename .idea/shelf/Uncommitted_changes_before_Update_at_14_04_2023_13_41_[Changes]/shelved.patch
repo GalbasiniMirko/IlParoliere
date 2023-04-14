@@ -1,0 +1,77 @@
+Index: src/View/panelimpostazioni.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package View;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class panelimpostazioni extends JPanel implements ActionListener {\r\n\r\n    JLabel titolo;\r\n    JLabel modalita;\r\n\r\n    JButton avanti;\r\n    JTextField username;\r\n\r\n    public panelimpostazioni(){\r\n        this.setBackground(new Color(216, 112, 124));\r\n        this.setBounds(0, 0, 1000, 700);\r\n        this.setLayout(null);\r\n\r\n        titolo= new JLabel();\r\n        titolo.setBounds(0, 0, 1000, 80);\r\n        titolo.setText(\"IMPOSTAZIONI DI GIOCO\");\r\n        titolo.setBackground(new Color(125, 125, 125));\r\n        titolo.setOpaque(true);\r\n        titolo.setForeground(new Color(0, 0, 0));\r\n        titolo.setFont(new Font(\"Comic Sans\", Font.BOLD, 30));\r\n        titolo.setVerticalAlignment(JLabel.CENTER);\r\n        titolo.setHorizontalAlignment(JLabel.CENTER);\r\n\r\n        modalita = new JLabel();\r\n        modalita.setBounds(0, 80, 1000, 50);\r\n        modalita.setText(\"come ti chiami amo?\");\r\n        modalita.setForeground(new Color(0, 0, 0));\r\n        modalita.setFont(new Font(\"Comic Sans\", Font.BOLD, 25));\r\n        modalita.setVerticalAlignment(JLabel.CENTER);\r\n        modalita.setHorizontalAlignment(JLabel.CENTER);\r\n\r\n        username = new JTextField();\r\n        username.setBounds(400,150,200 ,30);\r\n        username.setPreferredSize(new Dimension(250,40));\r\n        username.setFont(new Font(\"Comic Sans\", Font.BOLD, 25));\r\n        username.setForeground(new Color(0, 0, 0));\r\n        username.setBackground(new Color(255 ,255,255));\r\n\r\n\r\n\r\n        this.add(titolo);\r\n        this.add(modalita);\r\n        this.add(username);\r\n        this.setVisible(false);\r\n     }\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/View/panelimpostazioni.java b/src/View/panelimpostazioni.java
+--- a/src/View/panelimpostazioni.java	(revision 9f2ecb7a583a8177fefdb0e47f939190a1c9d85b)
++++ b/src/View/panelimpostazioni.java	(date 1681472461615)
+@@ -10,6 +10,8 @@
+     JLabel titolo;
+     JLabel modalita;
+ 
++
++
+     JButton avanti;
+     JTextField username;
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"be341bdf-be97-435d-97bf-2044031134b0\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/View/panelimpostazioni.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/View/PrimaPagina.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/View/PrimaPagina.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"f9554d07-10f8-40e4-9883-0d084260fcc9\" />\r\n        <option name=\"url\" value=\"https://github.com/GalbasiniMirko/IlParoliere.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2KRxad5eZrQ7WVIkgqI08zrL3xb\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/gaiac/IdeaProjects/IlParoliere&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"be341bdf-be97-435d-97bf-2044031134b0\" name=\"Changes\" comment=\"\" />\r\n      <created>1673951263915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1673951263915</updated>\r\n      <workItem from=\"1673951264336\" duration=\"2238000\" />\r\n      <workItem from=\"1681295814536\" duration=\"4531000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"commento\">\r\n      <created>1673952580975</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1673952580975</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"prima pagina (galba fai pena)\">\r\n      <created>1681297437418</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1681297437418</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"commento\" />\r\n    <MESSAGE value=\"prima pagina (galba fai pena)\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"prima pagina (galba fai pena)\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9f2ecb7a583a8177fefdb0e47f939190a1c9d85b)
++++ b/.idea/workspace.xml	(date 1681300744452)
+@@ -4,11 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/View/panelimpostazioni.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
+-    </list>
++    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -68,7 +64,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1673951263915</updated>
+       <workItem from="1673951264336" duration="2238000" />
+-      <workItem from="1681295814536" duration="4531000" />
++      <workItem from="1681295814536" duration="4810000" />
+     </task>
+     <task id="LOCAL-00001" summary="commento">
+       <created>1673952580975</created>
+@@ -84,7 +80,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1681297437418</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="inizio secondo panel per impostazioni">
++      <created>1681300666152</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1681300666152</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -104,6 +107,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="commento" />
+     <MESSAGE value="prima pagina (galba fai pena)" />
+-    <option name="LAST_COMMIT_MESSAGE" value="prima pagina (galba fai pena)" />
++    <MESSAGE value="inizio secondo panel per impostazioni" />
++    <option name="LAST_COMMIT_MESSAGE" value="inizio secondo panel per impostazioni" />
+   </component>
+ </project>
+\ No newline at end of file
