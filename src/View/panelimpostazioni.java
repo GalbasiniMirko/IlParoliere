@@ -5,13 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Panelimpostazioni extends JPanel implements ActionListener {
+public class panelimpostazioni extends JPanel implements ActionListener {
     JLabel titolo;
     JLabel modalita;
+    JLabel sceltadifficolta;
     JButton avanti;
     JTextField username;
 
-    public Panelimpostazioni(){
+    public panelimpostazioni(){
         this.setBackground(new Color(216, 112, 124));
         this.setBounds(0, 0, 1000, 700);
         this.setLayout(null);
@@ -41,9 +42,18 @@ public class Panelimpostazioni extends JPanel implements ActionListener {
         username.setForeground(new Color(0, 0, 0));
         username.setBackground(new Color(255 ,255,255));
 
+        sceltadifficolta = new JLabel();
+        sceltadifficolta.setBounds(0, 80, 1000, 50);
+        sceltadifficolta.setText("a che difficoltà giochiamo teso?");
+        sceltadifficolta.setForeground(new Color(0, 0, 0));
+        sceltadifficolta.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        sceltadifficolta.setVerticalAlignment(JLabel.CENTER);
+        sceltadifficolta.setHorizontalAlignment(JLabel.CENTER);
+
         this.add(titolo);
         this.add(modalita);
         this.add(username);
+        this.add(sceltadifficolta);
         this.setVisible(false);
      }
 

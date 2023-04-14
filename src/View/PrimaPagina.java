@@ -12,7 +12,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
     JButton btnGioca;
     JButton btnClassifica;
     JButton btnEsci;
-    Panelimpostazioni panelimpostazioni;
+    View.panelimpostazioni panelimpostazioni;
 
     public PrimaPagina(){
         this.setTitle("Il Paroliere");
@@ -73,7 +73,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
         panelPrimaPagina.add(btnClassifica);
         panelPrimaPagina.add(btnEsci);
 
-        panelimpostazioni = new Panelimpostazioni();
+        panelimpostazioni = new panelimpostazioni();
 
         this.add(panelPrimaPagina);
         this.add(panelimpostazioni);
