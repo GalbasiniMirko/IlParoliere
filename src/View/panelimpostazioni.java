@@ -71,7 +71,6 @@ public class panelimpostazioni extends JPanel implements ActionListener {
         group.add(medio);
         group.add(difficile);
 
-
         avanti =new JButton();
         avanti.setBounds(430, 480, 150, 50);
         avanti.setText("INIZIAMO");
@@ -81,9 +80,6 @@ public class panelimpostazioni extends JPanel implements ActionListener {
         avanti.setFont(new Font("Comic Sans", Font.BOLD, 25));
         avanti.setForeground(Color.black);
         avanti.setBackground(Color.lightGray);
-
-
-
 
         this.add(titolo);
         this.add(modalita);

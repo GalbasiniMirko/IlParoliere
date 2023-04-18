@@ -1,5 +1,7 @@
 package View;
 
+import Main.Partita;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -89,6 +91,8 @@ public class PrimaPagina extends JFrame implements ActionListener {
             panelimpostazioni.setVisible(true);
         }else if(e.getSource() == btnClassifica){
             panelPrimaPagina.setVisible(false);
+            Partita partita1 = new Partita();
+            partita1.inserisciDati();
         }else if(e.getSource() == btnEsci){
             //dichiarazione JOptionPane contenuto in una variabile memorizzare l'output generato dalla scelta dell'utente
             int scelta = JOptionPane.showConfirmDialog (null, "Sei sicuro di voler uscire?",
