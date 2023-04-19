@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Aggiunta librerie per connettersi al DB e prova prima query per inserire dei dati">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Sistemazione package progetto">
+      <change afterPath="$PROJECT_DIR$/src/View/frameGioco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/dbconnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/dbconnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/panelimpostazioni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/panelimpostazioni.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,7 @@
       <workItem from="1681894432634" duration="2817000" />
       <workItem from="1681898885464" duration="659000" />
       <workItem from="1681900185745" duration="1607000" />
-      <workItem from="1681904882217" duration="1079000" />
+      <workItem from="1681904882217" duration="1712000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -164,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681846988569</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Sistemazione package progetto">
+      <created>1681912825462</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681912825462</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +211,8 @@
     <MESSAGE value="megllio con le maiuscole" />
     <MESSAGE value="Creazione classe per collegamento al DB" />
     <MESSAGE value="Aggiunta librerie per connettersi al DB e prova prima query per inserire dei dati" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta librerie per connettersi al DB e prova prima query per inserire dei dati" />
+    <MESSAGE value="Sistemazione package progetto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione package progetto" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

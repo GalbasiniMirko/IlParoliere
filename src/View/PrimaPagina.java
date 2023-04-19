@@ -1,6 +1,7 @@
 package View;
 
 import Control.Partita;
+import View.panelimpostazioni;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +16,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
 
     JButton btnClassifica;
     JButton btnEsci;
-    View.panelimpostazioni panelimpostazioni;
+    panelimpostazioni panelimpostazioni;
 
     public PrimaPagina(){
         this.setTitle("Il Paroliere");

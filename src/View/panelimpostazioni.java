@@ -66,12 +66,12 @@ public class panelimpostazioni extends JPanel implements ActionListener {
         difficile.setBackground(new Color(216, 112, 124));
         difficile.setFont(new Font("Comic Sans", Font.BOLD, 20));
 
-        ButtonGroup group=new ButtonGroup();
+        ButtonGroup group = new ButtonGroup();
         group.add(facile);
         group.add(medio);
         group.add(difficile);
 
-        avanti =new JButton();
+        avanti = new JButton();
         avanti.setBounds(430, 480, 150, 50);
         avanti.setText("INIZIAMO");
         avanti.setFocusable(false);

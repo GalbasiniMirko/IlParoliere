@@ -42,7 +42,7 @@ public class Partita {
     //INSERISCI DATI
     public boolean inserisciDati() {
         dbconnection connessione1 = new dbconnection();
-        String query = "INSERT INTO Partita (Username, Difficoltà, punteggio) VALUES ('Galba', 'difficile', 100)";
+        String query = "INSERT INTO Partita (Username, Difficoltà, Punteggio) VALUES ('Galba', 'difficile', 100)";
         boolean success = connessione1.queryInsert(query);
 
         return success;
