@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Creazione classe per collegamento al DB">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_32.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Partita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_04_2023_09_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_04_2023_09_32__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_04_2023_13_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_04_2023_13_41__Changes_.xml" afterDir="false" />
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Aggiunta librerie per connettersi al DB e prova prima query per inserire dei dati">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlParoliere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IlParoliere.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/panelimpostazioni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/panelimpostazioni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/dbconnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/dbconnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/Downloads/mariadb-java-client-1.4.6.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/JavaGUIFullCourse&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -99,7 +95,11 @@
       <workItem from="1681473275235" duration="168000" />
       <workItem from="1681479628052" duration="26000" />
       <workItem from="1681721051640" duration="2288000" />
-      <workItem from="1681845232625" duration="1575000" />
+      <workItem from="1681845232625" duration="1870000" />
+      <workItem from="1681894432634" duration="2817000" />
+      <workItem from="1681898885464" duration="659000" />
+      <workItem from="1681900185745" duration="1607000" />
+      <workItem from="1681904882217" duration="1079000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -157,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681473401958</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Aggiunta librerie per connettersi al DB e prova prima query per inserire dei dati">
+      <created>1681846988569</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681846988569</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +202,8 @@
     <MESSAGE value="Completamento primo frame, creato un JPanel che contiene un JLabel e tre JButton per fare in modo di poterlo cambiare con quello che conterrà le impostazioni di gioco" />
     <MESSAGE value="megllio con le maiuscole" />
     <MESSAGE value="Creazione classe per collegamento al DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creazione classe per collegamento al DB" />
+    <MESSAGE value="Aggiunta librerie per connettersi al DB e prova prima query per inserire dei dati" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta librerie per connettersi al DB e prova prima query per inserire dei dati" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

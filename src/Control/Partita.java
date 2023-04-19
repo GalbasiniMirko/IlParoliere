@@ -1,8 +1,6 @@
-package Main;
+package Control;
 
-import View.dbconnection;
-
-import java.sql.ResultSet;
+import Control.dbconnection;
 
 public class Partita {
     private int id;

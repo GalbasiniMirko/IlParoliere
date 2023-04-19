@@ -1,6 +1,6 @@
 package View;
 
-import Main.Partita;
+import Control.Partita;
 
 import javax.swing.*;
 import java.awt.*;
