@@ -17,7 +17,8 @@ public class panelimpostazioni extends JPanel implements ActionListener {
 
     public panelimpostazioni(){
         this.setBackground(new Color(216, 112, 124));
-        this.setBounds(0, 0, 1000, 700);
+        this.setPreferredSize(new Dimension(1000, 700));
+        //this.setBounds(0, 0, 1000, 700);
         this.setLayout(null);
 
         titolo= new JLabel();

@@ -22,7 +22,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
         this.setTitle("Il Paroliere");
         this.setIconImage(iconFrame.getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   //il frame si chiuderà con il tasto in alto a destra
-        this.setLayout(null);
+        this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         this.setBounds(250, 50, 1000, 700);
 
         labelTitolo = new JLabel();
@@ -70,7 +70,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
 
         panelPrimaPagina = new JPanel();
         panelPrimaPagina.setBackground(new Color(216, 112, 124));
-        panelPrimaPagina.setBounds(0, 0, 1000, 700);
+        panelPrimaPagina.setPreferredSize(new Dimension(1000, 700));
         panelPrimaPagina.setLayout(null);
         panelPrimaPagina.add(labelTitolo);
         panelPrimaPagina.add(btnGioca);
@@ -92,8 +92,8 @@ public class PrimaPagina extends JFrame implements ActionListener {
             panelimpostazioni.setVisible(true);
         }else if(e.getSource() == btnClassifica){
             panelPrimaPagina.setVisible(false);
-            Partita partita1 = new Partita();
-            partita1.inserisciDati();
+            //Partita partita1 = new Partita();
+            //partita1.inserisciDati();
         }else if(e.getSource() == btnEsci){
             //dichiarazione JOptionPane contenuto in una variabile memorizzare l'output generato dalla scelta dell'utente
             int scelta = JOptionPane.showConfirmDialog (null, "Sei sicuro di voler uscire?",
