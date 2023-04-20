@@ -15,7 +15,7 @@ public class frameGioco extends JFrame implements ActionListener {
         this.setLayout(null);
         this.setBounds(250, 50, 1000, 700);
 
-        this.setVisible(true);
+        this.setVisible(false);
     }
 
     @Override

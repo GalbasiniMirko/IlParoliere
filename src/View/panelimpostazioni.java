@@ -10,10 +10,14 @@ public class panelimpostazioni extends JPanel implements ActionListener {
     JLabel modalita;
     JLabel sceltadifficolta;
     JButton avanti;
+    JButton indietro;
     JRadioButton facile;
     JRadioButton medio;
     JRadioButton difficile;
     JTextField username;
+    frameGioco frameGioco;
+    panelPrimaPagina ;
+
 
     public panelimpostazioni(){
         this.setBackground(new Color(216, 112, 124));
@@ -55,15 +59,15 @@ public class panelimpostazioni extends JPanel implements ActionListener {
         sceltadifficolta.setHorizontalAlignment(JLabel.CENTER);
 
         facile = new JRadioButton("facile");
-        facile.setBounds(455,280,150,80);
+        facile.setBounds(455,300,150,80);
         facile.setBackground(new Color(216, 112, 124));
         facile.setFont(new Font("Comic Sans", Font.BOLD, 20));
         medio =new JRadioButton("medio");
-        medio.setBounds(455,330,150,80);
+        medio.setBounds(455,350,150,80);
         medio.setBackground(new Color(216, 112, 124));
         medio.setFont(new Font("Comic Sans", Font.BOLD, 20));
         difficile = new JRadioButton("difficile");
-        difficile.setBounds(455,380,150,80);
+        difficile.setBounds(455,400,150,80);
         difficile.setBackground(new Color(216, 112, 124));
         difficile.setFont(new Font("Comic Sans", Font.BOLD, 20));
 
@@ -73,14 +77,28 @@ public class panelimpostazioni extends JPanel implements ActionListener {
         group.add(difficile);
 
         avanti = new JButton();
-        avanti.setBounds(430, 480, 150, 50);
+        avanti.setBounds(640, 550, 150, 50);
         avanti.setText("INIZIAMO");
         avanti.setFocusable(false);
         avanti.setVerticalTextPosition(JButton.CENTER);
         avanti.setHorizontalTextPosition(JButton.CENTER);
-        avanti.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        avanti.setFont(new Font("Comic Sans", Font.BOLD, 20));
         avanti.setForeground(Color.black);
         avanti.setBackground(Color.lightGray);
+
+        indietro= new JButton();
+        indietro.setBounds(200, 550, 150, 50);
+        indietro.setText("INDIETRO");
+        indietro.setFocusable(false);
+        indietro.setVerticalTextPosition(JButton.CENTER);
+        indietro.setHorizontalTextPosition(JButton.CENTER);
+        indietro.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        indietro.setForeground(Color.black);
+        indietro.setBackground(Color.lightGray);
+
+
+        frameGioco = new frameGioco();
+        panelPrimaPagina = new PrimaPagina();
 
         this.add(titolo);
         this.add(modalita);
@@ -90,11 +108,21 @@ public class panelimpostazioni extends JPanel implements ActionListener {
         this.add(medio);
         this.add(difficile);
         this.add(avanti);
+        this.add(indietro);
+        this.add(frameGioco);
+        this.add(PrimaPagina);
         this.setVisible(false);
      }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == avanti){
+            this.setVisible(false);
+            frameGioco.setVisible(true);
+        }else if(e.getSource() == indietro){
+            this.setVisible(false);
+            PrimaPagina.setVisible(true);
 
+        }
     }
 }
