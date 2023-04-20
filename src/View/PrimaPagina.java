@@ -122,15 +122,15 @@ public class PrimaPagina extends JFrame implements ActionListener {
         sceltadifficolta.setVerticalAlignment(JLabel.CENTER);
         sceltadifficolta.setHorizontalAlignment(JLabel.CENTER);
 
-        livelloFacile = new JRadioButton("facile ");
+        livelloFacile = new JRadioButton("facile (5 x 5)");
         livelloFacile.setBounds(455,300,150,80);
         livelloFacile.setBackground(new Color(216, 112, 124));
         livelloFacile.setFont(new Font("Comic Sans", Font.BOLD, 20));
-        livelloMedio =new JRadioButton("medio");
+        livelloMedio =new JRadioButton("medio (4 x 4)");
         livelloMedio.setBounds(455,350,150,80);
         livelloMedio.setBackground(new Color(216, 112, 124));
         livelloMedio.setFont(new Font("Comic Sans", Font.BOLD, 20));
-        livelloDifficile = new JRadioButton("difficile");
+        livelloDifficile = new JRadioButton("difficile (3 x 3)");
         livelloDifficile.setBounds(455,400,150,80);
         livelloDifficile.setBackground(new Color(216, 112, 124));
         livelloDifficile.setFont(new Font("Comic Sans", Font.BOLD, 20));
