@@ -1,8 +1,5 @@
 package View;
 
-import Control.Partita;
-import View.panelimpostazioni;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,12 +8,24 @@ import java.awt.event.ActionListener;
 public class PrimaPagina extends JFrame implements ActionListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     JPanel panelPrimaPagina;
+    JPanel panelImpostazioni;
+
+    //ELEMENTI COMNTENUTI NEL PRIMO PANEL
     JLabel labelTitolo;
     JButton btnGioca;
-
     JButton btnClassifica;
     JButton btnEsci;
-    panelimpostazioni panelimpostazioni;
+
+    //ELEMENTI CONTENUTI NEL PANLE DELLE IMPOSTAZIONI DI GIOCO
+    JLabel titolo;
+    JLabel modalita;
+    JLabel sceltadifficolta;
+    JButton btnIniziamo;
+    JButton btnIndietro;
+    JRadioButton livelloFacile;
+    JRadioButton livelloMedio;
+    JRadioButton livelloDifficile;
+    JTextField username;
 
     public PrimaPagina(){
         this.setTitle("Il Paroliere");
@@ -25,6 +34,7 @@ public class PrimaPagina extends JFrame implements ActionListener {
         this.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         this.setBounds(250, 50, 1000, 700);
 
+        //INIZIO ELEMENTI PANEL DELLA PRIMA PAGINA
         labelTitolo = new JLabel();
         labelTitolo.setBounds(0, 0, 1000, 250);
         labelTitolo.setText("IL PAROLIERE");
@@ -76,11 +86,99 @@ public class PrimaPagina extends JFrame implements ActionListener {
         panelPrimaPagina.add(btnGioca);
         panelPrimaPagina.add(btnClassifica);
         panelPrimaPagina.add(btnEsci);
+        panelPrimaPagina.setVisible(true);
 
-        panelimpostazioni = new panelimpostazioni();
+        //INIZIO ELEMENTI PANEL IMPOSTAZIONI
+        titolo = new JLabel();
+        titolo.setBounds(0, 0, 1000,  100);
+        titolo.setText("IMPOSTAZIONI DI GIOCO");
+        titolo.setBackground(new Color(125, 125, 125));
+        titolo.setOpaque(true);
+        titolo.setForeground(new Color(0, 0, 0));
+        titolo.setFont(new Font("Comic Sans", Font.BOLD, 30));
+        titolo.setVerticalAlignment(JLabel.CENTER);
+        titolo.setHorizontalAlignment(JLabel.CENTER);
+
+        modalita = new JLabel();
+        modalita.setBounds(0, 100, 1000, 70);
+        modalita.setText("come ti chiami ?");
+        modalita.setForeground(new Color(0, 0, 0));
+        modalita.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        modalita.setVerticalAlignment(JLabel.CENTER);
+        modalita.setHorizontalAlignment(JLabel.CENTER);
+
+        username = new JTextField();
+        username.setBounds(400,190,200 ,30);
+        username.setPreferredSize(new Dimension(250,40));
+        username.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        username.setForeground(new Color(0, 0, 0));
+        username.setBackground(new Color(255 ,255,255));
+
+        sceltadifficolta = new JLabel();
+        sceltadifficolta.setBounds(0, 230, 1000, 70);
+        sceltadifficolta.setText("a che difficoltà giochiamo?");
+        sceltadifficolta.setForeground(new Color(0, 0, 0));
+        sceltadifficolta.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        sceltadifficolta.setVerticalAlignment(JLabel.CENTER);
+        sceltadifficolta.setHorizontalAlignment(JLabel.CENTER);
+
+        livelloFacile = new JRadioButton("facile ");
+        livelloFacile.setBounds(455,300,150,80);
+        livelloFacile.setBackground(new Color(216, 112, 124));
+        livelloFacile.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        livelloMedio =new JRadioButton("medio");
+        livelloMedio.setBounds(455,350,150,80);
+        livelloMedio.setBackground(new Color(216, 112, 124));
+        livelloMedio.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        livelloDifficile = new JRadioButton("difficile");
+        livelloDifficile.setBounds(455,400,150,80);
+        livelloDifficile.setBackground(new Color(216, 112, 124));
+        livelloDifficile.setFont(new Font("Comic Sans", Font.BOLD, 20));
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(livelloFacile);
+        group.add(livelloMedio);
+        group.add(livelloDifficile);
+
+        btnIniziamo = new JButton();
+        btnIniziamo.setBounds(640, 550, 150, 50);
+        btnIniziamo.addActionListener(this);
+        btnIniziamo.setText("INIZIAMO");
+        btnIniziamo.setFocusable(false);
+        btnIniziamo.setVerticalTextPosition(JButton.CENTER);
+        btnIniziamo.setHorizontalTextPosition(JButton.CENTER);
+        btnIniziamo.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        btnIniziamo.setForeground(Color.black);
+        btnIniziamo.setBackground(Color.lightGray);
+
+        btnIndietro = new JButton();
+        btnIndietro.setBounds(200, 550, 150, 50);
+        btnIndietro.addActionListener(this);
+        btnIndietro.setText("INDIETRO");
+        btnIndietro.setFocusable(false);
+        btnIndietro.setVerticalTextPosition(JButton.CENTER);
+        btnIndietro.setHorizontalTextPosition(JButton.CENTER);
+        btnIndietro.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        btnIndietro.setForeground(Color.black);
+        btnIndietro.setBackground(Color.lightGray);
+
+        panelImpostazioni = new JPanel();
+        panelImpostazioni.setBackground(new Color(216, 112, 124));
+        panelImpostazioni.setPreferredSize(new Dimension(1000, 700));
+        panelImpostazioni.setLayout(null);
+        panelImpostazioni.add(titolo);
+        panelImpostazioni.add(modalita);
+        panelImpostazioni.add(username);
+        panelImpostazioni.add(sceltadifficolta);
+        panelImpostazioni.add(livelloFacile);
+        panelImpostazioni.add(livelloMedio);
+        panelImpostazioni.add(livelloDifficile);
+        panelImpostazioni.add(btnIniziamo);
+        panelImpostazioni.add(btnIndietro);
+        panelImpostazioni.setVisible(false);
 
         this.add(panelPrimaPagina);
-        this.add(panelimpostazioni);
+        this.add(panelImpostazioni);
         this.setVisible(true);
     }
 
@@ -89,11 +187,13 @@ public class PrimaPagina extends JFrame implements ActionListener {
         //controllo per capire quale tasto è stato cliccato
         if(e.getSource() == btnGioca){
             panelPrimaPagina.setVisible(false);
-            panelimpostazioni.setVisible(true);
+            panelImpostazioni.setVisible(true);
+
         }else if(e.getSource() == btnClassifica){
             panelPrimaPagina.setVisible(false);
             //Partita partita1 = new Partita();
             //partita1.inserisciDati();
+
         }else if(e.getSource() == btnEsci){
             //dichiarazione JOptionPane contenuto in una variabile memorizzare l'output generato dalla scelta dell'utente
             int scelta = JOptionPane.showConfirmDialog (null, "Sei sicuro di voler uscire?",
@@ -102,6 +202,14 @@ public class PrimaPagina extends JFrame implements ActionListener {
             if(scelta == JOptionPane.YES_OPTION){   //controllo sul bottone che clicca l'utente nel JOptionPane
                 this.dispose();   //nel caso l'utente clicca il bottone yes chiude il JFrame e chiude il programma
             }
+
+        }else if(e.getSource() == btnIniziamo){
+            this.dispose();
+            FrameGioco frameGioco = new FrameGioco();
+
+        }else if(e.getSource() == btnIndietro){
+            panelImpostazioni.setVisible(false);
+            panelPrimaPagina.setVisible(true);
         }
     }
 }
