@@ -13,14 +13,14 @@ public class FrameGioco extends JFrame implements ActionListener {
         this.setTitle("Il Paroliere");
         this.setIconImage(iconFrame.getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   //il frame si chiuderà con il tasto in alto a destra
-        this.setLayout(null);
+        this.setLayout(new BorderLayout(0, 0));
         this.setBounds(250, 50, 1000, 700);
 
         //ELEMENTI CONTENUTI NEL PANEL DI GIOCO
         panelGioco = new JPanel();
         panelGioco.setBackground(new Color(216, 112, 124));
         panelGioco.setPreferredSize(new Dimension(1000, 700));
-        panelGioco.setLayout(new GridLayout(0, 0, 0, 0));
+        panelGioco.setLayout(null);
 
         this.setVisible(true);
     }
