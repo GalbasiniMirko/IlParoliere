@@ -4,19 +4,25 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class FrameGioco extends JFrame implements ActionListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     JPanel panelalto;
     JPanel panelcentro;
     JPanel panelbasso;
-    JLabel titolo;
     JButton bottone1;
     JButton bottone2;
     JButton bottone3;
     JButton bottone4;
     JButton bottone5;
     JButton bottone6;
+    JButton btnrefresh;
+    Timer timer;
+    JLabel countdownLabel;
+    int countdownSeconds;
     public FrameGioco(){
         this.setTitle("Il Paroliere");
         this.setIconImage(iconFrame.getImage());
@@ -28,11 +34,37 @@ public class FrameGioco extends JFrame implements ActionListener {
        JPanel panelalto = new JPanel();
        panelalto.setBackground(new Color(125, 125, 125));
        panelalto.setPreferredSize(new Dimension(100, 120));
-       JLabel titolo = new JLabel();
-       titolo.setText("hai ancora :");
-       titolo.setFont(new Font("Comic Sans", Font.BOLD, 25));
-       panelalto.add(titolo);
 
+
+       countdownLabel = new JLabel();
+       countdownLabel.setHorizontalAlignment(SwingConstants.CENTER);
+       countdownLabel.setFont(new Font("Comic Sans", Font.BOLD, 25));
+       add(countdownLabel, BorderLayout.CENTER);
+
+        int countdownSeconds = 65;
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            int remainingSeconds = countdownSeconds;
+
+            public void run() {
+                int minutes = remainingSeconds / 60;
+                int seconds = remainingSeconds % 60;
+                String timeString = String.format("Tempo rimanente: %02d:%02d", minutes, seconds);
+                SwingUtilities.invokeLater(() -> {
+                    countdownLabel.setText(timeString);
+                });
+                remainingSeconds--;
+                if (remainingSeconds < 0) {
+                    SwingUtilities.invokeLater(() -> {
+                        countdownLabel.setText("Tempo scaduto!");
+                    });
+                    timer.cancel();
+                }
+            }
+        }, 0, 1000);
+
+
+       panelalto.add(countdownLabel);
        JPanel panelcentro = new JPanel();
        panelcentro.setBackground(new Color(216, 112, 124));
        panelcentro.setPreferredSize(new Dimension(100, 100));
@@ -76,10 +108,17 @@ public class FrameGioco extends JFrame implements ActionListener {
        panelcentro.add(bottone6);
 
 
-        JPanel panelbasso = new JPanel();
+       JPanel panelbasso = new JPanel();
        panelbasso.setBackground(new Color(253, 168, 90));
        panelbasso.setPreferredSize(new Dimension(100, 150));
 
+       btnrefresh= new JButton();
+       btnrefresh.setText("REFRESH");
+       btnrefresh.setFont(new Font("Comic Sans", Font.BOLD, 15));
+       btnrefresh.setBounds(640, 550, 150, 50);
+
+
+       panelbasso.add(btnrefresh);
 
         this.add(panelalto, BorderLayout.NORTH);
         this.add(panelcentro, BorderLayout.CENTER);
@@ -87,8 +126,32 @@ public class FrameGioco extends JFrame implements ActionListener {
         this.setVisible(true);
     }
 
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource()== btnrefresh){
+            timer.cancel();
+            countdownSeconds = 60;
+            timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                int remainingSeconds = countdownSeconds;
+                public void run() {
+                    int minutes = remainingSeconds / 60;
+                    int seconds = remainingSeconds % 60;
+                    String timeString = String.format("Tempo rimanente: %02d:%02d", minutes, seconds);
+                    SwingUtilities.invokeLater(() -> {
+                        countdownLabel.setText(timeString);
+                    });
+                    remainingSeconds--;
+                    if (remainingSeconds < 0) {
+                        SwingUtilities.invokeLater(() -> {
+                            countdownLabel.setText("Tempo scaduto!");
+                        });
+                        timer.cancel();
+                    }
+                }
+            }, 0, 1000);
+        }
     }
 }
