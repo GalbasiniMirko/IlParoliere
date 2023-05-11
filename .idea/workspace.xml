@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,7 @@
       <workItem from="1681918524559" duration="673000" />
       <workItem from="1683104774581" duration="844000" />
       <workItem from="1683716590983" duration="666000" />
-      <workItem from="1683789950200" duration="4199000" />
+      <workItem from="1683789950200" duration="6807000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -188,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683105513528</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="timer gioco">
+      <created>1683794925897</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683794925900</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +239,8 @@
     <MESSAGE value="Sistemazione package progetto" />
     <MESSAGE value="sistemazione frame gioco" />
     <MESSAGE value="griglia con bottoni" />
-    <option name="LAST_COMMIT_MESSAGE" value="griglia con bottoni" />
+    <MESSAGE value="timer gioco" />
+    <option name="LAST_COMMIT_MESSAGE" value="timer gioco" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
