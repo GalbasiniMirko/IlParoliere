@@ -2,6 +2,8 @@ package Control;
 
 import Control.dbconnection;
 
+import java.sql.ResultSet;
+
 public class Partita {
     private int id;
     private String Username;
@@ -47,4 +49,30 @@ public class Partita {
 
         return success;
     }
+    //visualizza punteggio
+    public ResultSet visualizzaMiglioriF(){
+        dbconnection connessione = new dbconnection();
+        String query = "SELECT  p1.Username, p1.Punteggio FROM Partita  p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'facile' AND p2.Difficoltà = 'facile' " +
+                "ORDER BY p1.Punteggio DESC ";
+        ResultSet success =connessione.querySelect(query);
+        return success;
+    }
+
+    public ResultSet visualizzaMiglioriM(){
+        dbconnection connessione = new dbconnection();
+        String query = "SELECT  p1.Username, p1.Punteggio FROM Partita  p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'medio' AND p2.Difficoltà = 'medio' " +
+                "ORDER BY p1.Punteggio DESC ";
+        ResultSet success =connessione.querySelect(query);
+        return success;
+    }
+    public ResultSet visualizzaMiglioriD(){
+        dbconnection connessione = new dbconnection();
+        String query = "SELECT  p1.Username, p1.Punteggio FROM Partita  p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'difficile' AND p2.Difficoltà = 'difficile' " +
+                "ORDER BY p1.Punteggio DESC ";
+        ResultSet success =connessione.querySelect(query);
+        return success;
+    }
+
 }
+
+

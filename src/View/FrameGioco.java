@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class FrameGioco extends JFrame implements ActionListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
@@ -26,6 +29,10 @@ public class FrameGioco extends JFrame implements ActionListener {
     JButton btnRefresh;
     JButton btnTerminaPartita;
     JPanel panelDestra;
+
+    Timer timer;
+    JLabel countdownLabel;
+    int countdownSeconds;
 
     public FrameGioco(){
         this.setTitle("IL PAROLIERE");
@@ -250,3 +257,35 @@ public class FrameGioco extends JFrame implements ActionListener {
         b.setLocation(x, y);
     }
 }
+
+/*
+countdownLabel = new JLabel();
+        countdownLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        countdownLabel.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        add(countdownLabel, BorderLayout.CENTER);
+
+        int countdownSeconds = 65;
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            int remainingSeconds = countdownSeconds;
+
+            public void run() {
+                int minutes = remainingSeconds / 60;
+                int seconds = remainingSeconds % 60;
+                String timeString = String.format("Tempo rimanente: %02d:%02d", minutes, seconds);
+                SwingUtilities.invokeLater(() -> {
+                    countdownLabel.setText(timeString);
+                });
+                remainingSeconds--;
+                if (remainingSeconds < 0) {
+                    SwingUtilities.invokeLater(() -> {
+                        countdownLabel.setText("Tempo scaduto!");
+                    });
+                    timer.cancel();
+                }
+            }
+        }, 0, 1000);
+
+
+        panelalto.add(countdownLabel);
+ */
