@@ -49,7 +49,7 @@ public class Partita {
 
         return success;
     }
-    //visualizza punteggio
+    //VISUALIZZA PUNTEGGIO
     public ResultSet visualizzaMiglioriF(){
         dbconnection connessione = new dbconnection();
         String query = "SELECT  p1.Username, p1.Punteggio FROM Partita  p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'facile' AND p2.Difficoltà = 'facile' " +

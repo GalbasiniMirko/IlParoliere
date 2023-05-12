@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="meno male che ci sono io :)">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Rework generale del progetto a livello grafico">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +111,7 @@
       <workItem from="1683805547058" duration="2708000" />
       <workItem from="1683821335250" duration="13362000" />
       <workItem from="1683883737809" duration="2944000" />
-      <workItem from="1683907953027" duration="6822000" />
+      <workItem from="1683907953027" duration="8599000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -205,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683023610611</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Rework generale del progetto a livello grafico">
+      <created>1683915669974</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683915669974</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +254,8 @@
     <MESSAGE value="Sistemazione panel PrimaPagina e inizio creazione JFrame di gioco" />
     <MESSAGE value="Sistemazione" />
     <MESSAGE value="meno male che ci sono io :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="meno male che ci sono io :)" />
+    <MESSAGE value="Rework generale del progetto a livello grafico" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rework generale del progetto a livello grafico" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
