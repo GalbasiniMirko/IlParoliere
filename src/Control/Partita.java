@@ -1,7 +1,14 @@
 package Control;
 
 import Control.dbconnection;
-
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.ResultSet;
 
 public class Partita {
@@ -73,6 +80,24 @@ public class Partita {
         return success;
     }
 
+  //query inserimento parole nel db
+    public boolean inserisciparole() throws IOException {
+       dbconnection connessione=new dbconnection();
+        String sql = "INSERT INTO parole (parola) VALUES (?)";
+        boolean success = connessione.queryInsert(sql);
+        String filePath = "C:\\Users\\gaiac\\OneDrive\\Desktop\\scuola(5)\\gpo\\dizionario.txt";
+        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        String line = reader.readLine();
+        while (line != null) {
+            connessione.setString(1, line);
+            connessione.executeUpdate();
+            line = reader.readLine();
+        }
+        return success;
+    }
+
+
 }
+
 
 

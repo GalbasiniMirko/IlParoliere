@@ -275,6 +275,9 @@ public class FrameGioco extends JFrame implements ActionListener {
         int x = (wPanel - width)/2;
         b.setLocation(x, y);
     }
+    private void refreshbaby(JPanel griglia, Timer timer){
+
+    }
 }
 
 /*
