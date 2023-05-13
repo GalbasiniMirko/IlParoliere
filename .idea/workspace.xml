@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Ricollocazione del timer dopo aggiornamenti grafici">
+      <change afterPath="$PROJECT_DIR$/src/fileParole.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/dbconnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/dbconnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +56,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/IlParoliere&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/IlParoliere/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,6 +75,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mirko\IdeaProjects\IlParoliere\src" />
       <recent name="C:\Users\mirko\IdeaProjects\IlParoliere" />
     </key>
   </component>
@@ -113,7 +115,9 @@
       <workItem from="1683805547058" duration="2708000" />
       <workItem from="1683821335250" duration="13362000" />
       <workItem from="1683883737809" duration="2944000" />
-      <workItem from="1683907953027" duration="8599000" />
+      <workItem from="1683907953027" duration="9519000" />
+      <workItem from="1683997496533" duration="2453000" />
+      <workItem from="1684001927525" duration="4060000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -213,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683915669974</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Ricollocazione del timer dopo aggiornamenti grafici">
+      <created>1683917505465</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683917505465</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +268,8 @@
     <MESSAGE value="Sistemazione" />
     <MESSAGE value="meno male che ci sono io :)" />
     <MESSAGE value="Rework generale del progetto a livello grafico" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rework generale del progetto a livello grafico" />
+    <MESSAGE value="Ricollocazione del timer dopo aggiornamenti grafici" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ricollocazione del timer dopo aggiornamenti grafici" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

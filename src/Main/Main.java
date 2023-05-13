@@ -1,5 +1,6 @@
 package Main;
 
+import Control.Partita;
 import View.PrimaPagina;
 
 public class Main {
