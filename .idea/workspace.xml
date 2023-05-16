@@ -23,7 +23,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -112,7 +111,7 @@
       <workItem from="1683821335250" duration="13362000" />
       <workItem from="1683883737809" duration="2944000" />
       <workItem from="1683907953027" duration="8599000" />
-      <workItem from="1684225829613" duration="2353000" />
+      <workItem from="1684225829613" duration="6069000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -219,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683994545338</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="sistemazione timer con bottone refresh">
+      <created>1684228259195</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684228259195</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +270,8 @@
     <MESSAGE value="meno male che ci sono io :)" />
     <MESSAGE value="Rework generale del progetto a livello grafico" />
     <MESSAGE value="metodo per inserire le parole nel db da file" />
-    <option name="LAST_COMMIT_MESSAGE" value="metodo per inserire le parole nel db da file" />
+    <MESSAGE value="sistemazione timer con bottone refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistemazione timer con bottone refresh" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

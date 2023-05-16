@@ -58,7 +58,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         countdownLabel.setHorizontalAlignment(SwingConstants.CENTER);
         countdownLabel.setVisible(true);
 
-        countdownSeconds = 65;   //TEMPO DA DECIDERE
+        countdownSeconds = 300;   //5 minuti di tempo per trovare le parole
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             int remainingSeconds = countdownSeconds;
@@ -81,91 +81,19 @@ public class FrameGioco extends JFrame implements ActionListener {
         }, 0, 1000);
 
         //GRIGLIA LETTERE
-        bottone1 = new JButton();
-        bottone1.setText("lettera 1");
-        bottone1.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        bottone1.setSize(150,50);
-        bottone1.addActionListener(this);
-        bottone1.setForeground(Color.black);
-        bottone1.setBackground(Color.lightGray);
-
-        bottone2 = new JButton();
-        bottone2.setText("lettera 2");
-        bottone2.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        bottone2.setSize(150,50);
-        bottone2.addActionListener(this);
-        bottone2.setForeground(Color.black);
-        bottone2.setBackground(Color.lightGray);
-
-        bottone3 = new JButton();
-        bottone3.setText("lettera 3");
-        bottone3.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        bottone3.setSize(150,50);
-        bottone3.addActionListener(this);
-        bottone3.setForeground(Color.black);
-        bottone3.setBackground(Color.lightGray);
-
-        bottone4 = new JButton();
-        bottone4.setText("lettera 4");
-        bottone4.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        bottone4.setSize(150,50);
-        bottone4.addActionListener(this);
-        bottone4.setForeground(Color.black);
-        bottone4.setBackground(Color.lightGray);
-
-        bottone5 = new JButton();
-        bottone5.setText("lettera 5");
-        bottone5.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        bottone5.setSize(150,50);
-        bottone5.addActionListener(this);
-        bottone5.setForeground(Color.black);
-        bottone5.setBackground(Color.lightGray);
-
-        bottone6 = new JButton();
-        bottone6.setText("lettera 6");
-        bottone6.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        bottone6.setSize(150,50);
-        bottone6.addActionListener(this);
-        bottone6.setForeground(Color.black);
-        bottone6.setBackground(Color.lightGray);
-
-        bottone7 = new JButton();
-        bottone7.setText("lettera 7");
-        bottone7.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        bottone7.setSize(150,50);
-        bottone7.addActionListener(this);
-        bottone7.setForeground(Color.black);
-        bottone7.setBackground(Color.lightGray);
-
-        bottone8 = new JButton();
-        bottone8.setText("lettera 8");
-        bottone8.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        bottone8.setSize(150,50);
-        bottone8.addActionListener(this);
-        bottone8.setForeground(Color.black);
-        bottone8.setBackground(Color.lightGray);
-
-        bottone9 = new JButton();
-        bottone9.setText("lettera 9");
-        bottone9.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        bottone9.setSize(150,50);
-        bottone9.addActionListener(this);
-        bottone9.setForeground(Color.black);
-        bottone9.setBackground(Color.lightGray);
-
         panelGriglia = new JPanel();
         panelGriglia.setBackground(new Color(216, 112, 124));
         //panelGriglia.setBackground(new Color(255, 255, 255));
         panelGriglia.setSize(700, 500);
         panelGriglia.setLocation(50, 240);
-        panelGriglia.setLayout(new GridLayout(3,3,10,10));
+        panelGriglia.setLayout(new GridLayout(6,6,10,10));
 
-        bottoniGriglia = new JButton[9];
+        bottoniGriglia = new JButton[36];
         for (int i = 0; i < bottoniGriglia.length; i++) {
             bottoniGriglia[i] = new JButton();
             bottoniGriglia[i].setText("lettera 9");
             bottoniGriglia[i].setFont(new Font("Comic Sans", Font.BOLD, 30));
-            bottoniGriglia[i].setSize(150,50);
+            bottoniGriglia[i].setSize(116,83);
             bottoniGriglia[i].addActionListener(this);
             bottoniGriglia[i].setForeground(Color.black);
             bottoniGriglia[i].setBackground(Color.lightGray);
@@ -250,48 +178,22 @@ public class FrameGioco extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == btnTerminaPartita) {
+        if (e.getSource() == btnTerminaPartita) {
             //if() {   //controllo per vedere se il tempo è maggiore di 0
-                int scelta = JOptionPane.showConfirmDialog (null, "Sei sicuro di voler terminare la partita?",
-                        "Termina Partita", JOptionPane.YES_NO_OPTION);
+            int scelta = JOptionPane.showConfirmDialog(null, "Sei sicuro di voler terminare la partita?",
+                    "Termina Partita", JOptionPane.YES_NO_OPTION);
 
-                if(scelta == JOptionPane.YES_OPTION){
-                    this.dispose();
-                    PrimaPagina primaPagina = new PrimaPagina();
-                }
+            if (scelta == JOptionPane.YES_OPTION) {
+                this.dispose();
+                PrimaPagina primaPagina = new PrimaPagina();
+            }
             //}
-        }else if(e.getSource() == btnRefresh) {
-            if (timer != null) {
-                timer.cancel();
-            }
+        } else if (e.getSource() == btnRefresh) {
+                     refreshbaby(); //metodo che fa ripartire il timer e cambia le lettere nella griglia
+                                    // nel caso in cui non siano disponibili parole
 
-            // Crea un nuovo timer e schedula un TimerTask
-            timer= new Timer();
-
-            timer.schedule(new TimerTask() {
-                int countdownSeconds = 65;
-                int remainingSeconds = countdownSeconds;
-                @Override
-                public void run() {
-                    int minutes = remainingSeconds / 60;
-                    int seconds = remainingSeconds % 60;
-                    String timeString = String.format("Tempo rimanente: %02d:%02d", minutes, seconds);
-                    SwingUtilities.invokeLater(() -> {
-                        countdownLabel.setText(timeString);
-                    });
-                    remainingSeconds--;
-                    if (remainingSeconds < 0) {
-                        SwingUtilities.invokeLater(() -> {
-                            countdownLabel.setText("Tempo scaduto!");
-                        });
-                        timer.cancel();
-                    }
-                }
-
-                }, 0, 1000); // Avvia il nuovo timer con un ritardo di 0
-            }
         }
-
+    }
 
     private void posizionaJLabel(JPanel p, JLabel l, int y) {
         int wPanel = p.getWidth();
@@ -311,10 +213,58 @@ public class FrameGioco extends JFrame implements ActionListener {
         int x = (wPanel - width)/2;
         b.setLocation(x, y);
     }
-    private void refreshbaby(JPanel griglia, Timer timer){
 
+    private void refreshbaby(){
+        if (timer != null) {
+            timer.cancel();
+        }
+
+        // Crea un nuovo timer e schedula un TimerTask
+        timer= new Timer();
+
+        timer.schedule(new TimerTask() {
+            int countdownSeconds = 300;
+            int remainingSeconds = countdownSeconds;
+            @Override
+            public void run() {
+                int minutes = remainingSeconds / 60;
+                int seconds = remainingSeconds % 60;
+                String timeString = String.format("Tempo rimanente: %02d:%02d", minutes, seconds);
+                SwingUtilities.invokeLater(() -> {
+                    countdownLabel.setText(timeString);
+                });
+                remainingSeconds--;
+                if (remainingSeconds < 0) {
+                    SwingUtilities.invokeLater(() -> {
+                        countdownLabel.setText("Tempo scaduto!");
+                    });
+                    timer.cancel();
+                }
+            }
+
+        }, 0, 1000); // Avvia il nuovo timer con un ritardo di 0
+
+        String lettere = "";
+        Random rand = new Random();
+        for (int i = 0; i < bottoniGriglia.length; i++) {
+            //Genera un numero casuale compreso tra 0 e 25, corrispondenti alle lettere minuscole dell'alfabeto
+            int numeroCasuale = rand.nextInt(26);
+            //Converte il numero casuale in una lettera dell'alfabeto e la aggiunge alla stringa
+            char lettera = (char) (numeroCasuale + 'a');
+            lettere += lettera;
+            //Aggiunge la lettera al testo del bottone corrispondente
+            bottoniGriglia[i].setText(Character.toString(lettera));
+        }
+
+
+        }
+
+        public void nometext(){
+
+        }
     }
-}
+
+
 
 /*
 
