@@ -80,12 +80,12 @@ public class Partita {
         return success;
     }
 
-  //query inserimento parole nel db
+    //QUERY PER INSERIRE LE PAROLE NEL DB
     public boolean inserisciparole() throws IOException {
        dbconnection connessione=new dbconnection();
         String sql = "INSERT INTO parole (parola) VALUES (?)";
         boolean success = connessione.queryInsert(sql);
-        String filePath = "C:\\Users\\gaiac\\OneDrive\\Desktop\\scuola(5)\\gpo\\dizionario.txt";
+        String filePath = "fileParole.txt";
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String line = reader.readLine();
         while (line != null) {
@@ -95,8 +95,6 @@ public class Partita {
         }
         return success;
     }
-
-
 }
 
 

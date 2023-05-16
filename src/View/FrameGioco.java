@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -11,21 +12,13 @@ import java.util.TimerTask;
 public class FrameGioco extends JFrame implements ActionListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     Dimension d;
+
     JLabel labelTitolo;
     JLabel countdownLabel;
     Timer timer;
-    Timer timer2;
     int countdownSeconds;
     JPanel panelGriglia;
-    JButton bottone1;
-    JButton bottone2;
-    JButton bottone3;
-    JButton bottone4;
-    JButton bottone5;
-    JButton bottone6;
-    JButton bottone7;
-    JButton bottone8;
-    JButton bottone9;
+    JButton[] bottoniGriglia;
     JLabel labelParola;
     JTextField inputUtente;
     JButton btnRefresh;
@@ -70,7 +63,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         timer.scheduleAtFixedRate(new TimerTask() {
             int remainingSeconds = countdownSeconds;
 
-            public void run(){
+            public void run() {
                 int minutes = remainingSeconds / 60;
                 int seconds = remainingSeconds % 60;
                 String timeString = String.format("Tempo rimanente: %02d:%02d", minutes, seconds);
@@ -166,15 +159,30 @@ public class FrameGioco extends JFrame implements ActionListener {
         panelGriglia.setSize(700, 500);
         panelGriglia.setLocation(50, 240);
         panelGriglia.setLayout(new GridLayout(3,3,10,10));
-        panelGriglia.add(bottone1);
-        panelGriglia.add(bottone2);
-        panelGriglia.add(bottone3);
-        panelGriglia.add(bottone4);
-        panelGriglia.add(bottone5);
-        panelGriglia.add(bottone6);
-        panelGriglia.add(bottone7);
-        panelGriglia.add(bottone8);
-        panelGriglia.add(bottone9);
+
+        bottoniGriglia = new JButton[9];
+        for (int i = 0; i < bottoniGriglia.length; i++) {
+            bottoniGriglia[i] = new JButton();
+            bottoniGriglia[i].setText("lettera 9");
+            bottoniGriglia[i].setFont(new Font("Comic Sans", Font.BOLD, 30));
+            bottoniGriglia[i].setSize(150,50);
+            bottoniGriglia[i].addActionListener(this);
+            bottoniGriglia[i].setForeground(Color.black);
+            bottoniGriglia[i].setBackground(Color.lightGray);
+            panelGriglia.add(bottoniGriglia[i]);
+        }
+
+        String lettere = "";
+        Random rand = new Random();
+        for (int i = 0; i < bottoniGriglia.length; i++) {
+            //Genera un numero casuale compreso tra 0 e 25, corrispondenti alle lettere minuscole dell'alfabeto
+            int numeroCasuale = rand.nextInt(26);
+            //Converte il numero casuale in una lettera dell'alfabeto e la aggiunge alla stringa
+            char lettera = (char) (numeroCasuale + 'a');
+            lettere += lettera;
+            //Aggiunge la lettera al testo del bottone corrispondente
+            bottoniGriglia[i].setText(Character.toString(lettera));
+        }
         panelGriglia.setVisible(true);
 
         panelDestra = new JPanel();
