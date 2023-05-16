@@ -11,10 +11,10 @@ import java.util.TimerTask;
 public class FrameGioco extends JFrame implements ActionListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     Dimension d;
-
     JLabel labelTitolo;
     JLabel countdownLabel;
     Timer timer;
+    Timer timer2;
     int countdownSeconds;
     JPanel panelGriglia;
     JButton bottone1;
@@ -70,7 +70,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         timer.scheduleAtFixedRate(new TimerTask() {
             int remainingSeconds = countdownSeconds;
 
-            public void run() {
+            public void run(){
                 int minutes = remainingSeconds / 60;
                 int seconds = remainingSeconds % 60;
                 String timeString = String.format("Tempo rimanente: %02d:%02d", minutes, seconds);
@@ -253,9 +253,37 @@ public class FrameGioco extends JFrame implements ActionListener {
                 }
             //}
         }else if(e.getSource() == btnRefresh) {
+            if (timer != null) {
+                timer.cancel();
+            }
 
+            // Crea un nuovo timer e schedula un TimerTask
+            timer= new Timer();
+
+            timer.schedule(new TimerTask() {
+                int countdownSeconds = 65;
+                int remainingSeconds = countdownSeconds;
+                @Override
+                public void run() {
+                    int minutes = remainingSeconds / 60;
+                    int seconds = remainingSeconds % 60;
+                    String timeString = String.format("Tempo rimanente: %02d:%02d", minutes, seconds);
+                    SwingUtilities.invokeLater(() -> {
+                        countdownLabel.setText(timeString);
+                    });
+                    remainingSeconds--;
+                    if (remainingSeconds < 0) {
+                        SwingUtilities.invokeLater(() -> {
+                            countdownLabel.setText("Tempo scaduto!");
+                        });
+                        timer.cancel();
+                    }
+                }
+
+                }, 0, 1000); // Avvia il nuovo timer con un ritardo di 0
+            }
         }
-    }
+
 
     private void posizionaJLabel(JPanel p, JLabel l, int y) {
         int wPanel = p.getWidth();
