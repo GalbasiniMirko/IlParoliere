@@ -93,11 +93,4 @@ public class dbconnection {
 
         return success;
     }
-
-
-    public void setString(int i, String line) {
-    }
-
-    public void executeUpdate() {
-    }
 }

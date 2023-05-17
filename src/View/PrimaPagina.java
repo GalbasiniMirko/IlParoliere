@@ -1,7 +1,12 @@
 package View;
 
+import Control.Partita;
+
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,30 +16,42 @@ import java.awt.event.ComponentListener;
 public class PrimaPagina extends JFrame implements ActionListener, ComponentListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     Dimension d;
+    int difficoltà = 0;   //variabile usata per passare da questo frame al FrameGioco la dimensione della griglia in base alla difficoltà scelta dall'utente
+    Partita partita1 = new Partita();
 
     //ELEMENTI CONTENUTI NELLA PAGINA INIZIALE
     JLabel labelTitolo;
     JPanel panelBtn1;
-    JButton btnGioca;
-    JButton btnClassifica;
-    JButton btnEsci;
+    RoundedButton btnGioca;
+    RoundedButton btnClassifica;
+    RoundedButton btnEsci;
 
     //ELEMENTI CONTENUTI NEL PANEL DELLE IMPOSTAZIONI DI GIOCO
     JLabel labelTitolo2;
     JLabel modalita;
     JLabel sceltadifficolta;
-    JButton btnIniziamo;
-    JButton btnIndietro;
+    RoundedButton btnIniziamo;
+    RoundedButton btnIndietro;
     JRadioButton livelloFacile;
     JRadioButton livelloMedio;
     JRadioButton livelloDifficile;
     JTextField username;
+    String nomeInserito;
     JPanel panelScelteUtente;
     JPanel panelBtn2;
 
     //ELEMENTI CONTENUTI NEL PANEL DELLA CLASSIFICA
     JLabel titoloClassifica;
-    JButton indietroClassifica;
+    RoundedButton indietroClassifica;
+    RoundedButton btnFacile;
+    RoundedButton btnMedio;
+    RoundedButton btnDifficile;
+    JPanel panelBtnClassifica;
+    JPanel panelClassifica;
+    String[] nomeColonne = {"USERNAME", "DIFFICOLTA'", "PUNTEGGIO"};
+    Object[][] data;
+    DefaultTableModel modelTable;
+    JTable tableClassifica;
 
 
     public PrimaPagina(){
@@ -59,25 +76,25 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         labelTitolo.setHorizontalAlignment(JLabel.CENTER);   //imposta la posizione orizzontale del testo
         labelTitolo.setVisible(true);
 
-        btnGioca = new JButton();
+        btnGioca = new RoundedButton("GIOCA!");
         btnGioca.setBounds(0, 25, 350, 150);
         btnGioca.addActionListener(this);
-        btnGioca.setText("GIOCA!");
         btnGioca.setVerticalTextPosition(JButton.CENTER);
         btnGioca.setHorizontalTextPosition(JButton.CENTER);
         btnGioca.setFont(new Font("Comic Sans", Font.BOLD, 30));
         btnGioca.setForeground(Color.black);   //imposto colore testo
         btnGioca.setBackground(Color.lightGray);   //imposto colore di sfondo
+        btnGioca.setBorder(null);
 
-        btnClassifica = new JButton();
+        btnClassifica = new RoundedButton("CLASSIFICA");
         btnClassifica.setBounds(750, 25, 350, 150);
         btnClassifica.addActionListener(this);
-        btnClassifica.setText("CLASSIFICA");
         btnClassifica.setVerticalTextPosition(JButton.CENTER);
         btnClassifica.setHorizontalTextPosition(JButton.CENTER);
         btnClassifica.setFont(new Font("Comic Sans", Font.BOLD, 30));
         btnClassifica.setForeground(Color.black);
         btnClassifica.setBackground(Color.lightGray);
+        btnClassifica.setBorder(null);
 
         panelBtn1 = new JPanel();
         panelBtn1.setBackground(new Color(216, 112, 124));
@@ -88,17 +105,16 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         panelBtn1.add(btnClassifica);
         panelBtn1.setVisible(true);
 
-        btnEsci = new JButton();
+        btnEsci = new RoundedButton("ESCI");
         btnEsci.setSize(200, 75);
         posizioneJButton(btnEsci, 700);
         btnEsci.addActionListener(this);
-        btnEsci.setText("ESCI");
-        btnEsci.setFocusable(false);
         btnEsci.setVerticalTextPosition(JButton.CENTER);
         btnEsci.setHorizontalTextPosition(JButton.CENTER);
         btnEsci.setFont(new Font("Comic Sans", Font.BOLD, 25));
         btnEsci.setForeground(Color.black);
         btnEsci.setBackground(Color.lightGray);
+        btnEsci.setBorder(null);
         btnEsci.setVisible(true);
 
         //INIZIO ELEMENTI PANEL IMPOSTAZIONI
@@ -128,6 +144,8 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         username.setForeground(new Color(0, 0, 0));
         username.setBackground(new Color(255, 255, 255));
 
+        nomeInserito = username.getText();
+
         sceltadifficolta = new JLabel();
         sceltadifficolta.setBounds(365, 100, 375, 70);
         sceltadifficolta.setText("Con quale difficoltà giochiamo?");
@@ -135,18 +153,21 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         sceltadifficolta.setFont(new Font("Comic Sans", Font.BOLD, 25));
         sceltadifficolta.setVerticalAlignment(JLabel.CENTER);
 
-        livelloFacile = new JRadioButton("facile (5 x 5)");
+        livelloFacile = new JRadioButton("facile (7 x 7)");
         livelloFacile.setBounds(470, 165, 175, 40);
         livelloFacile.setBackground(new Color(216, 112, 124));
         livelloFacile.setFont(new Font("Comic Sans", Font.BOLD, 20));
-        livelloMedio =new JRadioButton("medio (4 x 4)");
+        livelloFacile.addActionListener(this);
+        livelloMedio =new JRadioButton("medio (6 x 6)");
         livelloMedio.setBounds(470, 205, 175, 40);
         livelloMedio.setBackground(new Color(216, 112, 124));
         livelloMedio.setFont(new Font("Comic Sans", Font.BOLD, 20));
-        livelloDifficile = new JRadioButton("difficile (3 x 3)");
+        livelloMedio.addActionListener(this);
+        livelloDifficile = new JRadioButton("difficile (5 x 5)");
         livelloDifficile.setBounds(470, 245, 175, 40);
         livelloDifficile.setBackground(new Color(216, 112, 124));
         livelloDifficile.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        livelloDifficile.addActionListener(this);
 
         ButtonGroup group = new ButtonGroup();
         group.add(livelloFacile);
@@ -167,27 +188,25 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         panelScelteUtente.add(livelloDifficile);
         panelScelteUtente.setVisible(false);
 
-        btnIniziamo = new JButton();
+        btnIniziamo = new RoundedButton("INIZIAMO");
         btnIniziamo.setBounds(750, 25, 250, 100);
         btnIniziamo.addActionListener(this);
-        btnIniziamo.setText("INIZIAMO");
-        btnIniziamo.setFocusable(false);
         btnIniziamo.setVerticalTextPosition(JButton.CENTER);
         btnIniziamo.setHorizontalTextPosition(JButton.CENTER);
         btnIniziamo.setFont(new Font("Comic Sans", Font.BOLD, 20));
         btnIniziamo.setForeground(Color.black);
         btnIniziamo.setBackground(Color.lightGray);
+        btnIniziamo.setBorder(null);
 
-        btnIndietro = new JButton();
+        btnIndietro = new RoundedButton("INDIETRO");
         btnIndietro.setBounds(100, 25, 250, 100);
         btnIndietro.addActionListener(this);
-        btnIndietro.setText("INDIETRO");
-        btnIndietro.setFocusable(false);
         btnIndietro.setVerticalTextPosition(JButton.CENTER);
         btnIndietro.setHorizontalTextPosition(JButton.CENTER);
         btnIndietro.setFont(new Font("Comic Sans", Font.BOLD, 20));
         btnIndietro.setForeground(Color.black);
         btnIndietro.setBackground(Color.lightGray);
+        btnIndietro.setBorder(null);
 
         panelBtn2 = new JPanel();
         panelBtn2.setBackground(new Color(216, 112, 124));
@@ -210,17 +229,69 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         titoloClassifica.setHorizontalAlignment(JLabel.CENTER);
         titoloClassifica.setVisible(false);
 
-        indietroClassifica = new JButton();
+        btnFacile = new RoundedButton("FACILE");
+        btnFacile.setBounds(0, 12, 200, 50);
+        btnFacile.addActionListener(this);
+        btnFacile.setVerticalTextPosition(JButton.CENTER);
+        btnFacile.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        btnFacile.setForeground(Color.black);
+        btnFacile.setBackground(Color.GRAY);
+        btnFacile.setBorder(null);
+
+        btnMedio = new RoundedButton("MEDIO");
+        btnMedio.setBounds(300, 12, 200, 50);
+        btnMedio.addActionListener(this);
+        btnMedio.setVerticalTextPosition(JButton.CENTER);
+        btnMedio.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        btnMedio.setForeground(Color.black);
+        btnMedio.setBackground(Color.lightGray);
+        btnMedio.setBorder(null);
+
+        btnDifficile = new RoundedButton("DIFFICILE");
+        btnDifficile.setBounds(600, 12, 200, 50);
+        btnDifficile.addActionListener(this);
+        btnDifficile.setVerticalTextPosition(JButton.CENTER);
+        btnDifficile.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        btnDifficile.setForeground(Color.black);
+        btnDifficile.setBackground(Color.lightGray);
+        btnDifficile.setBorder(null);
+
+        panelBtnClassifica = new JPanel();
+        panelBtnClassifica.setBackground(new Color(255, 255, 255));
+        //panelBtnClassifica.setBackground(new Color(216, 112, 124));
+        panelBtnClassifica.setSize(800, 75);
+        posizionaJPanel(panelBtnClassifica, 175);
+        panelBtnClassifica.setLayout(null);
+        panelBtnClassifica.add(btnFacile);
+        panelBtnClassifica.add(btnMedio);
+        panelBtnClassifica.add(btnDifficile);
+        panelBtnClassifica.setVisible(false);
+
+        panelClassifica = new JPanel();
+        panelClassifica.setBackground(new Color(255, 255, 255));
+        //panelClassifica.setBackground(new Color(216, 112, 124));
+        panelClassifica.setSize(800, 400);
+        posizionaJPanel(panelClassifica, 275);
+        panelClassifica.setLayout(new BorderLayout());
+
+        //====================| TABELLA STATISTICHE |====================
+        data = partita1.visualizzaMiglioriF();
+        modificaTabella(data);
+        JScrollPane scrollTable = new JScrollPane(tableClassifica);   //oggetto che permette di scorrere la tabelal se diventa troppo grande
+        panelClassifica.add(scrollTable, BorderLayout.CENTER);
+        panelClassifica.setVisible(false);
+        //===============================================================
+
+        indietroClassifica = new RoundedButton("INDIETRO");
         indietroClassifica.setSize(200, 75);
         posizioneJButton(indietroClassifica, 700);
         indietroClassifica.addActionListener(this);
-        indietroClassifica.setText("ESCI");
-        indietroClassifica.setFocusable(false);
         indietroClassifica.setVerticalTextPosition(JButton.CENTER);
         indietroClassifica.setHorizontalTextPosition(JButton.CENTER);
         indietroClassifica.setFont(new Font("Comic Sans", Font.BOLD, 25));
         indietroClassifica.setForeground(Color.black);
         indietroClassifica.setBackground(Color.lightGray);
+        indietroClassifica.setBorder(null);
         indietroClassifica.setVisible(false);
 
         //AGGIUNTA AL FRAME DEGLI ELEMENTI DELLA PRIMA PAGINA
@@ -235,6 +306,8 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
 
         //AGGIUNTA AL FRAME DEGLI ELEMENTI DELLA PAGINA CLASSIFICA
         this.add(titoloClassifica);
+        this.add(panelBtnClassifica);
+        this.add(panelClassifica);
         this.add(indietroClassifica);
 
         this.setVisible(true);
@@ -252,18 +325,18 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             labelTitolo2.setVisible(true);
             panelScelteUtente.setVisible(true);
             panelBtn2.setVisible(true);
-
-        }else if(e.getSource() == btnClassifica){
+        }
+        if(e.getSource() == btnClassifica){
             labelTitolo.setVisible(false);
             panelBtn1.setVisible(false);
             btnEsci.setVisible(false);
 
             titoloClassifica.setVisible(true);
             indietroClassifica.setVisible(true);
-            //Partita partita1 = new Partita();
-            //partita1.inserisciDati();
-
-        }else if(e.getSource() == btnEsci){
+            panelClassifica.setVisible(true);
+            panelBtnClassifica.setVisible(true);
+        }
+        if(e.getSource() == btnEsci){
             //dichiarazione JOptionPane contenuto in una variabile memorizzare l'output generato dalla scelta dell'utente
             int scelta = JOptionPane.showConfirmDialog (null, "Sei sicuro di voler uscire?",
                     "Conferma Uscita", JOptionPane.YES_NO_OPTION);
@@ -272,11 +345,8 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
                 this.dispose();   //nel caso l'utente clicca il bottone yes chiude il JFrame e chiude il programma
             }
 
-        }else if(e.getSource() == btnIniziamo){
-            this.dispose();
-            FrameGioco frameGioco = new FrameGioco();
-
-        }else if(e.getSource() == btnIndietro){
+        }
+        if(e.getSource() == btnIndietro){
             labelTitolo2.setVisible(false);
             panelScelteUtente.setVisible(false);
             panelBtn2.setVisible(false);
@@ -284,25 +354,85 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             labelTitolo.setVisible(true);
             panelBtn1.setVisible(true);
             btnEsci.setVisible(true);
-        }else if(e.getSource() == indietroClassifica){
+        }
+        if(e.getSource() == indietroClassifica){
             titoloClassifica.setVisible(false);
             indietroClassifica.setVisible(false);
+            panelClassifica.setVisible(false);
+            panelBtnClassifica.setVisible(false);
 
             labelTitolo.setVisible(true);
             panelBtn1.setVisible(true);
             btnEsci.setVisible(true);
         }
-    }
+        if(e.getSource() == livelloFacile){
+            difficoltà = 7;
+        }else if(e.getSource() == livelloMedio){
+            difficoltà = 6;
+        }else if(e.getSource() == livelloDifficile){
+            difficoltà = 5;
+        }
+        if(e.getSource() == btnIniziamo){
+            if((difficoltà != 0) && !(username.getText()).equals("")){
+                partita1.setUsername(nomeInserito);
+                if(e.getSource() == livelloFacile){
+                    partita1.setDifficoltà("facile");
+                }else if(e.getSource() == livelloMedio){
+                    partita1.setDifficoltà("medio");
+                }else if(e.getSource() == livelloDifficile){
+                    partita1.setDifficoltà("difficile");
+                }
+                FrameGioco frameGioco = new FrameGioco(difficoltà);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(null,
+                        "Username o Difficoltà non inseriti!",
+                        "Errore Inserimento",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        if(e.getSource() == btnFacile){
+            btnFacile.setBackground(Color.GRAY);
+            btnMedio.setBackground(Color.lightGray);
+            btnDifficile.setBackground(Color.lightGray);
 
-    private void posizionaJPanel(JPanel p, int y) {
-        int width = p.getWidth();
-        int x = (d.width - width)/2;
-        p.setLocation(x, y);
-    }
-    private void posizioneJButton(JButton b, int y) {
-        int width = b.getWidth();
-        int x = (d.width - width)/2;
-        b.setLocation(x, y);
+            panelClassifica.removeAll();
+            panelClassifica.revalidate();
+
+            data = partita1.visualizzaMiglioriF();
+            modificaTabella(data);
+            JScrollPane scrollTable = new JScrollPane(tableClassifica);
+            panelClassifica.add(scrollTable, BorderLayout.CENTER);
+            panelClassifica.setVisible(true);
+        }
+        if(e.getSource() == btnMedio){
+            btnMedio.setBackground(Color.GRAY);
+            btnFacile.setBackground(Color.lightGray);
+            btnDifficile.setBackground(Color.lightGray);
+
+            panelClassifica.removeAll();
+            panelClassifica.revalidate();
+
+            data = partita1.visualizzaMiglioriM();
+            modificaTabella(data);
+            JScrollPane scrollTable = new JScrollPane(tableClassifica);
+            panelClassifica.add(scrollTable, BorderLayout.CENTER);
+            panelClassifica.setVisible(true);
+        }
+        if(e.getSource() == btnDifficile){
+            btnDifficile.setBackground(Color.GRAY);
+            btnFacile.setBackground(Color.lightGray);
+            btnMedio.setBackground(Color.lightGray);
+
+            panelClassifica.removeAll();
+            panelClassifica.revalidate();
+
+            data = partita1.visualizzaMiglioriD();
+            modificaTabella(data);
+            JScrollPane scrollTable = new JScrollPane(tableClassifica);
+            panelClassifica.add(scrollTable, BorderLayout.CENTER);
+            panelClassifica.setVisible(true);
+        }
     }
 
     //METODI COMPONENT LISTENER
@@ -321,5 +451,53 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
     @Override
     public void componentHidden(ComponentEvent e) {
 
+    }
+
+    private void posizionaJPanel(JPanel p, int y) {
+        int width = p.getWidth();
+        int x = (d.width - width)/2;
+        p.setLocation(x, y);
+    }
+    private void posizioneJButton(JButton b, int y) {
+        int width = b.getWidth();
+        int x = (d.width - width)/2;
+        b.setLocation(x, y);
+    }
+
+    //METODO RICHIAMATO PER CAMBIARE LA TABELLA QUANDO SI CLICCANO I BOTTONI SOPRA DI ESSA
+    private void modificaTabella(Object[][] data){
+        modelTable = new DefaultTableModel(data, nomeColonne);
+        tableClassifica = new JTable(modelTable);
+
+        //permette di prendere l'header della tableClassifica
+        JTableHeader headerTable = tableClassifica.getTableHeader();
+        //permette di richiamare un metodo che consente di modificare il font e background dell'heare della tableClassifica
+        headerTable.setDefaultRenderer(new CustomHeaderRenderer());
+
+        //permettono di prendere l'altezza dell'header della tableClassifica e modificarla a piacimento
+        Dimension hHeader = headerTable.getPreferredSize();
+        hHeader.height = 47;
+        headerTable.setPreferredSize(hHeader);
+
+        //permette di cambiare il font e grandezza delle parole contenute nella tabella
+        Font font = new Font("Comic Sans", Font.PLAIN, 15);
+        tableClassifica.getTableHeader().setFont(font);
+        tableClassifica.setFont(font);
+
+        //permette di centrare i contenuti delel celle all'interno di queste
+        DefaultTableCellRenderer centraContenuto = new DefaultTableCellRenderer();
+        centraContenuto.setHorizontalAlignment(SwingConstants.CENTER);
+        tableClassifica.setDefaultRenderer(Object.class, centraContenuto);
+        tableClassifica.setRowHeight(35);   //imposta l'altezza delle righe
+    }
+
+    //classe per cambiare colore e font ai componenti dell'header della tableClassifica
+    private class CustomHeaderRenderer extends DefaultTableCellRenderer{
+        public CustomHeaderRenderer(){
+            this.setHorizontalAlignment(SwingConstants.CENTER);
+            this.setForeground(Color.WHITE);
+            this.setBackground(Color.ORANGE);
+            this.setFont(new Font("Comic Sans", Font.BOLD, 15));
+        }
     }
 }

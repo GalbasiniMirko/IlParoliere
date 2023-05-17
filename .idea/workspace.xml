@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare">
+      <change afterPath="$PROJECT_DIR$/src/View/RoundedButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/dbconnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/dbconnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileParole.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/fileParole.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -52,7 +59,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/IlParoliere&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/JavaGUIFullCourse&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -70,8 +77,15 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="View" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mirko\IdeaProjects\IlParoliere\src" />
       <recent name="C:\Users\mirko\IdeaProjects\IlParoliere" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mirko\IdeaProjects\IlParoliere\src\Main" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -110,8 +124,14 @@
       <workItem from="1683805547058" duration="2708000" />
       <workItem from="1683821335250" duration="13362000" />
       <workItem from="1683883737809" duration="2944000" />
-      <workItem from="1683907953027" duration="8599000" />
-      <workItem from="1684225829613" duration="6069000" />
+      <workItem from="1683907953027" duration="9519000" />
+      <workItem from="1683997496533" duration="2453000" />
+      <workItem from="1684001927525" duration="4231000" />
+      <workItem from="1684058753146" duration="624000" />
+      <workItem from="1684220443798" duration="67000" />
+      <workItem from="1684227887845" duration="4275000" />
+      <workItem from="1684260099748" duration="8627000" />
+      <workItem from="1684305868793" duration="21356000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -211,19 +231,19 @@
       <option name="project" value="LOCAL" />
       <updated>1683915669974</updated>
     </task>
-    <task id="LOCAL-00015" summary="metodo per inserire le parole nel db da file">
-      <created>1683994545338</created>
+    <task id="LOCAL-00015" summary="Ricollocazione del timer dopo aggiornamenti grafici">
+      <created>1683917505465</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1683994545338</updated>
+      <updated>1683917505465</updated>
     </task>
-    <task id="LOCAL-00016" summary="sistemazione timer con bottone refresh">
-      <created>1684228259195</created>
+    <task id="LOCAL-00016" summary="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare">
+      <created>1684012669874</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1684228259195</updated>
+      <updated>1684012669874</updated>
     </task>
     <option name="localTasksCounter" value="17" />
     <servers />
@@ -269,9 +289,9 @@
     <MESSAGE value="Sistemazione" />
     <MESSAGE value="meno male che ci sono io :)" />
     <MESSAGE value="Rework generale del progetto a livello grafico" />
-    <MESSAGE value="metodo per inserire le parole nel db da file" />
-    <MESSAGE value="sistemazione timer con bottone refresh" />
-    <option name="LAST_COMMIT_MESSAGE" value="sistemazione timer con bottone refresh" />
+    <MESSAGE value="Ricollocazione del timer dopo aggiornamenti grafici" />
+    <MESSAGE value="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
