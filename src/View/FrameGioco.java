@@ -20,6 +20,8 @@ public class FrameGioco extends JFrame implements ActionListener {
     Dimension d;
     int dGriglia;
     Partita partita1 = new Partita();
+    String parolaInserita;
+    int contParole = 0;
 
     JLabel labelTitolo;
     JLabel countdownLabel;
@@ -30,7 +32,6 @@ public class FrameGioco extends JFrame implements ActionListener {
     RoundedButton[][] bottoniGriglia;   //griglia di bottoni per il gioco
     JLabel labelParola;
     JTextField inputUtente;
-    String parolaInserita;
     RoundedButton btnCercaParola;
     RoundedButton btnRefresh;
     RoundedButton btnTerminaPartita;
@@ -263,7 +264,8 @@ public class FrameGioco extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnTerminaPartita) {
             //if() {   //controllo per vedere se il tempo è maggiore di 0
-            int scelta = JOptionPane.showConfirmDialog(null, "Sei sicuro di voler terminare la partita?",
+            int scelta = JOptionPane.showConfirmDialog(null, "Sei sicuro di voler terminare la partita?" +
+                            "\nI dati non verranno salvati",
                     "Termina Partita", JOptionPane.YES_NO_OPTION);
 
             if (scelta == JOptionPane.YES_OPTION) {
@@ -285,6 +287,7 @@ public class FrameGioco extends JFrame implements ActionListener {
                         modelTable.addRow(new Object[]{parolaInserita, "ciao"/*punteggio*/});
                         tableClassifica.setModel(modelTable);
                         inputUtente.setText("");
+                        contParole++;
                     }else{
                         JOptionPane.showMessageDialog(null, "La parola non è presente nel DB :(");
                         modelTable.addRow(new Object[]{parolaInserita, 0});

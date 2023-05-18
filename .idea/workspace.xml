@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/fileParole.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/fileParole.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +128,8 @@
       <workItem from="1684227887845" duration="4275000" />
       <workItem from="1684260099748" duration="8627000" />
       <workItem from="1684305868793" duration="26742000" />
-      <workItem from="1684392138678" duration="10609000" />
+      <workItem from="1684392138678" duration="11305000" />
+      <workItem from="1684435448467" duration="2652000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -256,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684402102592</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)">
+      <created>1684405127131</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684405127131</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +312,8 @@
     <MESSAGE value="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare" />
     <MESSAGE value="Sistemazione griglia generata in base alla difficoltà scelta dall'utente (passando una variabile dal JFrame PrimaPagina al JFrame FrameGioco);&#10;Completato panelClassifica facendo le query al DB e visualizzando in una JTable i risultati ottenuti;&#10;Ho iniziato ad aggiungere una JTable al FrameGioco per visualizzare le parole trovate dall'utente e il punteggio assegnato ad esse;" />
     <MESSAGE value="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;" />
+    <MESSAGE value="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -48,7 +48,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
     RoundedButton btnDifficile;
     JPanel panelBtnClassifica;
     JPanel panelClassifica;
-    String[] nomeColonne = {"USERNAME", "DIFFICOLTA'", "PUNTEGGIO"};
+    String[] nomeColonne = {"USERNAME", "DIFFICOLTA'", "PUNTEGGIO", "NUMERO PAROLE"};
     Object[][] data;
     DefaultTableModel modelTable;
     JTable tableClassifica;
@@ -394,8 +394,11 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         }
         if(e.getSource() == btnFacile){
             btnFacile.setBackground(Color.GRAY);
+            btnFacile.setEnabled(false);
             btnMedio.setBackground(Color.lightGray);
+            btnMedio.setEnabled(true);
             btnDifficile.setBackground(Color.lightGray);
+            btnDifficile.setEnabled(true);
 
             panelClassifica.removeAll();
             panelClassifica.revalidate();
@@ -408,8 +411,11 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         }
         if(e.getSource() == btnMedio){
             btnMedio.setBackground(Color.GRAY);
+            btnMedio.setEnabled(false);
             btnFacile.setBackground(Color.lightGray);
+            btnFacile.setEnabled(true);
             btnDifficile.setBackground(Color.lightGray);
+            btnDifficile.setEnabled(true);
 
             panelClassifica.removeAll();
             panelClassifica.revalidate();
@@ -422,8 +428,11 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         }
         if(e.getSource() == btnDifficile){
             btnDifficile.setBackground(Color.GRAY);
+            btnDifficile.setEnabled(false);
             btnFacile.setBackground(Color.lightGray);
+            btnFacile.setEnabled(true);
             btnMedio.setBackground(Color.lightGray);
+            btnMedio.setEnabled(true);
 
             panelClassifica.removeAll();
             panelClassifica.revalidate();
