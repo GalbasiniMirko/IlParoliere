@@ -31,7 +31,6 @@ public class FrameGioco extends JFrame implements ActionListener {
     JLabel labelParola;
     JTextField inputUtente;
     String parolaInserita;
-    Boolean presenzaParola = false;
     RoundedButton btnCercaParola;
     RoundedButton btnRefresh;
     RoundedButton btnTerminaPartita;
@@ -42,10 +41,6 @@ public class FrameGioco extends JFrame implements ActionListener {
     Object[][] data;
     DefaultTableModel modelTable;
     JTable tableClassifica;
-
-    public FrameGioco(){
-
-    }
 
     public FrameGioco(int dimGriglia){
         this.setTitle("IL PAROLIERE");
@@ -220,14 +215,13 @@ public class FrameGioco extends JFrame implements ActionListener {
         panelCentro.setVisible(true);
 
         panelTablePartita = new JPanel();
-        //panelTablePartita.setBackground(new Color(216, 112, 124));
-        panelTablePartita.setBackground(new Color(255, 255, 255));
+        panelTablePartita.setBackground(new Color(216, 112, 124));
+        //panelTablePartita.setBackground(new Color(255, 255, 255));
         panelTablePartita.setSize(325, 510);
         panelTablePartita.setLocation(1150, 240);
         panelTablePartita.setLayout(new BorderLayout());
 
         //====================| TABELLA PAROLE/PUNTEGGIO |====================
-        //data = partita1.
         modelTable = new DefaultTableModel(data, nomeColonne);
         tableClassifica = new JTable(modelTable);
 
@@ -285,15 +279,18 @@ public class FrameGioco extends JFrame implements ActionListener {
             if(!(inputUtente.getText().equals(""))){
                 parolaInserita = inputUtente.getText();
 
-                presenzaParola = cercaParolaGriglia(matriceLettere, parolaInserita);
-
-                if(presenzaParola == true){
-                    /*JOptionPane.showMessageDialog(null,
-                            "Parola presente nella griglia",
-                            "WOW",
-                            JOptionPane.ERROR_MESSAGE);*/
-                    modelTable.addRow(new Object[]{parolaInserita, "ciao"/*punteggio*/});
-                    tableClassifica.setModel(modelTable);
+                //CERCARE PAROLA NEL DB
+                if(cercaParolaGriglia(matriceLettere, parolaInserita)){
+                    if(cercaParolaDB()){
+                        modelTable.addRow(new Object[]{parolaInserita, "ciao"/*punteggio*/});
+                        tableClassifica.setModel(modelTable);
+                        inputUtente.setText("");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "La parola non è presente nel DB :(");
+                        modelTable.addRow(new Object[]{parolaInserita, 0});
+                        tableClassifica.setModel(modelTable);
+                        inputUtente.setText("");
+                    }
                     /*se è possibile fare variabile per contare le parole trovate e vedere se è possibile mmorizzarle nel db*/
                 }else{
                     JOptionPane.showMessageDialog( null,
@@ -301,16 +298,26 @@ public class FrameGioco extends JFrame implements ActionListener {
                             "WOW",
                             JOptionPane.ERROR_MESSAGE);
                 }
-            }
-        }
-        if (e.getSource()== btnCercaParola) {
-            cercaParolaDB();
 
-            String parola=inputUtente.getText();
-            cercaParolaFile(parola);
-            Partita partita= new Partita();
-            if(partita.controllaParolaNelDatabase(parola) == true && cercaParolaFile(parola)==true){
-                JOptionPane.showMessageDialog(null, "La parola esiste sia nel file che nel database!");
+                //CERCARE PAROLA NEL FILE
+                /*if(cercaParolaGriglia(matriceLettere, parolaInserita)){
+                    if(cercaParolaFile(parolaInserita)){
+                        JOptionPane.showMessageDialog(null, "La parola è presente");
+                        modelTable.addRow(new Object[]{parolaInserita, "ciao"});
+                        tableClassifica.setModel(modelTable);
+                        inputUtente.setText("");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "La parola non è presente nel file :(");
+                        modelTable.addRow(new Object[]{parolaInserita, 0});
+                        tableClassifica.setModel(modelTable);
+                        inputUtente.setText("");
+                    }
+                }else{
+                    JOptionPane.showMessageDialog( null,
+                            "Parola non presente nella griglia",
+                            "WOW",
+                            JOptionPane.ERROR_MESSAGE);
+                }*/
             }
         }
     }
@@ -374,28 +381,25 @@ public class FrameGioco extends JFrame implements ActionListener {
         return false;
     }
 
-    public void cercaParolaDB(){
-        String parolaInserita = inputUtente.getText();
-        Partita partita= new Partita();
-        boolean parolaEsistente = partita.controllaParolaNelDatabase(parolaInserita);
-// se la parola esiste ripulisce solo la casella di testo altrimenti mostra la finestra dicendo che la parola non esiste nel database
-        if (parolaEsistente == false) {
-            JOptionPane.showMessageDialog(null, "La parola non esiste nel database!");
+    public Boolean cercaParolaDB(){
+        //se la parola esiste ripulisce solo la casella di testo altrimenti mostra la finestra dicendo che la parola non esiste nel database
+        if(partita1.controllaParolaNelDatabase(parolaInserita)){
             inputUtente.setText("");
+            return true;
         }else{
-            inputUtente.setText("");
+            return false;
         }
     }
 
     public static boolean cercaParolaFile(String parola) {
-        try (BufferedReader br = new BufferedReader(new FileReader("fileParole.txt"))) {
+        try(BufferedReader br = new BufferedReader(new FileReader("src/Main/fileParole.txt"))){
             String linea ;
-            while ((linea = br.readLine()) != null) { //continua a cercare finchè non arriva alla fine
-                if (linea.contains(parola)) { //se la linea contiene la parola ritorna vero
+            while((linea = br.readLine()) != null){ //continua a cercare finchè non arriva alla fine
+                if(linea.contains(parola)){ //se la linea contiene la parola ritorna vero
                     return true; // La parola è stata trovata
                 }
             }
-        } catch (IOException e) {
+        }catch(IOException e){
             e.printStackTrace();
         }
         return false; // La parola non è stata trovata

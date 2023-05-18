@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mariadb_java_client_1_4_6.xml" afterDir="false" />
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IlParoliere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IlParoliere.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/dbconnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/dbconnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/fileParole.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fileParole.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fileParole.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/fileParole.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,29 +49,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/gaiac/OneDrive/Desktop/mysql-connector-j-8.0.32.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/JavaGUIFullCourse&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="View" />
@@ -84,8 +81,6 @@
       <recent name="C:\Users\mirko\IdeaProjects\IlParoliere" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gaiac\IdeaProjects\IlParoliere\src\View" />
-      <recent name="C:\Users\gaiac\IdeaProjects\IlParoliere\src\Main" />
       <recent name="C:\Users\mirko\IdeaProjects\IlParoliere\src\Main" />
     </key>
   </component>
@@ -132,8 +127,8 @@
       <workItem from="1684220443798" duration="67000" />
       <workItem from="1684227887845" duration="4275000" />
       <workItem from="1684260099748" duration="8627000" />
-      <workItem from="1684305868793" duration="21356000" />
-      <workItem from="1684391931095" duration="8512000" />
+      <workItem from="1684305868793" duration="26742000" />
+      <workItem from="1684392138678" duration="10609000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -247,7 +242,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684012669874</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Sistemazione griglia generata in base alla difficoltà scelta dall'utente (passando una variabile dal JFrame PrimaPagina al JFrame FrameGioco);&#10;Completato panelClassifica facendo le query al DB e visualizzando in una JTable i risultati ottenuti;&#10;Ho iniziato ad aggiungere una JTable al FrameGioco per visualizzare le parole trovate dall'utente e il punteggio assegnato ad esse;">
+      <created>1684346492113</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684346492113</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;">
+      <created>1684402102592</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684402102592</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +302,9 @@
     <MESSAGE value="Rework generale del progetto a livello grafico" />
     <MESSAGE value="Ricollocazione del timer dopo aggiornamenti grafici" />
     <MESSAGE value="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare" />
+    <MESSAGE value="Sistemazione griglia generata in base alla difficoltà scelta dall'utente (passando una variabile dal JFrame PrimaPagina al JFrame FrameGioco);&#10;Completato panelClassifica facendo le query al DB e visualizzando in una JTable i risultati ottenuti;&#10;Ho iniziato ad aggiungere una JTable al FrameGioco per visualizzare le parole trovate dall'utente e il punteggio assegnato ad esse;" />
+    <MESSAGE value="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

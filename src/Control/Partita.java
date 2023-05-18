@@ -183,7 +183,10 @@ public class Partita {
             rs = stmt.executeQuery();
             if (rs.next()) {   //controlla se c'è una riga nel database che corrisponde
                 int count = rs.getInt(1); // se presente viene preso il valore del conteggio
-                parolaEsistente = count > 0; // se il conteggio è >0 la stringa viene messa true altrimenti false
+                if(count > 0){
+                    parolaEsistente = true;
+                }
+                //parolaEsistente = count > 0; // se il conteggio è >0 la stringa viene messa true altrimenti false
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -203,7 +206,7 @@ public class Partita {
             }
         }
 
-        return parolaEsistente; //restituisce se la parola è stata trovata o meno
+        return parolaEsistente; //restituisce true se la parola è stata trovata o meno
     }
 }
 
