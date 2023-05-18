@@ -375,6 +375,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         if(e.getSource() == btnIniziamo){
             if((difficoltà != 0) && !(username.getText()).equals("")){
                 partita1.setUsername(nomeInserito);
+
                 if(e.getSource() == livelloFacile){
                     partita1.setDifficoltà("facile");
                 }else if(e.getSource() == livelloMedio){
@@ -495,7 +496,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
     private class CustomHeaderRenderer extends DefaultTableCellRenderer{
         public CustomHeaderRenderer(){
             this.setHorizontalAlignment(SwingConstants.CENTER);
-            this.setForeground(Color.WHITE);
+            this.setForeground(Color.BLACK);
             this.setBackground(Color.ORANGE);
             this.setFont(new Font("Comic Sans", Font.BOLD, 15));
         }

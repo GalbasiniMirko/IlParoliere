@@ -3,6 +3,9 @@ package View;
 import Control.Partita;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,24 +15,34 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-
 public class FrameGioco extends JFrame implements ActionListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     Dimension d;
     int dGriglia;
+    Partita partita1 = new Partita();
 
     JLabel labelTitolo;
     JLabel countdownLabel;
     Timer timer;
     int countdownSeconds;
     JPanel panelGriglia;
-    RoundedButton[][] bottoniGriglia;
+    char[][] matriceLettere;   //matrice char per generare random una serie di lettere da mettere nella griglia
+    RoundedButton[][] bottoniGriglia;   //griglia di bottoni per il gioco
     JLabel labelParola;
     JTextField inputUtente;
-    JButton btnCercaParola;
-    JButton btnRefresh;
-    JButton btnTerminaPartita;
+    String parolaInserita;
+    Boolean presenzaParola = false;
+    RoundedButton btnCercaParola;
+    RoundedButton btnRefresh;
+    RoundedButton btnTerminaPartita;
     JPanel panelCentro;
+
+    JPanel panelTablePartita;
+    String[] nomeColonne = {"PAROLA", "PUNTEGGIO"};
+    Object[][] data;
+    DefaultTableModel modelTable;
+    JTable tableClassifica;
+
     public FrameGioco(){
 
     }
@@ -93,18 +106,26 @@ public class FrameGioco extends JFrame implements ActionListener {
 
         //GRIGLIA LETTERE
         panelGriglia = new JPanel();
-        //panelGriglia.setBackground(new Color(216, 112, 124));
-        panelGriglia.setBackground(new Color(255, 255, 255));
+        panelGriglia.setBackground(new Color(216, 112, 124));
+        //panelGriglia.setBackground(new Color(255, 255, 255));
         panelGriglia.setSize(600, 400);
         panelGriglia.setLocation(50, 240);
         panelGriglia.setLayout(new GridLayout(dimGriglia,dimGriglia,5,5));
 
-        char[][] matriceLettere = new char[dimGriglia][dimGriglia];
+        matriceLettere = new char[dimGriglia][dimGriglia];
         Random random = new Random();
         for (int i=0; i<dimGriglia; i++) {
             for (int j=0; j<dimGriglia; j++) {
                 matriceLettere[i][j] = (char) (random.nextInt(26) + 'a');
             }
+        }
+
+        //CODICE PER STAMPARE NELLA CONSOLE LA MATRICE
+        for (int i = 0; i < dimGriglia; i++) {
+            for (int j = 0; j < dimGriglia; j++) {
+                System.out.print(matriceLettere[i][j] + "  ");
+            }
+            System.out.println();
         }
 
         bottoniGriglia = new RoundedButton[dimGriglia][dimGriglia];
@@ -128,7 +149,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         }
         panelGriglia.setVisible(true);
 
-        btnRefresh = new JButton();
+        btnRefresh = new RoundedButton("Refresh");
         btnRefresh.setSize(150, 50);
         btnRefresh.setLocation(275, 700);
         btnRefresh.addActionListener(this);
@@ -139,13 +160,14 @@ public class FrameGioco extends JFrame implements ActionListener {
         btnRefresh.setFont(new Font("Comic Sans", Font.BOLD, 25));
         btnRefresh.setForeground(Color.black);
         btnRefresh.setBackground(Color.lightGray);
+        btnRefresh.setBorder(null);
         btnRefresh.setVisible(true);
 
         panelCentro = new JPanel();
-        //panelCentro.setBackground(new Color(216, 112, 124));
-        panelCentro.setBackground(new Color(255, 255, 255));
+        panelCentro.setBackground(new Color(216, 112, 124));
+        //panelCentro.setBackground(new Color(255, 255, 255));
         panelCentro.setSize(350, 510);
-        panelCentro.setLocation(750, 240);
+        panelCentro.setLocation(725, 240);
         panelCentro.setLayout(null);
 
         labelParola = new JLabel();
@@ -165,30 +187,30 @@ public class FrameGioco extends JFrame implements ActionListener {
         inputUtente.setForeground(new Color(0, 0, 0));
         inputUtente.setBackground(new Color(255, 255, 255));
 
-        btnCercaParola = new JButton();
+        btnCercaParola = new RoundedButton("Cerca");
         btnCercaParola.setSize(105, 50);
         posizioneJButton(panelCentro, btnCercaParola, 230);
         btnCercaParola.addActionListener(this);
-        btnCercaParola.setText("Cerca");
         btnCercaParola.setFocusable(false);
         btnCercaParola.setVerticalTextPosition(JButton.CENTER);
         btnCercaParola.setHorizontalTextPosition(JButton.CENTER);
         btnCercaParola.setFont(new Font("Comic Sans", Font.BOLD, 25));
         btnCercaParola.setForeground(Color.black);
         btnCercaParola.setBackground(Color.lightGray);
+        btnCercaParola.setBorder(null);
         btnCercaParola.setVisible(true);
 
-        btnTerminaPartita = new JButton();
+        btnTerminaPartita = new RoundedButton("Termina partita");
         btnTerminaPartita.setSize(215, 50);
         posizioneJButton(panelCentro, btnTerminaPartita, 460);
         btnTerminaPartita.addActionListener(this);
-        btnTerminaPartita.setText("Termina partita");
         btnTerminaPartita.setFocusable(false);
         btnTerminaPartita.setVerticalTextPosition(JButton.CENTER);
         btnTerminaPartita.setHorizontalTextPosition(JButton.CENTER);
         btnTerminaPartita.setFont(new Font("Comic Sans", Font.BOLD, 25));
         btnTerminaPartita.setForeground(Color.black);
         btnTerminaPartita.setBackground(Color.lightGray);
+        btnTerminaPartita.setBorder(null);
         btnTerminaPartita.setVisible(true);
 
         panelCentro.add(labelParola);
@@ -197,11 +219,49 @@ public class FrameGioco extends JFrame implements ActionListener {
         panelCentro.add(btnTerminaPartita);
         panelCentro.setVisible(true);
 
+        panelTablePartita = new JPanel();
+        //panelTablePartita.setBackground(new Color(216, 112, 124));
+        panelTablePartita.setBackground(new Color(255, 255, 255));
+        panelTablePartita.setSize(325, 510);
+        panelTablePartita.setLocation(1150, 240);
+        panelTablePartita.setLayout(new BorderLayout());
+
+        //====================| TABELLA PAROLE/PUNTEGGIO |====================
+        //data = partita1.
+        modelTable = new DefaultTableModel(data, nomeColonne);
+        tableClassifica = new JTable(modelTable);
+
+        //permette di prendere l'header della tableClassifica
+        JTableHeader headerTable = tableClassifica.getTableHeader();
+        //permette di richiamare un metodo che consente di modificare il font e background dell'heare della tableClassifica
+        headerTable.setDefaultRenderer(new CustomHeaderRenderer());
+
+        //permettono di prendere l'altezza dell'header della tableClassifica e modificarla a piacimento
+        Dimension hHeader = headerTable.getPreferredSize();
+        hHeader.height = 47;
+        headerTable.setPreferredSize(hHeader);
+
+        //permette di cambiare il font e grandezza delle parole contenute nella tabella
+        Font font = new Font("Comic Sans", Font.PLAIN, 15);
+        tableClassifica.getTableHeader().setFont(font);
+        tableClassifica.setFont(font);
+
+        //permette di centrare i contenuti delel celle all'interno di queste
+        DefaultTableCellRenderer centraContenuto = new DefaultTableCellRenderer();
+        centraContenuto.setHorizontalAlignment(SwingConstants.CENTER);
+        tableClassifica.setDefaultRenderer(Object.class, centraContenuto);
+        tableClassifica.setRowHeight(35);   //imposta l'altezza delle righe
+        JScrollPane scrollTable = new JScrollPane(tableClassifica);   //oggetto che permette di scorrere la tabelal se diventa troppo grande
+        panelTablePartita.add(scrollTable, BorderLayout.CENTER);
+        panelTablePartita.setVisible(true);
+        //====================================================================
+
         this.add(labelTitolo);
         this.add(countdownLabel);
         this.add(panelGriglia);
         this.add(btnRefresh);
         this.add(panelCentro);
+        this.add(panelTablePartita);
         this.setVisible(true);
     }
 
@@ -216,18 +276,41 @@ public class FrameGioco extends JFrame implements ActionListener {
                 this.dispose();
                 PrimaPagina primaPagina = new PrimaPagina();
             }
-            //}
-        } else if (e.getSource() == btnRefresh) {
+        }
+        if(e.getSource() == btnRefresh) {
             FrameGioco frameGioco = new FrameGioco(dGriglia);
             this.dispose();
-        } else if (e.getSource()== btnCercaParola) {
+        }
+        if(e.getSource() == btnCercaParola){
+            if(!(inputUtente.getText().equals(""))){
+                parolaInserita = inputUtente.getText();
+
+                presenzaParola = cercaParolaGriglia(matriceLettere, parolaInserita);
+
+                if(presenzaParola == true){
+                    /*JOptionPane.showMessageDialog(null,
+                            "Parola presente nella griglia",
+                            "WOW",
+                            JOptionPane.ERROR_MESSAGE);*/
+                    modelTable.addRow(new Object[]{parolaInserita, "ciao"/*punteggio*/});
+                    tableClassifica.setModel(modelTable);
+                    /*se è possibile fare variabile per contare le parole trovate e vedere se è possibile mmorizzarle nel db*/
+                }else{
+                    JOptionPane.showMessageDialog( null,
+                            "Parola non presente nella griglia",
+                            "WOW",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+        if (e.getSource()== btnCercaParola) {
             cercaParolaDB();
 
             String parola=inputUtente.getText();
             cercaParolaFile(parola);
             Partita partita= new Partita();
-          if(partita.controllaParolaNelDatabase(parola) == true && cercaParolaFile(parola)==true){
-             JOptionPane.showMessageDialog(null, "La parola esiste sia nel file che nel database!");
+            if(partita.controllaParolaNelDatabase(parola) == true && cercaParolaFile(parola)==true){
+                JOptionPane.showMessageDialog(null, "La parola esiste sia nel file che nel database!");
             }
         }
     }
@@ -250,6 +333,47 @@ public class FrameGioco extends JFrame implements ActionListener {
         int x = (wPanel - width)/2;
         b.setLocation(x, y);
     }
+
+    public static boolean cercaParolaGriglia(char[][] griglia, String parola) {
+        int righe = griglia.length;
+        int colonne = griglia[0].length;
+
+        //Scorri ogni cella della griglia
+        for (int i = 0; i < righe; i++) {
+            for (int j = 0; j < colonne; j++) {
+                //Se la cella corrente contiene la prima lettera della parola
+                if(griglia[i][j] == parola.charAt(0)) {
+                    //Controlla se la parola è presente partendo da questa cella
+                    if(trovaParolaGriglia(griglia, parola, i, j, 0)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean trovaParolaGriglia(char[][] griglia, String parola, int riga, int colonna, int indice) {
+        //Se l'indice ha raggiunto la lunghezza della parola, significa che la parola è stata trovata
+        if (indice == parola.length()) {
+            return true;
+        }
+
+        int righe = griglia.length;
+        int colonne = griglia[0].length;
+
+        //Verifica se le coordinate sono valide e la cella corrente contiene la lettera corrispondente all'indice
+        if(riga >= 0 && riga < righe && colonna >= 0 && colonna < colonne && griglia[riga][colonna] == parola.charAt(indice)) {
+            //Controlla la parola ricorsivamente in tutte le direzioni (su, giù, sinistra, destra)
+            return trovaParolaGriglia(griglia, parola, riga-1, colonna, indice+1) //Su
+                    || trovaParolaGriglia(griglia, parola, riga+1, colonna, indice+1) //Giù
+                    || trovaParolaGriglia(griglia, parola, riga, colonna-1, indice+1) //Sinistra
+                    || trovaParolaGriglia(griglia, parola, riga, colonna+1, indice+1); //Destra
+        }
+
+        return false;
+    }
+
     public void cercaParolaDB(){
         String parolaInserita = inputUtente.getText();
         Partita partita= new Partita();
@@ -278,5 +402,13 @@ public class FrameGioco extends JFrame implements ActionListener {
 
     }
 
+    //classe per cambiare colore e font ai componenti dell'header della tableClassifica
+    private class CustomHeaderRenderer extends DefaultTableCellRenderer{
+        public CustomHeaderRenderer(){
+            this.setHorizontalAlignment(SwingConstants.CENTER);
+            this.setForeground(Color.BLACK);
+            this.setBackground(Color.ORANGE);
+            this.setFont(new Font("Comic Sans", Font.BOLD, 15));
+        }
     }
-
+}
