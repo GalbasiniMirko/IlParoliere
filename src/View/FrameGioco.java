@@ -1,12 +1,16 @@
 package View;
 
+import Control.Partita;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+
 
 
 public class FrameGioco extends JFrame implements ActionListener {
@@ -26,6 +30,9 @@ public class FrameGioco extends JFrame implements ActionListener {
     JButton btnRefresh;
     JButton btnTerminaPartita;
     JPanel panelCentro;
+    public FrameGioco(){
+
+    }
 
     public FrameGioco(int dimGriglia){
         this.setTitle("IL PAROLIERE");
@@ -213,6 +220,15 @@ public class FrameGioco extends JFrame implements ActionListener {
         } else if (e.getSource() == btnRefresh) {
             FrameGioco frameGioco = new FrameGioco(dGriglia);
             this.dispose();
+        } else if (e.getSource()== btnCercaParola) {
+            cercaParolaDB();
+
+            String parola=inputUtente.getText();
+            cercaParolaFile(parola);
+            Partita partita= new Partita();
+          if(partita.controllaParolaNelDatabase(parola) == true && cercaParolaFile(parola)==true){
+             JOptionPane.showMessageDialog(null, "La parola esiste sia nel file che nel database!");
+            }
         }
     }
 
@@ -234,4 +250,33 @@ public class FrameGioco extends JFrame implements ActionListener {
         int x = (wPanel - width)/2;
         b.setLocation(x, y);
     }
-}
+    public void cercaParolaDB(){
+        String parolaInserita = inputUtente.getText();
+        Partita partita= new Partita();
+        boolean parolaEsistente = partita.controllaParolaNelDatabase(parolaInserita);
+// se la parola esiste ripulisce solo la casella di testo altrimenti mostra la finestra dicendo che la parola non esiste nel database
+        if (parolaEsistente == false) {
+            JOptionPane.showMessageDialog(null, "La parola non esiste nel database!");
+            inputUtente.setText("");
+        }else{
+            inputUtente.setText("");
+        }
+    }
+
+    public static boolean cercaParolaFile(String parola) {
+        try (BufferedReader br = new BufferedReader(new FileReader("fileParole.txt"))) {
+            String linea ;
+            while ((linea = br.readLine()) != null) { //continua a cercare finchè non arriva alla fine
+                if (linea.contains(parola)) { //se la linea contiene la parola ritorna vero
+                    return true; // La parola è stata trovata
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false; // La parola non è stata trovata
+
+    }
+
+    }
+

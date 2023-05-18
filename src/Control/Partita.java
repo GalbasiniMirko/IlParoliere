@@ -1,11 +1,12 @@
 package Control;
 
+import View.FrameGioco;
+
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class Partita {
     private int id;
@@ -14,7 +15,7 @@ public class Partita {
     private int Punteggio;
 
     //COSTRUTTORE VUOTO
-    public Partita(){
+    public Partita() {
 
     }
 
@@ -22,24 +23,31 @@ public class Partita {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getUsername() {
         return Username;
     }
+
     public void setUsername(String username) {
         Username = username;
     }
+
     public String getDifficoltà() {
         return Difficoltà;
     }
+
     public void setDifficoltà(String difficoltà) {
         Difficoltà = difficoltà;
     }
+
     public int getPunteggio() {
         return Punteggio;
     }
+
     public void setPunteggio(int punteggio) {
         Punteggio = punteggio;
     }
@@ -52,6 +60,7 @@ public class Partita {
 
         return success;
     }
+
     //VISUALIZZA PUNTEGGIO
     public Object[][] visualizzaMiglioriF() {
         dbconnection connessione = new dbconnection();
@@ -156,6 +165,45 @@ public class Partita {
         }
 
         return null; // Restituisce null in caso di errore
+    }
+
+    public boolean controllaParolaNelDatabase(String parola) {
+        boolean parolaEsistente = false;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            //connesione al database
+            conn = DriverManager.getConnection("jdbc:mariadb://172.22.201.51/IlParoliereLaCaGa", "utentedb", "Cobi_2022_$");
+            String query = "SELECT COUNT(*) FROM parole WHERE parola = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, parola);
+
+            rs = stmt.executeQuery();
+            if (rs.next()) {   //controlla se c'è una riga nel database che corrisponde
+                int count = rs.getInt(1); // se presente viene preso il valore del conteggio
+                parolaEsistente = count > 0; // se il conteggio è >0 la stringa viene messa true altrimenti false
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally { //rilascia la connessione e libera le risorse usate
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return parolaEsistente; //restituisce se la parola è stata trovata o meno
     }
 }
 

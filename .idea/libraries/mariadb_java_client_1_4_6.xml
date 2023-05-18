@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mariadb-java-client-1.4.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/OneDrive/Desktop/mariadb-java-client-1.4.6.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/Desktop/mysql-connector-j-8.0.32.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

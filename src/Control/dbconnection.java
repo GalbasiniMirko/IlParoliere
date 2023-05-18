@@ -1,6 +1,7 @@
 package Control;
 
 import java.sql.*;
+import java.sql.ResultSet;
 
 public class dbconnection {
 
@@ -92,5 +93,10 @@ public class dbconnection {
         }
 
         return success;
+    }
+
+
+    public boolean prepareStatement(String query) {
+        return false;
     }
 }
