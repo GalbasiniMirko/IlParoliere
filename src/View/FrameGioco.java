@@ -77,7 +77,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         countdownLabel.setHorizontalAlignment(SwingConstants.CENTER);
         countdownLabel.setVisible(true);
 
-        countdownSeconds = 300;   //5 minuti di tempo per trovare le parole
+        countdownSeconds = 65;   //5 minuti di tempo per trovare le parole
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             int remainingSeconds = countdownSeconds;
@@ -92,7 +92,8 @@ public class FrameGioco extends JFrame implements ActionListener {
                 remainingSeconds--;
                 if (remainingSeconds < 0) {
                     SwingUtilities.invokeLater(() -> {
-                        countdownLabel.setText("Tempo scaduto!");
+                        JOptionPane.showMessageDialog(null, "Il timer è scaduto!");
+                        inputUtente.setEditable(false);
                     });
                     timer.cancel();
                 }

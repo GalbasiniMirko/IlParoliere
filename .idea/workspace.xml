@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="merge non riuscita">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/fileParole.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/fileParole.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/JavaGUIFullCourse&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gaiac/OneDrive/Desktop/mysql-connector-j-8.0.32.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -81,6 +81,8 @@
       <recent name="C:\Users\mirko\IdeaProjects\IlParoliere" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gaiac\IdeaProjects\IlParoliere\src\View" />
+      <recent name="C:\Users\gaiac\IdeaProjects\IlParoliere\src\Main" />
       <recent name="C:\Users\mirko\IdeaProjects\IlParoliere\src\Main" />
     </key>
   </component>
@@ -127,8 +129,11 @@
       <workItem from="1684220443798" duration="67000" />
       <workItem from="1684227887845" duration="4275000" />
       <workItem from="1684260099748" duration="8627000" />
-      <workItem from="1684305868793" duration="26742000" />
-      <workItem from="1684392138678" duration="10609000" />
+      <workItem from="1684305868793" duration="21356000" />
+      <workItem from="1684391931095" duration="10255000" />
+      <workItem from="1684408218162" duration="2520000" />
+      <workItem from="1684481594695" duration="1825000" />
+      <workItem from="1684486896913" duration="3363000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -242,21 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684012669874</updated>
     </task>
-    <task id="LOCAL-00017" summary="Sistemazione griglia generata in base alla difficoltà scelta dall'utente (passando una variabile dal JFrame PrimaPagina al JFrame FrameGioco);&#10;Completato panelClassifica facendo le query al DB e visualizzando in una JTable i risultati ottenuti;&#10;Ho iniziato ad aggiungere una JTable al FrameGioco per visualizzare le parole trovate dall'utente e il punteggio assegnato ad esse;">
-      <created>1684346492113</created>
+    <task id="LOCAL-00017" summary="metodo cercare parole nel database e metodo da revisionare per cercare le parole nel file di testo">
+      <created>1684402295018</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1684346492113</updated>
+      <updated>1684402295018</updated>
     </task>
-    <task id="LOCAL-00018" summary="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;">
-      <created>1684402102592</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1684402102592</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,9 +300,8 @@
     <MESSAGE value="Rework generale del progetto a livello grafico" />
     <MESSAGE value="Ricollocazione del timer dopo aggiornamenti grafici" />
     <MESSAGE value="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare" />
-    <MESSAGE value="Sistemazione griglia generata in base alla difficoltà scelta dall'utente (passando una variabile dal JFrame PrimaPagina al JFrame FrameGioco);&#10;Completato panelClassifica facendo le query al DB e visualizzando in una JTable i risultati ottenuti;&#10;Ho iniziato ad aggiungere una JTable al FrameGioco per visualizzare le parole trovate dall'utente e il punteggio assegnato ad esse;" />
-    <MESSAGE value="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;" />
+    <MESSAGE value="metodo cercare parole nel database e metodo da revisionare per cercare le parole nel file di testo" />
+    <option name="LAST_COMMIT_MESSAGE" value="metodo cercare parole nel database e metodo da revisionare per cercare le parole nel file di testo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
