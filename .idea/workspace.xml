@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="merge non riuscita">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
-    </list>
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +20,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -133,7 +127,7 @@
       <workItem from="1684391931095" duration="10255000" />
       <workItem from="1684408218162" duration="2520000" />
       <workItem from="1684481594695" duration="1825000" />
-      <workItem from="1684486896913" duration="3363000" />
+      <workItem from="1684486896913" duration="3751000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -254,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684402295018</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="scelta colori e font">
+      <created>1684493121973</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684493121973</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +302,8 @@
     <MESSAGE value="Ricollocazione del timer dopo aggiornamenti grafici" />
     <MESSAGE value="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare" />
     <MESSAGE value="metodo cercare parole nel database e metodo da revisionare per cercare le parole nel file di testo" />
-    <option name="LAST_COMMIT_MESSAGE" value="metodo cercare parole nel database e metodo da revisionare per cercare le parole nel file di testo" />
+    <MESSAGE value="scelta colori e font" />
+    <option name="LAST_COMMIT_MESSAGE" value="scelta colori e font" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
