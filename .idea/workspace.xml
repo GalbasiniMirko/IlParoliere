@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Aggiunta colonna nella tabella Partita per contenere le parole presenti nel DB trovate dagli utenti;&#10;Inserito controllo sui bottoni per risolvere un bug;&#10;Aggiunta variabile per contare le parole trovate dagli utenti e presenti nel DB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +127,8 @@
       <workItem from="1684260099748" duration="8627000" />
       <workItem from="1684305868793" duration="26742000" />
       <workItem from="1684392138678" duration="11305000" />
-      <workItem from="1684435448467" duration="2652000" />
+      <workItem from="1684435448467" duration="2770000" />
+      <workItem from="1684481348889" duration="3299000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -264,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684405127131</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Aggiunta colonna nella tabella Partita per contenere le parole presenti nel DB trovate dagli utenti;&#10;Inserito controllo sui bottoni per risolvere un bug;&#10;Aggiunta variabile per contare le parole trovate dagli utenti e presenti nel DB">
+      <created>1684442097660</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684442097660</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +319,8 @@
     <MESSAGE value="Sistemazione griglia generata in base alla difficoltà scelta dall'utente (passando una variabile dal JFrame PrimaPagina al JFrame FrameGioco);&#10;Completato panelClassifica facendo le query al DB e visualizzando in una JTable i risultati ottenuti;&#10;Ho iniziato ad aggiungere una JTable al FrameGioco per visualizzare le parole trovate dall'utente e il punteggio assegnato ad esse;" />
     <MESSAGE value="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;" />
     <MESSAGE value="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)" />
+    <MESSAGE value="Aggiunta colonna nella tabella Partita per contenere le parole presenti nel DB trovate dagli utenti;&#10;Inserito controllo sui bottoni per risolvere un bug;&#10;Aggiunta variabile per contare le parole trovate dagli utenti e presenti nel DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta colonna nella tabella Partita per contenere le parole presenti nel DB trovate dagli utenti;&#10;Inserito controllo sui bottoni per risolvere un bug;&#10;Aggiunta variabile per contare le parole trovate dagli utenti e presenti nel DB" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -8,10 +8,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
+import java.awt.event.*;
 
 public class PrimaPagina extends JFrame implements ActionListener, ComponentListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
@@ -44,8 +41,11 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
     JLabel titoloClassifica;
     RoundedButton indietroClassifica;
     RoundedButton btnFacile;
+    Boolean btnFacileChecked = true;
     RoundedButton btnMedio;
+    Boolean btnMedioChecked = false;
     RoundedButton btnDifficile;
+    Boolean btnDifficileChecked = false;
     JPanel panelBtnClassifica;
     JPanel panelClassifica;
     String[] nomeColonne = {"USERNAME", "DIFFICOLTA'", "PUNTEGGIO", "NUMERO PAROLE"};
@@ -232,6 +232,21 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         btnFacile = new RoundedButton("FACILE");
         btnFacile.setBounds(0, 12, 200, 50);
         btnFacile.addActionListener(this);
+        btnFacile.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if(!btnFacileChecked){
+                    btnFacile.setBackground(Color.GRAY);
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if(!btnFacileChecked){
+                    btnFacile.setBackground(Color.lightGray);
+                }
+            }
+        });
         btnFacile.setVerticalTextPosition(JButton.CENTER);
         btnFacile.setFont(new Font("Comic Sans", Font.BOLD, 20));
         btnFacile.setForeground(Color.black);
@@ -241,6 +256,21 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         btnMedio = new RoundedButton("MEDIO");
         btnMedio.setBounds(300, 12, 200, 50);
         btnMedio.addActionListener(this);
+        btnMedio.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if(!btnMedioChecked){
+                    btnMedio.setBackground(Color.GRAY);
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if(!btnMedioChecked){
+                    btnMedio.setBackground(Color.lightGray);
+                }
+            }
+        });
         btnMedio.setVerticalTextPosition(JButton.CENTER);
         btnMedio.setFont(new Font("Comic Sans", Font.BOLD, 20));
         btnMedio.setForeground(Color.black);
@@ -250,6 +280,21 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         btnDifficile = new RoundedButton("DIFFICILE");
         btnDifficile.setBounds(600, 12, 200, 50);
         btnDifficile.addActionListener(this);
+        btnDifficile.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if(!btnDifficileChecked){
+                    btnDifficile.setBackground(Color.GRAY);
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if(!btnDifficileChecked){
+                    btnDifficile.setBackground(Color.lightGray);
+                }
+            }
+        });
         btnDifficile.setVerticalTextPosition(JButton.CENTER);
         btnDifficile.setFont(new Font("Comic Sans", Font.BOLD, 20));
         btnDifficile.setForeground(Color.black);
@@ -257,8 +302,8 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         btnDifficile.setBorder(null);
 
         panelBtnClassifica = new JPanel();
-        panelBtnClassifica.setBackground(new Color(255, 255, 255));
-        //panelBtnClassifica.setBackground(new Color(216, 112, 124));
+        //panelBtnClassifica.setBackground(new Color(255, 255, 255));
+        panelBtnClassifica.setBackground(new Color(216, 112, 124));
         panelBtnClassifica.setSize(800, 75);
         posizionaJPanel(panelBtnClassifica, 175);
         panelBtnClassifica.setLayout(null);
@@ -268,8 +313,8 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         panelBtnClassifica.setVisible(false);
 
         panelClassifica = new JPanel();
-        panelClassifica.setBackground(new Color(255, 255, 255));
-        //panelClassifica.setBackground(new Color(216, 112, 124));
+        //panelClassifica.setBackground(new Color(255, 255, 255));
+        panelClassifica.setBackground(new Color(216, 112, 124));
         panelClassifica.setSize(800, 400);
         posizionaJPanel(panelClassifica, 275);
         panelClassifica.setLayout(new BorderLayout());
@@ -408,6 +453,9 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             JScrollPane scrollTable = new JScrollPane(tableClassifica);
             panelClassifica.add(scrollTable, BorderLayout.CENTER);
             panelClassifica.setVisible(true);
+            btnFacileChecked = true;
+            btnMedioChecked = false;
+            btnDifficileChecked = false;
         }
         if(e.getSource() == btnMedio){
             btnMedio.setBackground(Color.GRAY);
@@ -425,6 +473,9 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             JScrollPane scrollTable = new JScrollPane(tableClassifica);
             panelClassifica.add(scrollTable, BorderLayout.CENTER);
             panelClassifica.setVisible(true);
+            btnMedioChecked = true;
+            btnFacileChecked = false;
+            btnDifficileChecked = false;
         }
         if(e.getSource() == btnDifficile){
             btnDifficile.setBackground(Color.GRAY);
@@ -442,6 +493,9 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             JScrollPane scrollTable = new JScrollPane(tableClassifica);
             panelClassifica.add(scrollTable, BorderLayout.CENTER);
             panelClassifica.setVisible(true);
+            btnDifficileChecked = true;
+            btnMedioChecked = false;
+            btnFacileChecked = false;
         }
     }
 
@@ -451,17 +505,11 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
     @Override
-    public void componentMoved(ComponentEvent e) {
-
-    }
+    public void componentMoved(ComponentEvent e) { }
     @Override
-    public void componentShown(ComponentEvent e) {
-
-    }
+    public void componentShown(ComponentEvent e) { }
     @Override
-    public void componentHidden(ComponentEvent e) {
-
-    }
+    public void componentHidden(ComponentEvent e) { }
 
     private void posizionaJPanel(JPanel p, int y) {
         int width = p.getWidth();
