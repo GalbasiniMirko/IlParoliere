@@ -22,6 +22,9 @@ public class FrameGioco extends JFrame implements ActionListener {
     Partita partita1 = new Partita();
     String parolaInserita;
     int contParole = 0;
+    int pParola = 0;
+    int punteggioTotale = 0;
+    String nomeUtente = partita1.getUsername();
 
     JLabel labelTitolo;
     JLabel countdownLabel;
@@ -48,7 +51,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         this.setIconImage(iconFrame.getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   //il frame si chiuderà con il tasto in alto a destra
         this.setLayout(null);
-        this.getContentPane().setBackground(new Color(216, 112, 124));
+        this.getContentPane().setBackground(new Color(255, 195, 149));
         d = getToolkit().getScreenSize();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setResizable(false);
@@ -58,8 +61,8 @@ public class FrameGioco extends JFrame implements ActionListener {
         //JLABEL PER IL TITOLO IN ALTO
         labelTitolo = new JLabel();
         labelTitolo.setBounds(0, 0, d.width, 100);
-        labelTitolo.setText("VEDIAMO DI COSA SEI CAPACE! ");
-        labelTitolo.setBackground(new Color(125, 125, 125));
+        labelTitolo.setText(nomeUtente+" VEDIAMO DI COSA SEI CAPACE! ");
+        labelTitolo.setBackground(new Color(255, 195, 149));
         labelTitolo.setOpaque(true);
         labelTitolo.setForeground(new Color(0, 0, 0));   //imposta colore del testo
         labelTitolo.setFont(new Font("Comic Sans", Font.BOLD, 25));
@@ -91,7 +94,7 @@ public class FrameGioco extends JFrame implements ActionListener {
                     countdownLabel.setText(timeString);
                 });
                 remainingSeconds--;
-                if (remainingSeconds < 0) {
+                if(remainingSeconds < 0) {
                     SwingUtilities.invokeLater(() -> {
                         JOptionPane.showMessageDialog(null, "Il timer è scaduto!");
                         inputUtente.setEditable(false);
@@ -124,6 +127,7 @@ public class FrameGioco extends JFrame implements ActionListener {
             }
             System.out.println();
         }
+        System.out.println();
 
         bottoniGriglia = new RoundedButton[dimGriglia][dimGriglia];
         for(int i=0; i<dimGriglia; i++){
@@ -137,7 +141,8 @@ public class FrameGioco extends JFrame implements ActionListener {
                 }else if(dimGriglia == 5){
                     bottoniGriglia[i][j].setSize(108,68);
                 }
-                bottoniGriglia[i][j].addActionListener(this);
+                //bottoniGriglia[i][j].addActionListener(this);
+                bottoniGriglia[i][j].setEnabled(false);    //opzionale perché togliendo l'ActionListener i bottoni non fanno nulla
                 bottoniGriglia[i][j].setForeground(Color.black);
                 bottoniGriglia[i][j].setBackground(Color.lightGray);
                 bottoniGriglia[i][j].setBorder(null);
@@ -150,7 +155,6 @@ public class FrameGioco extends JFrame implements ActionListener {
         btnRefresh.setSize(150, 50);
         btnRefresh.setLocation(275, 700);
         btnRefresh.addActionListener(this);
-        btnRefresh.setText("Refresh");
         btnRefresh.setFocusable(false);
         btnRefresh.setVerticalTextPosition(JButton.CENTER);
         btnRefresh.setHorizontalTextPosition(JButton.CENTER);
@@ -229,8 +233,8 @@ public class FrameGioco extends JFrame implements ActionListener {
 
         //permette di prendere l'header della tableClassifica
         JTableHeader headerTable = tableClassifica.getTableHeader();
-        //permette di richiamare un metodo che consente di modificare il font e background dell'heare della tableClassifica
-        headerTable.setDefaultRenderer(new CustomHeaderRenderer());
+        //permette di richiamare un metodo che consente di modificare il font e background dell'header della tableClassifica
+        //headerTable.setDefaultRenderer(new CustomHeaderRenderer());
 
         //permettono di prendere l'altezza dell'header della tableClassifica e modificarla a piacimento
         Dimension hHeader = headerTable.getPreferredSize();
@@ -238,8 +242,10 @@ public class FrameGioco extends JFrame implements ActionListener {
         headerTable.setPreferredSize(hHeader);
 
         //permette di cambiare il font e grandezza delle parole contenute nella tabella
+        Font fontHeader = new Font("Comic Sans", Font.PLAIN, 15);
+        tableClassifica.getTableHeader().setFont(fontHeader);
+        tableClassifica.getTableHeader().setBackground(Color.orange);
         Font font = new Font("Comic Sans", Font.PLAIN, 15);
-        tableClassifica.getTableHeader().setFont(font);
         tableClassifica.setFont(font);
 
         //permette di centrare i contenuti delel celle all'interno di queste
@@ -264,7 +270,6 @@ public class FrameGioco extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnTerminaPartita) {
-            //if() {   //controllo per vedere se il tempo è maggiore di 0
             int scelta = JOptionPane.showConfirmDialog(null, "Sei sicuro di voler terminare la partita?" +
                             "\nI dati non verranno salvati",
                     "Termina Partita", JOptionPane.YES_NO_OPTION);
@@ -285,17 +290,18 @@ public class FrameGioco extends JFrame implements ActionListener {
                 //CERCARE PAROLA NEL DB
                 if(cercaParolaGriglia(matriceLettere, parolaInserita)){
                     if(cercaParolaDB()){
-                        modelTable.addRow(new Object[]{parolaInserita, "ciao"/*punteggio*/});
+                        contParole++;
+                        pParola = parolaInserita.length();
+                        modelTable.addRow(new Object[]{parolaInserita, pParola});
                         tableClassifica.setModel(modelTable);
                         inputUtente.setText("");
-                        contParole++;
                     }else{
                         JOptionPane.showMessageDialog(null, "La parola non è presente nel DB :(");
+                        contParole++;
                         modelTable.addRow(new Object[]{parolaInserita, 0});
                         tableClassifica.setModel(modelTable);
                         inputUtente.setText("");
                     }
-                    /*se è possibile fare variabile per contare le parole trovate e vedere se è possibile mmorizzarle nel db*/
                 }else{
                     JOptionPane.showMessageDialog( null,
                             "Parola non presente nella griglia",
@@ -411,12 +417,12 @@ public class FrameGioco extends JFrame implements ActionListener {
     }
 
     //classe per cambiare colore e font ai componenti dell'header della tableClassifica
-    private class CustomHeaderRenderer extends DefaultTableCellRenderer{
+    /*private class CustomHeaderRenderer extends DefaultTableCellRenderer{
         public CustomHeaderRenderer(){
             this.setHorizontalAlignment(SwingConstants.CENTER);
             this.setForeground(Color.BLACK);
             this.setBackground(Color.ORANGE);
             this.setFont(new Font("Comic Sans", Font.BOLD, 15));
         }
-    }
+    }*/
 }

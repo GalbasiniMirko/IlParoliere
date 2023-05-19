@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="" />
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Implementazione di alcuni effetti grafici nel panelClassifica">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -49,7 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gaiac/OneDrive/Desktop/mysql-connector-j-8.0.32.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/JavaGUIFullCourse&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -75,8 +80,6 @@
       <recent name="C:\Users\mirko\IdeaProjects\IlParoliere" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gaiac\IdeaProjects\IlParoliere\src\View" />
-      <recent name="C:\Users\gaiac\IdeaProjects\IlParoliere\src\Main" />
       <recent name="C:\Users\mirko\IdeaProjects\IlParoliere\src\Main" />
     </key>
   </component>
@@ -123,11 +126,12 @@
       <workItem from="1684220443798" duration="67000" />
       <workItem from="1684227887845" duration="4275000" />
       <workItem from="1684260099748" duration="8627000" />
-      <workItem from="1684305868793" duration="21356000" />
-      <workItem from="1684391931095" duration="10255000" />
-      <workItem from="1684408218162" duration="2520000" />
-      <workItem from="1684481594695" duration="1825000" />
-      <workItem from="1684486896913" duration="3751000" />
+      <workItem from="1684305868793" duration="26742000" />
+      <workItem from="1684392138678" duration="11305000" />
+      <workItem from="1684435448467" duration="2770000" />
+      <workItem from="1684481348889" duration="3364000" />
+      <workItem from="1684490317433" duration="2038000" />
+      <workItem from="1684511753882" duration="3180000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -241,21 +245,42 @@
       <option name="project" value="LOCAL" />
       <updated>1684012669874</updated>
     </task>
-    <task id="LOCAL-00017" summary="metodo cercare parole nel database e metodo da revisionare per cercare le parole nel file di testo">
-      <created>1684402295018</created>
+    <task id="LOCAL-00017" summary="Sistemazione griglia generata in base alla difficoltà scelta dall'utente (passando una variabile dal JFrame PrimaPagina al JFrame FrameGioco);&#10;Completato panelClassifica facendo le query al DB e visualizzando in una JTable i risultati ottenuti;&#10;Ho iniziato ad aggiungere una JTable al FrameGioco per visualizzare le parole trovate dall'utente e il punteggio assegnato ad esse;">
+      <created>1684346492113</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1684402295018</updated>
+      <updated>1684346492113</updated>
     </task>
-    <task id="LOCAL-00018" summary="scelta colori e font">
-      <created>1684493121973</created>
+    <task id="LOCAL-00018" summary="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;">
+      <created>1684402102592</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1684493121973</updated>
+      <updated>1684402102592</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)">
+      <created>1684405127131</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684405127131</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Aggiunta colonna nella tabella Partita per contenere le parole presenti nel DB trovate dagli utenti;&#10;Inserito controllo sui bottoni per risolvere un bug;&#10;Aggiunta variabile per contare le parole trovate dagli utenti e presenti nel DB">
+      <created>1684442097660</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684442097660</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Implementazione di alcuni effetti grafici nel panelClassifica">
+      <created>1684486306619</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1684486306619</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,9 +326,12 @@
     <MESSAGE value="Rework generale del progetto a livello grafico" />
     <MESSAGE value="Ricollocazione del timer dopo aggiornamenti grafici" />
     <MESSAGE value="Generazione randomica delle lettere per i bottoni e prova per mettere a posto la funzione del tempo con esito fallimentare" />
-    <MESSAGE value="metodo cercare parole nel database e metodo da revisionare per cercare le parole nel file di testo" />
-    <MESSAGE value="scelta colori e font" />
-    <option name="LAST_COMMIT_MESSAGE" value="scelta colori e font" />
+    <MESSAGE value="Sistemazione griglia generata in base alla difficoltà scelta dall'utente (passando una variabile dal JFrame PrimaPagina al JFrame FrameGioco);&#10;Completato panelClassifica facendo le query al DB e visualizzando in una JTable i risultati ottenuti;&#10;Ho iniziato ad aggiungere una JTable al FrameGioco per visualizzare le parole trovate dall'utente e il punteggio assegnato ad esse;" />
+    <MESSAGE value="Aggiunti due metodi che permetto la ricerca della parola all'interno della matriceLettere;&#10;Finita grafica FrameGioco con tabella per far vedere a schermo le parole trovate con il relativo punteggio;" />
+    <MESSAGE value="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)" />
+    <MESSAGE value="Aggiunta colonna nella tabella Partita per contenere le parole presenti nel DB trovate dagli utenti;&#10;Inserito controllo sui bottoni per risolvere un bug;&#10;Aggiunta variabile per contare le parole trovate dagli utenti e presenti nel DB" />
+    <MESSAGE value="Implementazione di alcuni effetti grafici nel panelClassifica" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementazione di alcuni effetti grafici nel panelClassifica" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

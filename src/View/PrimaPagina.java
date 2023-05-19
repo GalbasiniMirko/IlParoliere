@@ -303,7 +303,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
 
         panelBtnClassifica = new JPanel();
         //panelBtnClassifica.setBackground(new Color(255, 255, 255));
-        panelBtnClassifica.setBackground(new Color(216, 112, 124));
+        panelBtnClassifica.setBackground(new Color(255, 195, 149));
         panelBtnClassifica.setSize(800, 75);
         posizionaJPanel(panelBtnClassifica, 175);
         panelBtnClassifica.setLayout(null);
@@ -335,7 +335,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         indietroClassifica.setHorizontalTextPosition(JButton.CENTER);
         indietroClassifica.setFont(new Font("Comic Sans", Font.BOLD, 25));
         indietroClassifica.setForeground(Color.black);
-        indietroClassifica.setBackground(Color.lightGray);
+        indietroClassifica.setBackground(new Color(245, 245, 200));
         indietroClassifica.setBorder(null);
         indietroClassifica.setVisible(false);
 
