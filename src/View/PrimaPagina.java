@@ -524,6 +524,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
     private void modificaTabella(Object[][] data){
         modelTable = new DefaultTableModel(data, nomeColonne);
         tableClassifica = new JTable(modelTable);
+        tableClassifica.setEnabled(false);
 
         //permette di prendere l'header della tableClassifica
         JTableHeader headerTable = tableClassifica.getTableHeader();

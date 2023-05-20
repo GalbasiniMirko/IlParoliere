@@ -46,7 +46,7 @@ public class FrameGioco extends JFrame implements ActionListener {
     String[] nomeColonne = {"PAROLA", "PUNTEGGIO"};
     Object[][] data;
     DefaultTableModel modelTable;
-    JTable tableClassifica;
+    JTable tableParole;
 
     public FrameGioco(int dimGriglia, String nUtente, String dif){
         this.setTitle("IL PAROLIERE");
@@ -237,10 +237,11 @@ public class FrameGioco extends JFrame implements ActionListener {
 
         //====================| TABELLA PAROLE/PUNTEGGIO |====================
         modelTable = new DefaultTableModel(data, nomeColonne);
-        tableClassifica = new JTable(modelTable);
+        tableParole = new JTable(modelTable);
+        tableParole.setEnabled(false);
 
         //permette di prendere l'header della tableClassifica
-        JTableHeader headerTable = tableClassifica.getTableHeader();
+        JTableHeader headerTable = tableParole.getTableHeader();
         //permette di richiamare un metodo che consente di modificare il font e background dell'header della tableClassifica
         //headerTable.setDefaultRenderer(new CustomHeaderRenderer());
 
@@ -251,17 +252,17 @@ public class FrameGioco extends JFrame implements ActionListener {
 
         //permette di cambiare il font e grandezza delle parole contenute nella tabella
         Font fontHeader = new Font("Comic Sans", Font.PLAIN, 15);
-        tableClassifica.getTableHeader().setFont(fontHeader);
-        tableClassifica.getTableHeader().setBackground(Color.orange);
+        tableParole.getTableHeader().setFont(fontHeader);
+        tableParole.getTableHeader().setBackground(Color.orange);
         Font font = new Font("Comic Sans", Font.PLAIN, 15);
-        tableClassifica.setFont(font);
+        tableParole.setFont(font);
 
         //permette di centrare i contenuti delel celle all'interno di queste
         DefaultTableCellRenderer centraContenuto = new DefaultTableCellRenderer();
         centraContenuto.setHorizontalAlignment(SwingConstants.CENTER);
-        tableClassifica.setDefaultRenderer(Object.class, centraContenuto);
-        tableClassifica.setRowHeight(35);   //imposta l'altezza delle righe
-        JScrollPane scrollTable = new JScrollPane(tableClassifica);   //oggetto che permette di scorrere la tabelal se diventa troppo grande
+        tableParole.setDefaultRenderer(Object.class, centraContenuto);
+        tableParole.setRowHeight(35);   //imposta l'altezza delle righe
+        JScrollPane scrollTable = new JScrollPane(tableParole);   //oggetto che permette di scorrere la tabelal se diventa troppo grande
         panelTablePartita.add(scrollTable, BorderLayout.CENTER);
         panelTablePartita.setVisible(true);
         //====================================================================
@@ -318,13 +319,13 @@ public class FrameGioco extends JFrame implements ActionListener {
                         pParola = parolaInserita.length();
                         punteggioTotale = punteggioTotale + pParola;
                         modelTable.addRow(new Object[]{parolaInserita, pParola});
-                        tableClassifica.setModel(modelTable);
+                        tableParole.setModel(modelTable);
                         inputUtente.setText("");
                     }else{
                         JOptionPane.showMessageDialog(null, "La parola non è presente nel DB :(");
                         contParole++;
                         modelTable.addRow(new Object[]{parolaInserita, 0});
-                        tableClassifica.setModel(modelTable);
+                        tableParole.setModel(modelTable);
                         inputUtente.setText("");
                     }
                 }else{
