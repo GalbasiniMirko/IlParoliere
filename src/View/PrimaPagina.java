@@ -13,11 +13,12 @@ import java.awt.event.*;
 public class PrimaPagina extends JFrame implements ActionListener, ComponentListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     Dimension d;
-    int difficoltà = 0;   //variabile usata per passare da questo frame al FrameGioco la dimensione della griglia in base alla difficoltà scelta dall'utente
+    int dGriglia = 0;   //variabile usata per passare da questo frame al FrameGioco la dimensione della griglia in base alla difficoltà scelta dall'utente
+    String difficoltà;
     Partita partita1 = new Partita();
 
     //ELEMENTI CONTENUTI NELLA PAGINA INIZIALE
-    JLabel labelTitolo;
+    ShadowedLabel labelTitolo;
     JPanel panelBtn1;
     RoundedButton btnGioca;
     RoundedButton btnClassifica;
@@ -65,15 +66,16 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         this.setResizable(false);
 
         //INIZIO ELEMENTI PANEL DELLA PRIMA PAGINA
-        labelTitolo = new JLabel();
+        labelTitolo = new ShadowedLabel("IL PAROLIERE");
         labelTitolo.setBounds(0, 0, d.width, 275);
-        labelTitolo.setText("IL PAROLIERE");
         labelTitolo.setBackground(new Color(255, 195, 149));
         labelTitolo.setOpaque(true);
         labelTitolo.setForeground(new Color(0, 0, 0));   //imposta colore del testo
         labelTitolo.setFont(new Font("Kristen ITC", Font.BOLD, 75));   //imposta il font e la grandezza del testo
         labelTitolo.setVerticalAlignment(JLabel.CENTER);   //imposta la posizione verticale del testo
         labelTitolo.setHorizontalAlignment(JLabel.CENTER);   //imposta la posizione orizzontale del testo
+        labelTitolo.setShadowColor(Color.GRAY);
+        labelTitolo.setShadowOffset(new Point(6, 6));
         labelTitolo.setVisible(true);
 
         btnGioca = new RoundedButton("GIOCA!");
@@ -411,24 +413,20 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             btnEsci.setVisible(true);
         }
         if(e.getSource() == livelloFacile){
-            difficoltà = 7;
+            dGriglia = 7;
+            difficoltà = "facile";
         }else if(e.getSource() == livelloMedio){
-            difficoltà = 6;
+            dGriglia = 6;
+            difficoltà = "medio";
         }else if(e.getSource() == livelloDifficile){
-            difficoltà = 5;
+            dGriglia = 5;
+            difficoltà = "difficile";
         }
         if(e.getSource() == btnIniziamo){
-            if((difficoltà != 0) && !(username.getText()).equals("")){
-                partita1.setUsername(nomeInserito);
+            if((dGriglia != 0) && !(username.getText()).equals("")){
+                nomeInserito = username.getText();
 
-                if(e.getSource() == livelloFacile){
-                    partita1.setDifficoltà("facile");
-                }else if(e.getSource() == livelloMedio){
-                    partita1.setDifficoltà("medio");
-                }else if(e.getSource() == livelloDifficile){
-                    partita1.setDifficoltà("difficile");
-                }
-                FrameGioco frameGioco = new FrameGioco(difficoltà);
+                FrameGioco frameGioco = new FrameGioco(dGriglia, nomeInserito, difficoltà);
                 this.dispose();
             }else{
                 JOptionPane.showMessageDialog(null,

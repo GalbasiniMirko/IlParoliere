@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Implementazione di alcuni effetti grafici nel panelClassifica">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Sistemazione generale">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
@@ -131,7 +133,8 @@
       <workItem from="1684435448467" duration="2770000" />
       <workItem from="1684481348889" duration="3364000" />
       <workItem from="1684490317433" duration="2038000" />
-      <workItem from="1684511753882" duration="3180000" />
+      <workItem from="1684511753882" duration="3291000" />
+      <workItem from="1684577330831" duration="6096000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -280,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684486306619</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Sistemazione generale">
+      <created>1684521772002</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1684521772002</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +341,8 @@
     <MESSAGE value="Implementazione corretta con gaia dei 3 metodi per cercare le parole (griglia, DB, file)" />
     <MESSAGE value="Aggiunta colonna nella tabella Partita per contenere le parole presenti nel DB trovate dagli utenti;&#10;Inserito controllo sui bottoni per risolvere un bug;&#10;Aggiunta variabile per contare le parole trovate dagli utenti e presenti nel DB" />
     <MESSAGE value="Implementazione di alcuni effetti grafici nel panelClassifica" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementazione di alcuni effetti grafici nel panelClassifica" />
+    <MESSAGE value="Sistemazione generale" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione generale" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

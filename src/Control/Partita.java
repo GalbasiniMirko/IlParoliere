@@ -208,6 +208,11 @@ public class Partita {
 
         return parolaEsistente; //restituisce true se la parola è stata trovata o meno
     }
+
+    public void visDati(){
+        System.out.println(getUsername());
+        System.out.println(getDifficoltà());
+    }
 }
 
 

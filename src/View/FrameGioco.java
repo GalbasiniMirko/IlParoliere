@@ -18,13 +18,14 @@ import java.util.TimerTask;
 public class FrameGioco extends JFrame implements ActionListener {
     ImageIcon iconFrame = new ImageIcon("LogoProgettoGPO.png");
     Dimension d;
-    int dGriglia;
     Partita partita1 = new Partita();
-    String parolaInserita;
-    int contParole = 0;
-    int pParola = 0;
-    int punteggioTotale = 0;
-    String nomeUtente = partita1.getUsername();
+    int dGriglia;   //serve per memorizzare la dimensione della griglia che viene passata dal precedente frame
+    String parolaInserita;   //viene memorizzata la parola inserita dall'utente nel JTextField
+    int contParole = 0;   //memorizza il numero di parole trovate dall'utente
+    int pParola = 0;   //memorizza il punteggio della singola parola trovata dall'utente
+    int punteggioTotale = 0;   //memorizza il punteggio totale delle parole trovate dall'utente
+    String nomeUtente;   //serve per memorizzare lo username inserito dall'utente nel JFrame precedente e passato a questo
+    String difficoltà;   //serve per memorizzare la difficoltà scelta dall'utente nel JFrame precedente e passato a questo
 
     JLabel labelTitolo;
     JLabel countdownLabel;
@@ -46,7 +47,7 @@ public class FrameGioco extends JFrame implements ActionListener {
     DefaultTableModel modelTable;
     JTable tableClassifica;
 
-    public FrameGioco(int dimGriglia){
+    public FrameGioco(int dimGriglia, String nUtente, String dif){
         this.setTitle("IL PAROLIERE");
         this.setIconImage(iconFrame.getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   //il frame si chiuderà con il tasto in alto a destra
@@ -57,11 +58,13 @@ public class FrameGioco extends JFrame implements ActionListener {
         this.setResizable(false);
 
         dGriglia = dimGriglia;
+        nomeUtente = nUtente;
+        difficoltà = dif;
 
         //JLABEL PER IL TITOLO IN ALTO
         labelTitolo = new JLabel();
         labelTitolo.setBounds(0, 0, d.width, 100);
-        labelTitolo.setText(nomeUtente+" VEDIAMO DI COSA SEI CAPACE! ");
+        labelTitolo.setText(nomeUtente+", VEDIAMO DI COSA SEI CAPACE! ");
         labelTitolo.setBackground(new Color(255, 195, 149));
         labelTitolo.setOpaque(true);
         labelTitolo.setForeground(new Color(0, 0, 0));   //imposta colore del testo
@@ -100,6 +103,7 @@ public class FrameGioco extends JFrame implements ActionListener {
                         inputUtente.setEditable(false);
                     });
                     timer.cancel();
+                    timer = null;
                 }
             }
         }, 0, 1000);
@@ -280,7 +284,12 @@ public class FrameGioco extends JFrame implements ActionListener {
             }
         }
         if(e.getSource() == btnRefresh) {
-            FrameGioco frameGioco = new FrameGioco(dGriglia);
+            if (timer != null) {
+                timer.cancel();
+                timer = null;
+            }
+
+            FrameGioco frameGioco = new FrameGioco(dGriglia, nomeUtente, difficoltà);
             this.dispose();
         }
         if(e.getSource() == btnCercaParola){
