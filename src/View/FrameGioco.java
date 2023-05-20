@@ -31,6 +31,7 @@ public class FrameGioco extends JFrame implements ActionListener {
     JLabel countdownLabel;
     Timer timer;
     int countdownSeconds;
+    Boolean tempoScaduto = false;
     JPanel panelGriglia;
     char[][] matriceLettere;   //matrice char per generare random una serie di lettere da mettere nella griglia
     RoundedButton[][] bottoniGriglia;   //griglia di bottoni per il gioco
@@ -101,6 +102,8 @@ public class FrameGioco extends JFrame implements ActionListener {
                     SwingUtilities.invokeLater(() -> {
                         JOptionPane.showMessageDialog(null, "Il timer è scaduto!");
                         inputUtente.setEditable(false);
+                        btnRefresh.setEnabled(false);
+                        tempoScaduto = true;
                     });
                     timer.cancel();
                     timer = null;
@@ -160,6 +163,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         btnRefresh.setLocation(275, 700);
         btnRefresh.addActionListener(this);
         btnRefresh.setFocusable(false);
+        btnRefresh.setEnabled(true);
         btnRefresh.setVerticalTextPosition(JButton.CENTER);
         btnRefresh.setHorizontalTextPosition(JButton.CENTER);
         btnRefresh.setFont(new Font("Comic Sans", Font.BOLD, 25));
@@ -273,14 +277,25 @@ public class FrameGioco extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnTerminaPartita) {
-            int scelta = JOptionPane.showConfirmDialog(null, "Sei sicuro di voler terminare la partita?" +
-                            "\nI dati non verranno salvati",
-                    "Termina Partita", JOptionPane.YES_NO_OPTION);
+        if(e.getSource() == btnTerminaPartita) {
+            if(tempoScaduto){
+                partita1.setUsername(nomeUtente);
+                partita1.setDifficoltà(difficoltà);
+                partita1.setPunteggio(punteggioTotale);
+                partita1.setNumeroParole(contParole);
+                partita1.inserisciDati();
 
-            if (scelta == JOptionPane.YES_OPTION) {
                 this.dispose();
                 PrimaPagina primaPagina = new PrimaPagina();
+            }else{
+                int scelta = JOptionPane.showConfirmDialog(null, "Sei sicuro di voler terminare la partita?" +
+                                "\nI dati non verranno salvati",
+                        "Termina Partita", JOptionPane.YES_NO_OPTION);
+
+                if (scelta == JOptionPane.YES_OPTION) {
+                    this.dispose();
+                    PrimaPagina primaPagina = new PrimaPagina();
+                }
             }
         }
         if(e.getSource() == btnRefresh) {
@@ -301,6 +316,7 @@ public class FrameGioco extends JFrame implements ActionListener {
                     if(cercaParolaDB()){
                         contParole++;
                         pParola = parolaInserita.length();
+                        punteggioTotale = punteggioTotale + pParola;
                         modelTable.addRow(new Object[]{parolaInserita, pParola});
                         tableClassifica.setModel(modelTable);
                         inputUtente.setText("");

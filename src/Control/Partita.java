@@ -13,6 +13,7 @@ public class Partita {
     private String Username;
     private String Difficoltà;
     private int Punteggio;
+    private int numeroParole;
 
     //COSTRUTTORE VUOTO
     public Partita() {
@@ -51,11 +52,17 @@ public class Partita {
     public void setPunteggio(int punteggio) {
         Punteggio = punteggio;
     }
+    public int getNumeroParole() {
+        return numeroParole;
+    }
+    public void setNumeroParole(int numeroParole) {
+        this.numeroParole = numeroParole;
+    }
 
-    //INSERISCI DATI
+    //INSERISCI DATI NEL DB
     public boolean inserisciDati() {
         dbconnection connessione1 = new dbconnection();
-        String query = "INSERT INTO Partita (Username, Difficoltà, Punteggio) VALUES ('Galba', 'difficile', 100)";
+        String query = "INSERT INTO Partita (Username, Difficoltà, Punteggio, numeroParole) VALUES ('"+Username+"', '"+Difficoltà+"', "+Punteggio+", "+numeroParole+")";
         boolean success = connessione1.queryInsert(query);
 
         return success;
