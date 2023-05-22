@@ -6,6 +6,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -205,6 +209,23 @@ public class FrameGioco extends JFrame implements ActionListener {
         inputUtente.setForeground(new Color(0, 0, 0));
         inputUtente.setBackground(new Color(255, 255, 255));
 
+       //metodo per far si che l'utente scriva in maiuscolo
+        DocumentFilter filter = new DocumentFilter() { //serve per filtrare o modificare il testo inseruti
+            public void insertString(FilterBypass fb, int offset, String text,
+                                     AttributeSet attr) throws BadLocationException {
+                fb.insertString(offset, text.toUpperCase(), attr); //prende la stringa all'inserimento e la fa in maiuscolo
+            }
+
+            public void replace(FilterBypass fb, int offset, int length, String text,
+                                AttributeSet attrs) throws BadLocationException {
+                fb.replace(offset, length, text.toUpperCase(), attrs);
+            }
+        };
+
+        // Applica il DocumentFilter al JTextField
+        AbstractDocument document = (AbstractDocument) inputUtente.getDocument();
+        document.setDocumentFilter(filter);
+
         btnCercaParola = new RoundedButton("Cerca");
         btnCercaParola.setSize(105, 50);
         posizioneJButton(panelCentro, btnCercaParola, 230);
@@ -320,7 +341,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         if(e.getSource() == btnCercaParola){
             if(!(inputUtente.getText().equals(""))){
                 parolaInserita = inputUtente.getText();
-
+                parolaInserita.toUpperCase();
                 //CERCARE PAROLA NEL DB
                 if(cercaParolaGriglia(matriceLettere, parolaInserita.toUpperCase())){
                     if(cercaParolaDB()){
