@@ -77,7 +77,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         //JLABEL PER IL TEMPO RIMANENTE
         countdownLabel = new JLabel();
         countdownLabel.setBounds(0, 100, d.width, 75);
-        countdownLabel.setBackground(new Color(125, 125, 125));
+        countdownLabel.setBackground(new Color(255, 195, 149));
         countdownLabel.setOpaque(true);
         countdownLabel.setForeground(new Color(0, 0, 0));
         countdownLabel.setFont(new Font("Comic Sans", Font.BOLD, 25));
@@ -85,7 +85,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         countdownLabel.setHorizontalAlignment(SwingConstants.CENTER);
         countdownLabel.setVisible(true);
 
-        countdownSeconds = 65;   //5 minuti di tempo per trovare le parole
+        countdownSeconds = 300;   //5 minuti di tempo per trovare le parole
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             int remainingSeconds = countdownSeconds;
@@ -113,17 +113,26 @@ public class FrameGioco extends JFrame implements ActionListener {
 
         //GRIGLIA LETTERE
         panelGriglia = new JPanel();
-        panelGriglia.setBackground(new Color(216, 112, 124));
+        panelGriglia.setBackground(new Color(255, 195, 149));
         //panelGriglia.setBackground(new Color(255, 255, 255));
         panelGriglia.setSize(600, 400);
         panelGriglia.setLocation(50, 240);
         panelGriglia.setLayout(new GridLayout(dimGriglia,dimGriglia,5,5));
 
         matriceLettere = new char[dimGriglia][dimGriglia];
+        int numerocelle = dimGriglia * dimGriglia;
+        int percentualeVocali = (int) (numerocelle * 0.3);
+        int contatoreVocali = 0;
         Random random = new Random();
-        for (int i=0; i<dimGriglia; i++) {
-            for (int j=0; j<dimGriglia; j++) {
-                matriceLettere[i][j] = (char) (random.nextInt(26) + 'a');
+        while (contatoreVocali <percentualeVocali) {
+            contatoreVocali = 0;
+            for (int i = 0; i < dimGriglia; i++) {
+                for (int j = 0; j < dimGriglia; j++) {
+                    matriceLettere[i][j] = (char) (random.nextInt(26) + 'a');
+                    if (trovaVocale(matriceLettere[i][j])) {
+                        contatoreVocali++;
+                    }
+                }
             }
         }
 
@@ -150,8 +159,8 @@ public class FrameGioco extends JFrame implements ActionListener {
                 }
                 //bottoniGriglia[i][j].addActionListener(this);
                 bottoniGriglia[i][j].setEnabled(false);    //opzionale perché togliendo l'ActionListener i bottoni non fanno nulla
-                bottoniGriglia[i][j].setForeground(Color.black);
-                bottoniGriglia[i][j].setBackground(Color.lightGray);
+                bottoniGriglia[i][j].setForeground(new Color(0, 0, 0));
+                bottoniGriglia[i][j].setBackground(Color.white);
                 bottoniGriglia[i][j].setBorder(null);
                 panelGriglia.add(bottoniGriglia[i][j]);
             }
@@ -168,12 +177,12 @@ public class FrameGioco extends JFrame implements ActionListener {
         btnRefresh.setHorizontalTextPosition(JButton.CENTER);
         btnRefresh.setFont(new Font("Comic Sans", Font.BOLD, 25));
         btnRefresh.setForeground(Color.black);
-        btnRefresh.setBackground(Color.lightGray);
+        btnRefresh.setBackground(new Color(245, 245, 200));
         btnRefresh.setBorder(null);
         btnRefresh.setVisible(true);
 
         panelCentro = new JPanel();
-        panelCentro.setBackground(new Color(216, 112, 124));
+        panelCentro.setBackground(new Color(255, 195, 149));
         //panelCentro.setBackground(new Color(255, 255, 255));
         panelCentro.setSize(350, 510);
         panelCentro.setLocation(725, 240);
@@ -205,7 +214,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         btnCercaParola.setHorizontalTextPosition(JButton.CENTER);
         btnCercaParola.setFont(new Font("Comic Sans", Font.BOLD, 25));
         btnCercaParola.setForeground(Color.black);
-        btnCercaParola.setBackground(Color.lightGray);
+        btnCercaParola.setBackground(new Color(245, 245, 200));
         btnCercaParola.setBorder(null);
         btnCercaParola.setVisible(true);
 
@@ -218,7 +227,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         btnTerminaPartita.setHorizontalTextPosition(JButton.CENTER);
         btnTerminaPartita.setFont(new Font("Comic Sans", Font.BOLD, 25));
         btnTerminaPartita.setForeground(Color.black);
-        btnTerminaPartita.setBackground(Color.lightGray);
+        btnTerminaPartita.setBackground(new Color(245, 245, 200));
         btnTerminaPartita.setBorder(null);
         btnTerminaPartita.setVisible(true);
 
@@ -229,7 +238,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         panelCentro.setVisible(true);
 
         panelTablePartita = new JPanel();
-        panelTablePartita.setBackground(new Color(216, 112, 124));
+        panelTablePartita.setBackground(new Color(255, 195, 149));
         //panelTablePartita.setBackground(new Color(255, 255, 255));
         panelTablePartita.setSize(325, 510);
         panelTablePartita.setLocation(1150, 240);
@@ -431,6 +440,10 @@ public class FrameGioco extends JFrame implements ActionListener {
         }else{
             return false;
         }
+    }
+    private static boolean trovaVocale(char c) {
+
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 
     public static boolean cercaParolaFile(String parola) {
