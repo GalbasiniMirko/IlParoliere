@@ -131,6 +131,13 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         labelTitolo2.setHorizontalAlignment(JLabel.CENTER);
         labelTitolo2.setVisible(false);
 
+        panelScelteUtente = new JPanel();
+        //panelScelteUtente.setBackground(new Color(255, 255, 255));
+        panelScelteUtente.setBackground(new Color(255, 195, 149));
+        panelScelteUtente.setSize(1100, 325);
+        posizionaJPanel(panelScelteUtente, 300);
+        panelScelteUtente.setLayout(null);
+
         modalita = new JLabel();
         modalita.setBounds(455, 0, 200, 50);
         modalita.setBackground(new Color(255, 255, 255));
@@ -149,7 +156,8 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         nomeInserito = username.getText();
 
         sceltadifficolta = new JLabel();
-        sceltadifficolta.setBounds(365, 100, 375, 70);
+        sceltadifficolta.setSize(375, 70);
+        posizionaJLabel(panelScelteUtente, sceltadifficolta, 100);
         sceltadifficolta.setText("Con quale difficoltà giochiamo?");
         sceltadifficolta.setForeground(new Color(0, 0, 0));
         sceltadifficolta.setFont(new Font("Century Gothic", Font.BOLD, 20));
@@ -176,12 +184,6 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         group.add(livelloMedio);
         group.add(livelloDifficile);
 
-        panelScelteUtente = new JPanel();
-        //panelScelteUtente.setBackground(new Color(255, 255, 255));
-        panelScelteUtente.setBackground(new Color(255, 195, 149));
-        panelScelteUtente.setSize(1100, 325);
-        posizionaJPanel(panelScelteUtente, 300);
-        panelScelteUtente.setLayout(null);
         panelScelteUtente.add(modalita);
         panelScelteUtente.add(username);
         panelScelteUtente.add(sceltadifficolta);
@@ -513,6 +515,12 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         int width = p.getWidth();
         int x = (d.width - width)/2;
         p.setLocation(x, y);
+    }
+    private void posizionaJLabel(JPanel p, JLabel l, int y) {
+        int wPanel = p.getWidth();
+        int wLabel = l.getWidth();
+        int x = (wPanel - wLabel)/2;
+        l.setLocation(x+25, y);
     }
     private void posizioneJButton(JButton b, int y) {
         int width = b.getWidth();
