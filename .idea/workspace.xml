@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Aggiunta la possibilità di trovare le parole anche in diagonale;">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Sistemazione grafica;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684781198350</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Sistemazione grafica;">
+      <created>1684783221196</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1684783221196</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +377,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Completamento primo frame, creato un JPanel che contiene un JLabel e tre JButton per fare in modo di poterlo cambiare con quello che conterrà le impostazioni di gioco" />
     <MESSAGE value="megllio con le maiuscole" />
     <MESSAGE value="Creazione classe per collegamento al DB" />
     <MESSAGE value="Aggiunta librerie per connettersi al DB e prova prima query per inserire dei dati" />
@@ -395,7 +401,8 @@
     <MESSAGE value="rifiniture grafiche" />
     <MESSAGE value="Sistemata generazione csuali di lettere maiuscole" />
     <MESSAGE value="Aggiunta la possibilità di trovare le parole anche in diagonale;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta la possibilità di trovare le parole anche in diagonale;" />
+    <MESSAGE value="Sistemazione grafica;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemazione grafica;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
