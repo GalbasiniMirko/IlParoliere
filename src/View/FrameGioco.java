@@ -10,9 +10,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.Random;
+import java.util.*;
 import java.util.Timer;
-import java.util.TimerTask;
 
 
 public class FrameGioco extends JFrame implements ActionListener {
@@ -26,6 +25,7 @@ public class FrameGioco extends JFrame implements ActionListener {
     int punteggioTotale = 0;   //memorizza il punteggio totale delle parole trovate dall'utente
     String nomeUtente;   //serve per memorizzare lo username inserito dall'utente nel JFrame precedente e passato a questo
     String difficoltà;   //serve per memorizzare la difficoltà scelta dall'utente nel JFrame precedente e passato a questo
+    Vector<String> paroleTrovate = new Vector<>(0, 1);   //array usato per salvare le parole già trovate e controllare se vengono trovate più di una volta
 
     JLabel labelTitolo;
     JLabel countdownLabel;
@@ -315,12 +315,18 @@ public class FrameGioco extends JFrame implements ActionListener {
                 //CERCARE PAROLA NEL DB
                 if(cercaParolaGriglia(matriceLettere, parolaInserita)){
                     if(cercaParolaDB()){
-                        contParole++;
-                        pParola = parolaInserita.length();
-                        punteggioTotale = punteggioTotale + pParola;
-                        modelTable.addRow(new Object[]{parolaInserita, pParola});
-                        tableParole.setModel(modelTable);
-                        inputUtente.setText("");
+                        //controllo se la parola è già stata trovata
+                        if(!paroleTrovate.contains(parolaInserita)){
+                            paroleTrovate.addElement(parolaInserita);
+                            contParole++;
+                            pParola = parolaInserita.length();
+                            punteggioTotale = punteggioTotale + pParola;
+                            modelTable.addRow(new Object[]{parolaInserita, pParola});
+                            tableParole.setModel(modelTable);
+                            inputUtente.setText("");
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Parola già trovata!", "Errore", JOptionPane.ERROR_MESSAGE);
+                        }
                     }else{
                         JOptionPane.showMessageDialog(null, "La parola non è presente nel DB :(");
                         contParole++;

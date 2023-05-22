@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Aggiunto controllo sui punteggi delle parole, con il conto per il punteggioTotale;&#10;Aggiunto controllo per il tempo sul btnTerminaPartita;&#10;Aggiunti i caricamenti delle variabili nel javaBean con utilizzo di query utili per memorizzare le partite nel DB">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Ho fatto in modo che le tabelle non fossero editabili">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +134,9 @@
       <workItem from="1684511753882" duration="3291000" />
       <workItem from="1684577330831" duration="10665000" />
       <workItem from="1684605368396" duration="504000" />
+      <workItem from="1684615026666" duration="333000" />
+      <workItem from="1684701217082" duration="247000" />
+      <workItem from="1684737886952" duration="2642000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -301,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684588162777</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Ho fatto in modo che le tabelle non fossero editabili">
+      <created>1684615351933</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1684615351933</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +367,8 @@
     <MESSAGE value="Sistemazione generale" />
     <MESSAGE value="Aggiunta la sfumatura al titolo iniziale;&#10;Sistemato il passaggio di alcune variabili da caricare nel DB da PrimaPagina a FrameGioco" />
     <MESSAGE value="Aggiunto controllo sui punteggi delle parole, con il conto per il punteggioTotale;&#10;Aggiunto controllo per il tempo sul btnTerminaPartita;&#10;Aggiunti i caricamenti delle variabili nel javaBean con utilizzo di query utili per memorizzare le partite nel DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto controllo sui punteggi delle parole, con il conto per il punteggioTotale;&#10;Aggiunto controllo per il tempo sul btnTerminaPartita;&#10;Aggiunti i caricamenti delle variabili nel javaBean con utilizzo di query utili per memorizzare le partite nel DB" />
+    <MESSAGE value="Ho fatto in modo che le tabelle non fossero editabili" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ho fatto in modo che le tabelle non fossero editabili" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

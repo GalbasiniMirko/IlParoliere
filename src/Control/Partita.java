@@ -24,31 +24,24 @@ public class Partita {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getUsername() {
         return Username;
     }
-
     public void setUsername(String username) {
         Username = username;
     }
-
     public String getDifficoltà() {
         return Difficoltà;
     }
-
     public void setDifficoltà(String difficoltà) {
         Difficoltà = difficoltà;
     }
-
     public int getPunteggio() {
         return Punteggio;
     }
-
     public void setPunteggio(int punteggio) {
         Punteggio = punteggio;
     }
