@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="sistemazione ultimi colori &#10;controllo sul numero di vocali nella griglia (30% circa)">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
     </list>
@@ -53,7 +53,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/JavaGUIFullCourse&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/IdeaProjects/provaArrotondamentoBottoni&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -135,7 +135,9 @@
       <workItem from="1684605368396" duration="504000" />
       <workItem from="1684615026666" duration="333000" />
       <workItem from="1684701217082" duration="247000" />
-      <workItem from="1684737886952" duration="2642000" />
+      <workItem from="1684737886952" duration="2923000" />
+      <workItem from="1684745036368" duration="1162000" />
+      <workItem from="1684753290275" duration="749000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -312,7 +314,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684615351933</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Inserito controllo per le parole già trovate per fare ciò è stato implementato un vettore che memorizza le parole già trovate">
+      <created>1684740820299</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684740820299</updated>
+    </task>
+    <task id="LOCAL-00027" summary=".">
+      <created>1684745053348</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684745053348</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,8 +358,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commento" />
-    <MESSAGE value="mioPrintln" />
     <MESSAGE value="ciao" />
     <MESSAGE value="prova commit" />
     <MESSAGE value="Creazione primo frame" />
@@ -367,7 +381,9 @@
     <MESSAGE value="Aggiunta la sfumatura al titolo iniziale;&#10;Sistemato il passaggio di alcune variabili da caricare nel DB da PrimaPagina a FrameGioco" />
     <MESSAGE value="Aggiunto controllo sui punteggi delle parole, con il conto per il punteggioTotale;&#10;Aggiunto controllo per il tempo sul btnTerminaPartita;&#10;Aggiunti i caricamenti delle variabili nel javaBean con utilizzo di query utili per memorizzare le partite nel DB" />
     <MESSAGE value="Ho fatto in modo che le tabelle non fossero editabili" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho fatto in modo che le tabelle non fossero editabili" />
+    <MESSAGE value="Inserito controllo per le parole già trovate per fare ciò è stato implementato un vettore che memorizza le parole già trovate" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

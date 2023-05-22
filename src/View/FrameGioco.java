@@ -337,17 +337,15 @@ public class FrameGioco extends JFrame implements ActionListener {
                             JOptionPane.showMessageDialog(null, "Parola già trovata!", "Errore", JOptionPane.ERROR_MESSAGE);
                         }
                     }else{
-                        JOptionPane.showMessageDialog(null, "La parola non è presente nel DB :(");
+                        JOptionPane.showMessageDialog(null, "La parola non è presente :(");
                         contParole++;
                         modelTable.addRow(new Object[]{parolaInserita, 0});
                         tableParole.setModel(modelTable);
                         inputUtente.setText("");
                     }
                 }else{
-                    JOptionPane.showMessageDialog( null,
-                            "Parola non presente nella griglia",
-                            "WOW",
-                            JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "La parola non è presente :(");
+                    inputUtente.setText("");
                 }
 
                 //CERCARE PAROLA NEL FILE
