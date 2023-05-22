@@ -252,7 +252,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         btnFacile.setVerticalTextPosition(JButton.CENTER);
         btnFacile.setFont(new Font("Century Gothic", Font.BOLD, 20));
         btnFacile.setForeground(Color.black);
-        btnFacile.setBackground(new Color(245, 245, 200));
+        btnFacile.setBackground(new Color(245, 245, 150));
         btnFacile.setBorder(null);
 
         btnMedio = new RoundedButton("MEDIO");
