@@ -69,7 +69,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         labelTitolo.setBackground(new Color(255, 195, 149));
         labelTitolo.setOpaque(true);
         labelTitolo.setForeground(new Color(0, 0, 0));   //imposta colore del testo
-        labelTitolo.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        labelTitolo.setFont(new Font("Century Gothic", Font.BOLD, 25));
         labelTitolo.setVerticalAlignment(JLabel.CENTER);   //imposta la posizione verticale del testo
         labelTitolo.setHorizontalAlignment(JLabel.CENTER);   //imposta la posizione orizzontale del testo
         labelTitolo.setVisible(true);
@@ -80,7 +80,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         countdownLabel.setBackground(new Color(255, 195, 149));
         countdownLabel.setOpaque(true);
         countdownLabel.setForeground(new Color(0, 0, 0));
-        countdownLabel.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        countdownLabel.setFont(new Font("Century Gothic", Font.BOLD, 25));
         countdownLabel.setVerticalAlignment(JLabel.CENTER);
         countdownLabel.setHorizontalAlignment(SwingConstants.CENTER);
         countdownLabel.setVisible(true);
@@ -149,7 +149,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         for(int i=0; i<dimGriglia; i++){
             for (int j=0; j<dimGriglia; j++){
                 bottoniGriglia[i][j] = new RoundedButton(String.valueOf(matriceLettere[i][j]));
-                bottoniGriglia[i][j].setFont(new Font("Comic Sans", Font.BOLD, 30));
+                bottoniGriglia[i][j].setFont(new Font("Century Gothic", Font.BOLD, 30));
                 if(dimGriglia == 7){
                     bottoniGriglia[i][j].setSize(77,48);
                 }else if(dimGriglia == 6){
@@ -175,7 +175,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         btnRefresh.setEnabled(true);
         btnRefresh.setVerticalTextPosition(JButton.CENTER);
         btnRefresh.setHorizontalTextPosition(JButton.CENTER);
-        btnRefresh.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        btnRefresh.setFont(new Font("Century Gothic", Font.BOLD, 25));
         btnRefresh.setForeground(Color.black);
         btnRefresh.setBackground(new Color(245, 245, 200));
         btnRefresh.setBorder(null);
@@ -194,14 +194,14 @@ public class FrameGioco extends JFrame implements ActionListener {
         labelParola.setBackground(new Color(255, 255, 255));
         labelParola.setText("Inserisci la parola trovata: ");
         labelParola.setForeground(new Color(0, 0, 0));
-        labelParola.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        labelParola.setFont(new Font("Century Gothic", Font.BOLD, 20));
         labelParola.setVerticalAlignment(JLabel.CENTER);
 
         inputUtente = new JTextField();
         inputUtente.setSize(200 , 30);
         posizionaJTextField(panelCentro, inputUtente, 190);
         inputUtente.setPreferredSize(new Dimension(250, 40));
-        inputUtente.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        inputUtente.setFont(new Font("Century Gothic", Font.BOLD, 25));
         inputUtente.setForeground(new Color(0, 0, 0));
         inputUtente.setBackground(new Color(255, 255, 255));
 
@@ -212,7 +212,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         btnCercaParola.setFocusable(false);
         btnCercaParola.setVerticalTextPosition(JButton.CENTER);
         btnCercaParola.setHorizontalTextPosition(JButton.CENTER);
-        btnCercaParola.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        btnCercaParola.setFont(new Font("Century Gothic", Font.BOLD, 25));
         btnCercaParola.setForeground(Color.black);
         btnCercaParola.setBackground(new Color(245, 245, 200));
         btnCercaParola.setBorder(null);
@@ -225,7 +225,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         btnTerminaPartita.setFocusable(false);
         btnTerminaPartita.setVerticalTextPosition(JButton.CENTER);
         btnTerminaPartita.setHorizontalTextPosition(JButton.CENTER);
-        btnTerminaPartita.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        btnTerminaPartita.setFont(new Font("Century Gothic", Font.BOLD, 25));
         btnTerminaPartita.setForeground(Color.black);
         btnTerminaPartita.setBackground(new Color(245, 245, 200));
         btnTerminaPartita.setBorder(null);
@@ -260,10 +260,10 @@ public class FrameGioco extends JFrame implements ActionListener {
         headerTable.setPreferredSize(hHeader);
 
         //permette di cambiare il font e grandezza delle parole contenute nella tabella
-        Font fontHeader = new Font("Comic Sans", Font.PLAIN, 15);
+        Font fontHeader = new Font("Century Gothic", Font.PLAIN, 15);
         tableParole.getTableHeader().setFont(fontHeader);
         tableParole.getTableHeader().setBackground(Color.orange);
-        Font font = new Font("Comic Sans", Font.PLAIN, 15);
+        Font font = new Font("Century Gothic", Font.PLAIN, 15);
         tableParole.setFont(font);
 
         //permette di centrare i contenuti delel celle all'interno di queste

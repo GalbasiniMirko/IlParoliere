@@ -83,7 +83,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         btnGioca.addActionListener(this);
         btnGioca.setVerticalTextPosition(JButton.CENTER);
         btnGioca.setHorizontalTextPosition(JButton.CENTER);
-        btnGioca.setFont(new Font("Comic Sans", Font.BOLD, 30));
+        btnGioca.setFont(new Font("Roboto", Font.BOLD, 30));
         btnGioca.setForeground(Color.black);   //imposto colore testo
         btnGioca.setBackground(new Color(245, 245, 200));   //imposto colore di sfondo
         btnGioca.setBorder(null);
@@ -126,7 +126,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         labelTitolo2.setBackground(new Color(245, 245, 200));
         labelTitolo2.setOpaque(true);
         labelTitolo2.setForeground(new Color(0, 0, 0));
-        labelTitolo2.setFont(new Font("Comic Sans", Font.BOLD, 30));
+        labelTitolo2.setFont(new Font("Century Gothic", Font.BOLD, 40));
         labelTitolo2.setVerticalAlignment(JLabel.CENTER);
         labelTitolo2.setHorizontalAlignment(JLabel.CENTER);
         labelTitolo2.setVisible(false);
@@ -136,7 +136,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         modalita.setBackground(new Color(255, 255, 255));
         modalita.setText("Come ti chiami?");
         modalita.setForeground(new Color(0, 0, 0));
-        modalita.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        modalita.setFont(new Font("Century Gothic", Font.BOLD, 25));
         modalita.setVerticalAlignment(JLabel.CENTER);
 
         username = new JTextField();
@@ -152,23 +152,23 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         sceltadifficolta.setBounds(365, 100, 375, 70);
         sceltadifficolta.setText("Con quale difficoltà giochiamo?");
         sceltadifficolta.setForeground(new Color(0, 0, 0));
-        sceltadifficolta.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        sceltadifficolta.setFont(new Font("Century Gothic", Font.BOLD, 20));
         sceltadifficolta.setVerticalAlignment(JLabel.CENTER);
 
         livelloFacile = new JRadioButton("facile (7 x 7)");
         livelloFacile.setBounds(470, 165, 175, 40);
         livelloFacile.setBackground(new Color(255, 195, 149));
-        livelloFacile.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        livelloFacile.setFont(new Font("Century Gothic", Font.BOLD, 20));
         livelloFacile.addActionListener(this);
         livelloMedio = new JRadioButton("medio (6 x 6)");
         livelloMedio.setBounds(470, 205, 175, 40);
         livelloMedio.setBackground(new Color(255, 195, 149));
-        livelloMedio.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        livelloMedio.setFont(new Font("Century Gothic", Font.BOLD, 20));
         livelloMedio.addActionListener(this);
         livelloDifficile = new JRadioButton("difficile (5 x 5)");
         livelloDifficile.setBounds(470, 245, 175, 40);
         livelloDifficile.setBackground(new Color(255, 195, 149));
-        livelloDifficile.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        livelloDifficile.setFont(new Font("Century Gothic", Font.BOLD, 20));
         livelloDifficile.addActionListener(this);
 
         ButtonGroup group = new ButtonGroup();
@@ -195,7 +195,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         btnIniziamo.addActionListener(this);
         btnIniziamo.setVerticalTextPosition(JButton.CENTER);
         btnIniziamo.setHorizontalTextPosition(JButton.CENTER);
-        btnIniziamo.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        btnIniziamo.setFont(new Font("Century Gothic", Font.BOLD, 20));
         btnIniziamo.setForeground(Color.black);
         btnIniziamo.setBackground(new Color(245, 245, 200));
         btnIniziamo.setBorder(null);
@@ -205,7 +205,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         btnIndietro.addActionListener(this);
         btnIndietro.setVerticalTextPosition(JButton.CENTER);
         btnIndietro.setHorizontalTextPosition(JButton.CENTER);
-        btnIndietro.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        btnIndietro.setFont(new Font("Century Gothic", Font.BOLD, 20));
         btnIndietro.setForeground(Color.black);
         btnIndietro.setBackground(new Color(245, 245, 200));
         btnIndietro.setBorder(null);
@@ -226,7 +226,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         titoloClassifica.setBackground(new Color(245, 245, 200));
         titoloClassifica.setOpaque(true);
         titoloClassifica.setForeground(new Color(0, 0, 0));
-        titoloClassifica.setFont(new Font("Comic Sans", Font.BOLD, 30));
+        titoloClassifica.setFont(new Font("Century Gothic", Font.BOLD, 30));
         titoloClassifica.setVerticalAlignment(JLabel.CENTER);
         titoloClassifica.setHorizontalAlignment(JLabel.CENTER);
         titoloClassifica.setVisible(false);
@@ -238,21 +238,21 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             @Override
             public void mouseEntered(MouseEvent e) {
                 if(!btnFacileChecked){
-                    btnFacile.setBackground(Color.GRAY);
+                    btnFacile.setBackground(new Color(245, 245, 150));
                 }
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 if(!btnFacileChecked){
-                    btnFacile.setBackground(Color.lightGray);
+                    btnFacile.setBackground(new Color(245, 245, 200));
                 }
             }
         });
         btnFacile.setVerticalTextPosition(JButton.CENTER);
-        btnFacile.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        btnFacile.setFont(new Font("Century Gothic", Font.BOLD, 20));
         btnFacile.setForeground(Color.black);
-        btnFacile.setBackground(Color.GRAY);
+        btnFacile.setBackground(new Color(245, 245, 200));
         btnFacile.setBorder(null);
 
         btnMedio = new RoundedButton("MEDIO");
@@ -262,21 +262,21 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             @Override
             public void mouseEntered(MouseEvent e) {
                 if(!btnMedioChecked){
-                    btnMedio.setBackground(Color.GRAY);
+                    btnMedio.setBackground(new Color(245, 245, 150));
                 }
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 if(!btnMedioChecked){
-                    btnMedio.setBackground(Color.lightGray);
+                    btnMedio.setBackground(new Color(245, 245, 200));
                 }
             }
         });
         btnMedio.setVerticalTextPosition(JButton.CENTER);
-        btnMedio.setFont(new Font("Comic Sans", Font.BOLD, 20));
-        btnMedio.setForeground(Color.black);
-        btnMedio.setBackground(Color.lightGray);
+        btnMedio.setFont(new Font("Century Gothic", Font.BOLD, 20));
+        btnMedio.setForeground(Color.BLACK);
+        btnMedio.setBackground(new Color(245, 245, 200));
         btnMedio.setBorder(null);
 
         btnDifficile = new RoundedButton("DIFFICILE");
@@ -286,21 +286,21 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             @Override
             public void mouseEntered(MouseEvent e) {
                 if(!btnDifficileChecked){
-                    btnDifficile.setBackground(Color.GRAY);
+                    btnDifficile.setBackground(new Color(245, 245, 150));
                 }
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 if(!btnDifficileChecked){
-                    btnDifficile.setBackground(Color.lightGray);
+                    btnDifficile.setBackground(new Color(245, 245, 200));
                 }
             }
         });
         btnDifficile.setVerticalTextPosition(JButton.CENTER);
-        btnDifficile.setFont(new Font("Comic Sans", Font.BOLD, 20));
+        btnDifficile.setFont(new Font("Century Gothic", Font.BOLD, 20));
         btnDifficile.setForeground(Color.black);
-        btnDifficile.setBackground(Color.lightGray);
+        btnDifficile.setBackground(new Color(245, 245, 200));
         btnDifficile.setBorder(null);
 
         panelBtnClassifica = new JPanel();
@@ -316,7 +316,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
 
         panelClassifica = new JPanel();
         //panelClassifica.setBackground(new Color(255, 255, 255));
-        panelClassifica.setBackground(new Color(216, 112, 124));
+        panelClassifica.setBackground(new Color(255, 195, 149));
         panelClassifica.setSize(800, 400);
         posizionaJPanel(panelClassifica, 275);
         panelClassifica.setLayout(new BorderLayout());
@@ -335,7 +335,7 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
         indietroClassifica.addActionListener(this);
         indietroClassifica.setVerticalTextPosition(JButton.CENTER);
         indietroClassifica.setHorizontalTextPosition(JButton.CENTER);
-        indietroClassifica.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        indietroClassifica.setFont(new Font("Century Gothic", Font.BOLD, 25));
         indietroClassifica.setForeground(Color.black);
         indietroClassifica.setBackground(new Color(245, 245, 200));
         indietroClassifica.setBorder(null);

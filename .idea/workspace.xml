@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="sistemazione ultimi colori &#10;controllo sul numero di vocali nella griglia (30% circa)">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +24,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -312,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684615351933</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="sistemazione ultimi colori &#10;controllo sul numero di vocali nella griglia (30% circa)">
+      <created>1684753067545</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684753067545</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +349,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commento" />
     <MESSAGE value="mioPrintln" />
     <MESSAGE value="ciao" />
     <MESSAGE value="prova commit" />
@@ -367,7 +373,19 @@
     <MESSAGE value="Aggiunta la sfumatura al titolo iniziale;&#10;Sistemato il passaggio di alcune variabili da caricare nel DB da PrimaPagina a FrameGioco" />
     <MESSAGE value="Aggiunto controllo sui punteggi delle parole, con il conto per il punteggioTotale;&#10;Aggiunto controllo per il tempo sul btnTerminaPartita;&#10;Aggiunti i caricamenti delle variabili nel javaBean con utilizzo di query utili per memorizzare le partite nel DB" />
     <MESSAGE value="Ho fatto in modo che le tabelle non fossero editabili" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho fatto in modo che le tabelle non fossero editabili" />
+    <MESSAGE value="sistemazione ultimi colori &#10;controllo sul numero di vocali nella griglia (30% circa)" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistemazione ultimi colori &#10;controllo sul numero di vocali nella griglia (30% circa)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/View/PrimaPagina.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
