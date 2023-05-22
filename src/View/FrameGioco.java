@@ -128,7 +128,7 @@ public class FrameGioco extends JFrame implements ActionListener {
             contatoreVocali = 0;
             for (int i = 0; i < dimGriglia; i++) {
                 for (int j = 0; j < dimGriglia; j++) {
-                    matriceLettere[i][j] = (char) (random.nextInt(26) + 'a');
+                    matriceLettere[i][j] = Character.toUpperCase((char) (random.nextInt(26) + 'a'));
                     if (trovaVocale(matriceLettere[i][j])) {
                         contatoreVocali++;
                     }
@@ -432,7 +432,7 @@ public class FrameGioco extends JFrame implements ActionListener {
 
     public Boolean cercaParolaDB(){
         //se la parola esiste ripulisce solo la casella di testo altrimenti mostra la finestra dicendo che la parola non esiste nel database
-        if(partita1.controllaParolaNelDatabase(parolaInserita)){
+       if(partita1.controllaParolaNelDatabase(parolaInserita)){
             inputUtente.setText("");
             return true;
         }else{

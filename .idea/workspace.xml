@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="">
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="rifiniture grafiche">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Partita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Partita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
@@ -136,6 +137,7 @@
       <workItem from="1684615026666" duration="333000" />
       <workItem from="1684701217082" duration="247000" />
       <workItem from="1684737886952" duration="2642000" />
+      <workItem from="1684769280415" duration="2849000" />
     </task>
     <task id="LOCAL-00001" summary="commento">
       <created>1673952580975</created>
@@ -319,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684753067545</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="colori e font">
+      <created>1684756741736</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684756741736</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,8 +358,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mioPrintln" />
-    <MESSAGE value="ciao" />
     <MESSAGE value="prova commit" />
     <MESSAGE value="Creazione primo frame" />
     <MESSAGE value="Completamento primo frame, creato un JPanel che contiene un JLabel e tre JButton per fare in modo di poterlo cambiare con quello che conterrà le impostazioni di gioco" />
@@ -374,18 +381,9 @@
     <MESSAGE value="Aggiunto controllo sui punteggi delle parole, con il conto per il punteggioTotale;&#10;Aggiunto controllo per il tempo sul btnTerminaPartita;&#10;Aggiunti i caricamenti delle variabili nel javaBean con utilizzo di query utili per memorizzare le partite nel DB" />
     <MESSAGE value="Ho fatto in modo che le tabelle non fossero editabili" />
     <MESSAGE value="sistemazione ultimi colori &#10;controllo sul numero di vocali nella griglia (30% circa)" />
-    <option name="LAST_COMMIT_MESSAGE" value="sistemazione ultimi colori &#10;controllo sul numero di vocali nella griglia (30% circa)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/View/PrimaPagina.java</url>
-          <line>130</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="colori e font" />
+    <MESSAGE value="rifiniture grafiche" />
+    <option name="LAST_COMMIT_MESSAGE" value="rifiniture grafiche" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

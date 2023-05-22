@@ -436,11 +436,11 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             }
         }
         if(e.getSource() == btnFacile){
-            btnFacile.setBackground(Color.GRAY);
+            btnFacile.setBackground(new Color(245, 245, 150));
             btnFacile.setEnabled(false);
-            btnMedio.setBackground(Color.lightGray);
+            btnMedio.setBackground(new Color(245, 245, 200));
             btnMedio.setEnabled(true);
-            btnDifficile.setBackground(Color.lightGray);
+            btnDifficile.setBackground(new Color(245, 245, 200));
             btnDifficile.setEnabled(true);
 
             panelClassifica.removeAll();
@@ -456,11 +456,11 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             btnDifficileChecked = false;
         }
         if(e.getSource() == btnMedio){
-            btnMedio.setBackground(Color.GRAY);
+            btnMedio.setBackground(new Color(245, 245, 150));
             btnMedio.setEnabled(false);
-            btnFacile.setBackground(Color.lightGray);
+            btnFacile.setBackground(new Color(245, 245, 200));
             btnFacile.setEnabled(true);
-            btnDifficile.setBackground(Color.lightGray);
+            btnDifficile.setBackground(new Color(245, 245, 200));
             btnDifficile.setEnabled(true);
 
             panelClassifica.removeAll();
@@ -476,11 +476,11 @@ public class PrimaPagina extends JFrame implements ActionListener, ComponentList
             btnDifficileChecked = false;
         }
         if(e.getSource() == btnDifficile){
-            btnDifficile.setBackground(Color.GRAY);
+            btnDifficile.setBackground(new Color(245, 245, 150));
             btnDifficile.setEnabled(false);
-            btnFacile.setBackground(Color.lightGray);
+            btnFacile.setBackground(new Color(245, 245, 200));
             btnFacile.setEnabled(true);
-            btnMedio.setBackground(Color.lightGray);
+            btnMedio.setBackground(new Color(245, 245, 200));
             btnMedio.setEnabled(true);
 
             panelClassifica.removeAll();
