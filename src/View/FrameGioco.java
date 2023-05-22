@@ -89,7 +89,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         countdownLabel.setHorizontalAlignment(SwingConstants.CENTER);
         countdownLabel.setVisible(true);
 
-        countdownSeconds = 60;   //5 minuti di tempo per trovare le parole
+        countdownSeconds = 300;   //5 minuti di tempo per trovare le parole
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             int remainingSeconds = countdownSeconds;
@@ -313,16 +313,16 @@ public class FrameGioco extends JFrame implements ActionListener {
                 partita1.setNumeroParole(contParole);
                 partita1.inserisciDati();
 
-                this.dispose();
                 PrimaPagina primaPagina = new PrimaPagina();
+                this.dispose();
             }else{
                 int scelta = JOptionPane.showConfirmDialog(null, "Sei sicuro di voler terminare la partita?" +
                                 "\nI dati non verranno salvati",
                         "Termina Partita", JOptionPane.YES_NO_OPTION);
 
                 if(scelta == JOptionPane.YES_OPTION) {
-                    this.dispose();
                     PrimaPagina primaPagina = new PrimaPagina();
+                    this.dispose();
                 }
             }
         }
@@ -393,7 +393,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         int wPanel = p.getWidth();
         int wLabel = l.getWidth();
         int x = (wPanel - wLabel)/2;
-        l.setLocation(x, y);
+        l.setLocation(x+30, y);
     }
     private void posizionaJTextField(JPanel p, JTextField tf, int y) {
         int wPanel = p.getWidth();
