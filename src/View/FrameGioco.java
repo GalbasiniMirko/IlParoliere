@@ -128,7 +128,7 @@ public class FrameGioco extends JFrame implements ActionListener {
             contatoreVocali = 0;
             for (int i = 0; i < dimGriglia; i++) {
                 for (int j = 0; j < dimGriglia; j++) {
-                    matriceLettere[i][j] = Character.toUpperCase((char) (random.nextInt(26) + 'a'));
+                    matriceLettere[i][j] = (char) (random.nextInt(26) + 'A');
                     if (trovaVocale(matriceLettere[i][j])) {
                         contatoreVocali++;
                     }
@@ -441,7 +441,7 @@ public class FrameGioco extends JFrame implements ActionListener {
     }
     private static boolean trovaVocale(char c) {
 
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+        return c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
     }
 
     public static boolean cercaParolaFile(String parola) {
