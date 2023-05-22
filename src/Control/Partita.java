@@ -64,7 +64,8 @@ public class Partita {
     //VISUALIZZA PUNTEGGIO
    public Object[][] visualizzaMiglioriF() {
         dbconnection connessione = new dbconnection();
-        String query = "SELECT p1.Username, p1.Difficoltà, p1.Punteggio, p1.numeroParole FROM Partita p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'facile' AND p2.Difficoltà = 'facile' " +
+        String query = "SELECT p1.Username, p1.Difficoltà, p1.Punteggio, p1.numeroParole" +
+                " FROM Partita p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'facile' AND p2.Difficoltà = 'facile' " +
                 "ORDER BY p1.Punteggio DESC";
         ResultSet resultSet = connessione.querySelect(query);
 
