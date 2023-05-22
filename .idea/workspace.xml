@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="rifiniture grafiche">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_04_2023_09_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_04_2023_09_32__Changes_.xml" afterDir="false" />
+    <list default="true" id="be341bdf-be97-435d-97bf-2044031134b0" name="Changes" comment="Sistemata generazione csuali di lettere maiuscole">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/FrameGioco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/FrameGioco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/PrimaPagina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/PrimaPagina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684756741736</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Sistemata generazione csuali di lettere maiuscole">
+      <created>1684777906821</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1684777906821</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +364,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="prova commit" />
     <MESSAGE value="Creazione primo frame" />
     <MESSAGE value="Completamento primo frame, creato un JPanel che contiene un JLabel e tre JButton per fare in modo di poterlo cambiare con quello che conterrà le impostazioni di gioco" />
     <MESSAGE value="megllio con le maiuscole" />
@@ -382,7 +388,8 @@
     <MESSAGE value="sistemazione ultimi colori &#10;controllo sul numero di vocali nella griglia (30% circa)" />
     <MESSAGE value="colori e font" />
     <MESSAGE value="rifiniture grafiche" />
-    <option name="LAST_COMMIT_MESSAGE" value="rifiniture grafiche" />
+    <MESSAGE value="Sistemata generazione csuali di lettere maiuscole" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemata generazione csuali di lettere maiuscole" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

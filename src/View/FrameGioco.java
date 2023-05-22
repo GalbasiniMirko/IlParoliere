@@ -121,7 +121,7 @@ public class FrameGioco extends JFrame implements ActionListener {
 
         matriceLettere = new char[dimGriglia][dimGriglia];
         int numerocelle = dimGriglia * dimGriglia;
-        int percentualeVocali = (int) (numerocelle * 0.3);
+        int percentualeVocali = (int) (numerocelle * 0.4);
         int contatoreVocali = 0;
         Random random = new Random();
         while (contatoreVocali <percentualeVocali) {
@@ -302,7 +302,7 @@ public class FrameGioco extends JFrame implements ActionListener {
                                 "\nI dati non verranno salvati",
                         "Termina Partita", JOptionPane.YES_NO_OPTION);
 
-                if (scelta == JOptionPane.YES_OPTION) {
+                if(scelta == JOptionPane.YES_OPTION) {
                     this.dispose();
                     PrimaPagina primaPagina = new PrimaPagina();
                 }
@@ -322,7 +322,7 @@ public class FrameGioco extends JFrame implements ActionListener {
                 parolaInserita = inputUtente.getText();
 
                 //CERCARE PAROLA NEL DB
-                if(cercaParolaGriglia(matriceLettere, parolaInserita)){
+                if(cercaParolaGriglia(matriceLettere, parolaInserita.toUpperCase())){
                     if(cercaParolaDB()){
                         //controllo se la parola è già stata trovata
                         if(!paroleTrovate.contains(parolaInserita)){
@@ -398,9 +398,9 @@ public class FrameGioco extends JFrame implements ActionListener {
         for (int i = 0; i < righe; i++) {
             for (int j = 0; j < colonne; j++) {
                 //Se la cella corrente contiene la prima lettera della parola
-                if(griglia[i][j] == parola.charAt(0)) {
+                if (griglia[i][j] == parola.charAt(0)) {
                     //Controlla se la parola è presente partendo da questa cella
-                    if(trovaParolaGriglia(griglia, parola, i, j, 0)) {
+                    if (trovaParolaGriglia(griglia, parola, i, j, 0)) {
                         return true;
                     }
                 }
@@ -411,7 +411,7 @@ public class FrameGioco extends JFrame implements ActionListener {
 
     public static boolean trovaParolaGriglia(char[][] griglia, String parola, int riga, int colonna, int indice) {
         //Se l'indice ha raggiunto la lunghezza della parola, significa che la parola è stata trovata
-        if (indice == parola.length()) {
+        if(indice == parola.length()) {
             return true;
         }
 
@@ -419,12 +419,16 @@ public class FrameGioco extends JFrame implements ActionListener {
         int colonne = griglia[0].length;
 
         //Verifica se le coordinate sono valide e la cella corrente contiene la lettera corrispondente all'indice
-        if(riga >= 0 && riga < righe && colonna >= 0 && colonna < colonne && griglia[riga][colonna] == parola.charAt(indice)) {
-            //Controlla la parola ricorsivamente in tutte le direzioni (su, giù, sinistra, destra)
-            return trovaParolaGriglia(griglia, parola, riga-1, colonna, indice+1) //Su
-                    || trovaParolaGriglia(griglia, parola, riga+1, colonna, indice+1) //Giù
-                    || trovaParolaGriglia(griglia, parola, riga, colonna-1, indice+1) //Sinistra
-                    || trovaParolaGriglia(griglia, parola, riga, colonna+1, indice+1); //Destra
+        if (riga >= 0 && riga < righe && colonna >= 0 && colonna < colonne && griglia[riga][colonna] == parola.charAt(indice)) {
+            //Controlla la parola ricorsivamente in tutte le direzioni (su, giù, sinistra, destra, diagonali)
+            return trovaParolaGriglia(griglia, parola, riga - 1, colonna, indice + 1)   //Su
+                    || trovaParolaGriglia(griglia, parola, riga + 1, colonna, indice + 1)   //Giù
+                    || trovaParolaGriglia(griglia, parola, riga, colonna - 1, indice + 1)   //Sinistra
+                    || trovaParolaGriglia(griglia, parola, riga, colonna + 1, indice + 1)   //Destra
+                    || trovaParolaGriglia(griglia, parola, riga - 1, colonna - 1, indice + 1)   //Diagonale su/sinistra
+                    || trovaParolaGriglia(griglia, parola, riga - 1, colonna + 1, indice + 1)   //Diagonale su/destra
+                    || trovaParolaGriglia(griglia, parola, riga + 1, colonna - 1, indice + 1)   //Diagonale giù/sinistra
+                    || trovaParolaGriglia(griglia, parola, riga + 1, colonna + 1, indice + 1);   //Diagonale giù/destra
         }
 
         return false;
@@ -458,14 +462,4 @@ public class FrameGioco extends JFrame implements ActionListener {
         return false; // La parola non è stata trovata
 
     }
-
-    //classe per cambiare colore e font ai componenti dell'header della tableClassifica
-    /*private class CustomHeaderRenderer extends DefaultTableCellRenderer{
-        public CustomHeaderRenderer(){
-            this.setHorizontalAlignment(SwingConstants.CENTER);
-            this.setForeground(Color.BLACK);
-            this.setBackground(Color.ORANGE);
-            this.setFont(new Font("Comic Sans", Font.BOLD, 15));
-        }
-    }*/
 }
