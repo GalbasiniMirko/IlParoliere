@@ -69,7 +69,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         labelTitolo.setBackground(new Color(255, 195, 149));
         labelTitolo.setOpaque(true);
         labelTitolo.setForeground(new Color(0, 0, 0));   //imposta colore del testo
-        labelTitolo.setFont(new Font("Comic Sans", Font.BOLD, 25));
+        labelTitolo.setFont(new Font("Century Gothic", Font.BOLD, 25));
         labelTitolo.setVerticalAlignment(JLabel.CENTER);   //imposta la posizione verticale del testo
         labelTitolo.setHorizontalAlignment(JLabel.CENTER);   //imposta la posizione orizzontale del testo
         labelTitolo.setVisible(true);
