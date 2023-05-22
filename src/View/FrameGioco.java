@@ -89,7 +89,7 @@ public class FrameGioco extends JFrame implements ActionListener {
         countdownLabel.setHorizontalAlignment(SwingConstants.CENTER);
         countdownLabel.setVisible(true);
 
-        countdownSeconds = 300;   //5 minuti di tempo per trovare le parole
+        countdownSeconds = 60;   //5 minuti di tempo per trovare le parole
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             int remainingSeconds = countdownSeconds;

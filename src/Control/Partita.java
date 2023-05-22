@@ -66,7 +66,7 @@ public class Partita {
         dbconnection connessione = new dbconnection();
         String query = "SELECT p1.Username, p1.Difficoltà, p1.Punteggio, p1.numeroParole" +
                 " FROM Partita p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'facile' AND p2.Difficoltà = 'facile' " +
-                "ORDER BY p1.Punteggio DESC";
+                "ORDER BY p1.Punteggio DESC LIMIT 10";
         ResultSet resultSet = connessione.querySelect(query);
 
         try {
@@ -100,8 +100,9 @@ public class Partita {
 
     public Object[][] visualizzaMiglioriM() {
         dbconnection connessione = new dbconnection();
-        String query = "SELECT p1.Username, p1.Difficoltà, p1.Punteggio, p1.numeroParole FROM Partita p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'medio' AND p2.Difficoltà = 'medio' " +
-                "ORDER BY p1.Punteggio DESC";
+        String query = "SELECT p1.Username, p1.Difficoltà, p1.Punteggio, p1.numeroParole " +
+                "FROM Partita p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'medio' AND p2.Difficoltà = 'medio' " +
+                "ORDER BY p1.Punteggio DESC LIMIT 10";
         ResultSet resultSet = connessione.querySelect(query);
 
         try {
@@ -135,8 +136,9 @@ public class Partita {
 
     public Object[][] visualizzaMiglioriD() {
         dbconnection connessione = new dbconnection();
-        String query = "SELECT p1.Username, p1.Difficoltà, p1.Punteggio, p1.numeroParole FROM Partita p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'difficile' AND p2.Difficoltà = 'difficile' " +
-                "ORDER BY p1.Punteggio DESC";
+        String query = "SELECT p1.Username, p1.Difficoltà, p1.Punteggio, p1.numeroParole " +
+                "FROM Partita p1 JOIN Partita p2 ON p1.Username = p2.Username WHERE p1.Difficoltà = 'difficile' AND p2.Difficoltà = 'difficile' " +
+                "ORDER BY p1.Punteggio DESC LIMIT 10";
         ResultSet resultSet = connessione.querySelect(query);
 
         try {
